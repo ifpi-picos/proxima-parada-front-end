@@ -5,9 +5,9 @@
     padding: 0px;
 }
 
-body,
-html {
+body{
     background: #eeeeee;
+    background-image: url(../imagens/mapa-\ abastrato-30.jpg);
     height: 100%;
 }
 
@@ -81,7 +81,7 @@ html {
     border: 0;
     border-bottom: 2px solid #a7a5a5;
     outline: none;
-    font-size: 16px;    
+    font-size: 20px;
     transition: all .3s ease-out;
     -webkit-transition: all .3s ease-out;
     -moz-transition: all .3s ease-out;
@@ -90,7 +90,7 @@ html {
 }
 
 .label-float input:focus {
-    border-bottom: 2px solid #3951b2;
+    border-bottom: 2px solid #0C227F;
 }
 
 .label-float input::placeholder {
@@ -98,6 +98,7 @@ html {
 }
 
 .label-float label {
+    font-size: 16px;
     pointer-events: none;
     position: absolute;
     top: 0;
@@ -119,10 +120,10 @@ html {
 
 .label-float input:focus+label,
 .label-float input:not(:placeholder-shown)+label {
-    font-size: 20px;
+    font-size: 22px;
     margin-top: 0;
     margin-left: 0;
-    color: #3951b2;
+    color: #0C227F;
 }
 
 .btn-login {
@@ -134,33 +135,28 @@ html {
     height: 10%;
 }
 
+.btn-login button{
+    width: 96%;
+    height: 80%;
+    border-radius: 20px;
+
+    border: 1px solid #0C227F;
+    background: #2FD3DA;
+    font-size: 20px;
+    color: #0C227F;
+}
+
 .text-cadastre-se {
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 100%;
     height: 10%;
-}
-/* apartir daqui tudo e da tela de cadastro*/
-.enviar{
-    background-color:#00EBC7;
 
-}
-.cancelar{
-    background-color:#00EBC7;
-
-}
-.container{
-    
-    padding-left: 400px;
+    font-size: 20px;
 }
 
-img{
-    padding-top: 20px;
-    width:300px;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+.text-cadastre-se a {
+    text-decoration: none;
+    color: #0C227F;
 }
-/* apartir daqui tudo e da tela de cadastro*/
