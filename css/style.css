@@ -4,7 +4,7 @@
 }
 
 body {
-    background: #eeeeee;
+    background: #ffffff;
     margin: 0;
     padding: 0;
 }
@@ -84,6 +84,17 @@ img{
 }
 
 .criarConta{
+    text-align: center;
+}
+.nome{
+    text-align: center;
+    opacity: 50%;
+}
+hr{
+    opacity: 50%;
+    width: 400px;
+}
+p{
     text-align: center;
 }
 
