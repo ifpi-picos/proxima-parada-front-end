@@ -86,16 +86,13 @@ img{
 .criarConta{
     text-align: center;
 }
-.nome{
-    text-align: center;
-    opacity: 50%;
-}
 hr{
     opacity: 50%;
     width: 400px;
 }
 p{
     text-align: center;
+    opacity: 50%;
 }
 
 .enviar{
