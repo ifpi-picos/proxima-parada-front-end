@@ -75,7 +75,7 @@ body {
 /* apartir daqui tudo e da tela de cadastro*/
 
 img{
-    padding-top: 20px;
+    padding-top: 40px;
     width:400px;
     display: block;
     margin-left: auto;
@@ -91,16 +91,23 @@ hr{
     width: 400px;
 }
 p{
-    text-align: center;
+    text-align:justify;
+    padding-left: 20px;
     opacity: 50%;
+    
 }
 
 .enviar{
     background-color:#00EBC7;
+    height: 40px;
+    width: 50px;
+    border-radius: 20%;
 
 }
 .cancelar{
     background-color:#00EBC7;
+    height: 40px;
+    border-radius: 50%;
 
 }
 
