@@ -1,0 +1,74 @@
+/* -------------------- Configurações Globais ------------------------------ */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #eeeeee;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* -------------------- Conteudo ------------------------------ */
+.limiter {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.content {
+    box-sizing: border-box;
+    background: #F5F5F5CC;
+    width: 96vw;
+    height: 60vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-box {
+    width: 100%;
+    height: 100%;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 55%;
+}
+
+.input-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    width: 100%;
+    height: 20%;
+}
+
+.btn-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 15%;
+}
+
+.text-cadastre-se {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 10%;
+}
