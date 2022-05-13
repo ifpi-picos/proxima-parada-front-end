@@ -73,6 +73,20 @@ body {
     height: 10%;
 }
 /* apartir daqui tudo e da tela de cadastro*/
+
+img{
+    padding-top: 20px;
+    width:400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  
+}
+
+.criarConta{
+    text-align: center;
+}
+
 .enviar{
     background-color:#00EBC7;
 
@@ -81,16 +95,5 @@ body {
     background-color:#00EBC7;
 
 }
-.container{
-    
-    padding-left: 400px;
-}
 
-img{
-    padding-top: 20px;
-    width:300px;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
 /* apartir daqui tudo e da tela de cadastro*/
