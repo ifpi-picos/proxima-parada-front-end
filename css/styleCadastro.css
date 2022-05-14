@@ -9,6 +9,8 @@ img{
 }
 h1{
     text-align: center;
+    font-family: PT Sans;
+    
 }
 
 form{
@@ -27,14 +29,15 @@ form input{
     
 }
 label{
-    font-family: PT Sans;
+   
     font-size: 18px;
 }
 hr{
     opacity: 50%;
+    color: bisque;
 }
 
-.enviar,.cancelar{
+.entrar,.cancelar{
     background-color: aqua;
     width: 280px;
     border-radius: 10px;
