@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=
     , initial-scale=1.0">
     <link rel="stylesheet" href="css/styleCadastro.css">
+    <link rel="shortcut icon" href="imagens/image-carona.jpeg" type="image/x-icon">
     <title>Tela de Cadastro</title>
 </head>
 <body>
@@ -13,12 +14,36 @@
     <h1>Criar Conta</h1>
     
     <form >
-        Nome:
-        <input type="text" name="nome" id="nome" placeholder="João da silva">
+        <label>Nome Completo:</label> <br>
+        <input type="text" name="nome" class="nome" placeholder="João da silva">
+        <hr>
         
 
+        <label>Telefone:</label><br>
+        <input type="number" placeholder="(+55)8998845-8976">
+        <hr>
+      
 
+        <label for="">Ocupação no Campus:</label> <br>
+        <input type="tex"  placeholder="Professor ou aluno">
+        <hr>
+      
+
+        <label for=""> Senha: </label><br>
+        <input type="tex"  placeholder="************">
+        <hr>
+       
+
+       <label for=""> Confirmação de Senha:</label> <br>
+        <input type="tex"  placeholder="************">
+        <hr>
+    
+        <button type="submit" class="enviar">Enviar</button>
+        
+        <button type="submit" class="cancelar">Cancelar</button>
+      
     </form>
+   
     
 </body>
 </html>
