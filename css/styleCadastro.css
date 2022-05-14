@@ -1,14 +1,21 @@
-/* apartir daqui tudo e da tela de cadastro*/
+form{
+    border: 1px solid #ccc;
+    float: left;
+    padding: 18px;
+    margin-left: auto;
+
+
+}
 
 img{
-    padding-top: 40px;
-    width:400px;
+    padding-top: 20px;
+    width:300px;
     display: block;
     margin-left: auto;
     margin-right: auto;
   
 }
-
+/*
 .criarConta{
     text-align: center;
 }
@@ -36,3 +43,4 @@ p{
     border-radius: 50%;
 
 }
+*/
