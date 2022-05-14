@@ -1,7 +1,9 @@
 form{
     border: 1px solid #ccc;
+    height: 100px;
+    width: 300px;
     float: left;
-    padding: 18px;
+    padding: 12px;
     margin-left: auto;
 
 
@@ -15,32 +17,6 @@ img{
     margin-right: auto;
   
 }
-/*
-.criarConta{
+h1{
     text-align: center;
 }
-hr{
-    opacity: 50%;
-    width: 400px;
-}
-p{
-    text-align:justify;
-    padding-left: 20px;
-    opacity: 50%;
-    
-}
-
-.enviar{
-    background-color:#00EBC7;
-    height: 40px;
-    width: 50px;
-    border-radius: 20%;
-
-}
-.cancelar{
-    background-color:#00EBC7;
-    height: 40px;
-    border-radius: 50%;
-
-}
-*/
