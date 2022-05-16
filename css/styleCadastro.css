@@ -36,6 +36,7 @@ label{
 hr{
     opacity: 50%;
     color: bisque;
+    margin-top: -1px;
 }
 
 .entrar,.cancelar{
