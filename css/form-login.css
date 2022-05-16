@@ -1,15 +1,13 @@
-/* -------------------- Formúlario ------------------------------ */
+/* -------------------- Inicio das configurações de formulário ------------------------------ */
 .form-box {
     width: 100%;
     height: 100%;
 }
 
 .logo {
-    border: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 100%;
     height: 55%;
     min-width: 100%;
@@ -21,13 +19,12 @@
     max-height: 100%;
 }
 
+/* -------------------- Inicio input formulário ------------------------------ */
 .input-login {
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     width: 100%;
     height: 25%;
     min-width: 100%;
@@ -40,13 +37,10 @@
 }
 
 .label-float input {
-
-    border: 1px solid red;
     width: 96%;
     height: 55px;
     background: transparent;
     padding: 0 5px;
-
     border: 0;
     border-bottom: 2px solid #a7a5a5;
     outline: none;
@@ -95,22 +89,22 @@
     color: #0C227F;
 }
 
+/* -------------------- Fim input formulário ------------------------------ */
+
+
+/* -------------------- Inicio button e texto final formulário ------------------------------ */
 .btn-login {
-    border: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 100%;
     height: 10%;
 }
 
 .btn-login button {
-    border: 1px solid red;
-    width: 96%;
-    height: 80%;
-    border-radius: 20px;
-
+    width: 92%;
+    height: 65%;
+    border-radius: 30px;
     border: 1px solid #0C227F;
     background: #2FD3DA;
     font-size: 20px;
@@ -118,14 +112,13 @@
 }
 
 .text-cadastre-se {
-    border: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 10%;
 
-    font-size: 20px;
+    font-size: 1.2em;
 }
 
 .text-cadastre-se a {
@@ -133,134 +126,29 @@
     color: #0C227F;
 }
 
-/* ------------------- Media Querys ----------------------- */
+/* -------------------- Fim button e texto final formulário ------------------------------ */
+/* -------------------- Fim das configurações de formulário ------------------------------ */
+
+
+/* -------------------- Inicio das medias Querys ------------------------------ */
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 476px) {
-    .form-box {
-        border: 1px solid red;
-        width: 100%;
-        height: 100%;
-    }
 
-    .logo {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        width: 100%;
-        height: 55%;
-    }
-
-    .logo img {
-        max-width: 100%;
-        max-height: 100%;
-    }
-
-    .input-login {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        width: 100%;
-        height: 25%;
-    }
-
-    .label-float {
-        position: relative;
-        width: 96%;
-    }
-
-    .label-float input {
-
-        width: 96%;
-        height: 55px;
-        background: transparent;
-        padding: 0 5px;
-
-        border: 0;
-        border-bottom: 2px solid #a7a5a5;
-        outline: none;
-        font-size: 20px;
-        transition: all .3s ease-out;
-        -webkit-transition: all .3s ease-out;
-        -moz-transition: all .3s ease-out;
-        -webkit-appearance: none;
-        border-radius: 0;
-    }
-
-    .label-float input:focus {
-        border-bottom: 2px solid #0C227F;
-    }
-
-    .label-float input::placeholder {
-        color: transparent;
-    }
-
-    .label-float label {
-        font-size: 16px;
-        pointer-events: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        margin-top: 13px;
-        margin-left: 10px;
-        transition: all .3s ease-out;
-        -webkit-transition: all .3s ease-out;
-        -moz-transition: all .3s ease-out;
-    }
-
-    .label-float input:required:invalid+label {
-        color: #a7a5a5;
-    }
-
-    .label-float input:focus:required:invalid {
-        border-bottom: 2px solid #a7a5a5;
-    }
-
-    .label-float input:focus+label,
-    .label-float input:not(:placeholder-shown)+label {
-        font-size: 22px;
-        margin-top: 0;
-        margin-left: 0;
-        color: #0C227F;
-    }
-
-    .btn-login {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        width: 100%;
-        height: 10%;
-    }
+    /* -------------------- Inicio input formulário ------------------------------ */
+    /* -------------------- Inicio button e texto final formulário ------------------------------ */
 
     .btn-login button {
-        width: 96%;
-        height: 80%;
-        border-radius: 20px;
-
-        border: 1px solid #0C227F;
-        background: #2FD3DA;
-        font-size: 20px;
-        color: #0C227F;
+        font-size: 1.3em;
+        height: 70%;
     }
 
     .text-cadastre-se {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 10%;
-
-        font-size: 20px;
+        font-size: 1.3em;
     }
 
-    .text-cadastre-se a {
-        text-decoration: none;
-        color: #0C227F;
-    }
+    /* -------------------- Fim button e texto final formulário ------------------------------ */
+    /* -------------------- Fim das configurações de formulário ------------------------------ */
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -274,3 +162,5 @@
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {}
+
+/* -------------------- Fim das medias Querys ------------------------------ */

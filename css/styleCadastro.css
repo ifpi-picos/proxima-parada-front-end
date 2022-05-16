@@ -45,9 +45,11 @@ hr{
     width: 280px;
     border-radius: 10px;
     font-size: 24px;
-    font-family: PT Sans;
+   
 }
-.nome{
-    border-style:none
-    
+.entrar{
+    margin-top: 4px;
+}
+.cancelar{
+    margin-top: 14px;
 }
