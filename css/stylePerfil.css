@@ -1,0 +1,27 @@
+img{
+    width: 100px;
+    border-radius: 50%;
+    display: block;
+    margin-left: 50px;
+}
+
+figcaption{
+    text-align: center;
+}
+
+hr{
+    text-align: center;
+    width: 290px;
+    margin-top: 0px;
+    opacity: 50%;
+   
+}
+form{
+    width: 290px;
+    height: 750px;
+     
+}
+input{
+    border-style:none ;
+    width: 290px;
+}
