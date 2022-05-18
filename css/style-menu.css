@@ -75,7 +75,7 @@ a:hover {
 
 .mobile-menu div {
     width: 32px;
-    height: 2px;
+    height: 3px;
     background: #0C227F;
     margin: 8px;
     transition: 0.3s;
