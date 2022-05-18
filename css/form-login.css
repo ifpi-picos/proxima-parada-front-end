@@ -53,7 +53,7 @@
 }
 
 .label-float input:focus {
-    border-bottom: 2px solid #0C227F;
+    border-bottom: 2px solid var(--color-secodary);
 }
 
 .label-float input::placeholder {
@@ -86,7 +86,7 @@
     font-size: 22px;
     margin-top: 0;
     margin-left: 0;
-    color: #0C227F;
+    color: var(--color-secodary);
 }
 
 /* -------------------- Fim input formulário ------------------------------ */
@@ -105,10 +105,10 @@
     width: 92%;
     height: 65%;
     border-radius: 30px;
-    border: 1px solid #0C227F;
-    background: #2FD3DA;
+    border: 1px solid var(--color-secodary);
+    background: var(--color-primary);
     font-size: 20px;
-    color: #0C227F;
+    color: var(--color-secodary);
 }
 
 .text-cadastre-se {
