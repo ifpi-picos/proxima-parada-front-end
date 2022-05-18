@@ -1,8 +1,8 @@
 img{
-    width: 100px;
+    width: 120px;
     border-radius: 50%;
     display: block;
-    margin-left: 50px;
+    margin-left: 60px;
 }
 
 figcaption{
@@ -10,7 +10,7 @@ figcaption{
 }
 
 hr{
-    text-align: center;
+    text-align: justify;
     width: 290px;
     margin-top: 0px;
     opacity: 50%;
@@ -24,4 +24,32 @@ form{
 input{
     border-style:none ;
     width: 290px;
+    padding: 5px;
+    font-size: 20px;
 }
+label{
+    padding: 4px;
+    font-size: 20px;
+}
+
+figcaption{
+    opacity: 50%;
+}
+
+button{
+    background-color: aqua;
+    font-size: large;
+    width: 200px;
+    
+}
+.Alteracao,.cancelar{
+    margin: 12px;
+    width: 280px;
+    height: 50px;
+    border-radius: 15px;
+    font-size: 30px;
+}
+button.cancelar{
+    background-color: rgba(0, 255, 255, 0.93);
+}
+

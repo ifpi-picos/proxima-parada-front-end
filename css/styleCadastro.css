@@ -58,3 +58,16 @@ hr{
 .cancelar{
     margin-top: 14px;
 }
+.conteiner{
+    max-width: 1120;
+    width: 100%;
+  
+}
+.conteudo{
+    max-width: 1920;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
