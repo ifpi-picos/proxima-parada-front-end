@@ -18,8 +18,10 @@ hr{
 }
 form{
     width: 290px;
-    height: 750px;
-     
+    height: 710px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-left:12 ;
 }
 input{
     border-style:none ;
@@ -29,7 +31,7 @@ input{
 }
 label{
     padding: 4px;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 figcaption{
@@ -42,6 +44,7 @@ button{
     width: 200px;
     
 }
+
 .Alteracao,.cancelar{
     margin: 12px;
     width: 280px;
@@ -49,7 +52,18 @@ button{
     border-radius: 15px;
     font-size: 30px;
 }
-button.cancelar{
-    background-color: rgba(0, 255, 255, 0.93);
+.Alteracao{
+    margin-top:40px;
 }
 
+.div-conteiner{
+    max-width: 1200;
+    width: 100%;
+}
+.formulario{
+    max-width: 1200;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
