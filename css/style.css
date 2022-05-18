@@ -1,4 +1,20 @@
 /* -------------------- Inicio das configurações globais ------------------------------ */
+
+:root {
+    /** primary **/
+    --color-primary: #2FD3DA;
+
+    /** secondary **/
+    --color-secodary: #0C227F;
+
+    /** background **/
+    --color-background: #EEEEEE;
+
+    /** background content **/
+    --color-background-content: #F5F5F5CC;
+}
+
+
 * {
     box-sizing: border-box;
     margin: 0px;
@@ -6,7 +22,7 @@
 }
 
 body {
-    background: #eeeeee;
+    background: var(--color-background);
     background-image: url(../img/mapa-abastrato-30.jpg);
     height: 100%;
     margin: 0;
@@ -15,7 +31,7 @@ body {
 
 a {
     text-decoration: none;
-    color: #0C227F;
+    color: var(--color-secodary);
 }
 
 /* -------------------- Fim das configurações globais ------------------------------ */
@@ -32,7 +48,7 @@ a {
 }
 
 .content {
-    background: #F5F5F5CC;
+    background: var(--color-background-content);
     width: 96vw;
     height: 80vh;
     max-width: 476px;
