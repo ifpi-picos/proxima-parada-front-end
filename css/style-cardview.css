@@ -1,0 +1,53 @@
+
+.limiter {
+    padding-top: 8vh;
+    align-items:flex-start;
+    justify-content:flex-start;
+    text-align:start;
+}
+
+.cardview {
+    background: var(--color-background-content);
+    color: var(--color-secondary);
+    border-radius: 10px;
+    box-shadow: 3px 3px 0.8em #9c9c9c;
+    width: 96%;
+    max-width: 400px;
+    margin: 1vh 0;
+    padding: 5px;
+    font-size: 24px;
+}
+
+.origen, .destino {
+    border: 1px solid #b9b9b9;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.button {
+    width: 100%;
+    height: 30px;
+    border-radius: 30px;
+    border: 1px solid var(--color-secodary);
+    background: var(--color-primary);
+    font-size: 20px;
+    color: var(--color-secodary);
+}
+
+
+.cardview p {
+    font-weight: bold;
+}
+
+.cardview span {
+    font-weight: normal;
+}
+
+@media (max-width: 700px) {
+    .limiter {
+        flex-direction: column;
+        justify-content:flex-start;
+        text-align:start;
+    }
+}
