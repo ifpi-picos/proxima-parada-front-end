@@ -16,21 +16,23 @@ label{
 }
 
 form{
-    border: 1px solid #ccc;
-    height: 520px;
+    
     width: 290px;
-    float: left;
-    padding: 12px;
-    margin-left: 12px;
+    height: 710px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-left:12 ;
+}
+input{
+    border-style:none ;
+    width: 290px;
+    padding: 5px;
+    font-size: 20px;
 }
 
-form input{
-    padding: 4px;
-    width: 290px;
-    border-style:none  
-}
 label{
     font-size: 18px;
+    padding: 4px;
 }
 
 hr{
