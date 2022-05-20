@@ -6,4 +6,4 @@ Sistema de compartilhamento de caronas voltado para os alunos e professores do I
 
 Rafhael Gaspar - lider da equipe
 Edivan Santos de Oliveira 
-Kemily de Jesus de Sousa Santos
+Kemily de Jesus de Sousa Santos.
