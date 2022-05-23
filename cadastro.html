@@ -1,52 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=
     , initial-scale=1.0">
-    <link rel="stylesheet" href="css/style-cadastro.css">
-    <link rel="shortcut icon" href="imagens/image-carona.jpeg" type="image/x-icon">
     <title>Tela de Cadastro</title>
+
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/form-login.css">
+    <link rel="stylesheet" href="css/style-cadastro.css">
+    
+    <link rel="shortcut icon" href="imagens/image-carona.jpeg" type="image/x-icon">
+
 </head>
+
 <body>
-    <div class="conteiner">
+    <div class="logo">
         <img src="img/home.webp" alt="imagem da tela inicial">
         <h1>Criar Conta</h1>
-    </div>   
+    </div>
     <div class="conteudo">
-        <form >
-            <label>Nome Completo:</label> 
-            <input type="text" name="nome" class="nome" placeholder="João da silva">
-            <hr>
+        <form class="form-box">
+            <div class="input">
 
-            <label>Telefone:</label>
-            <input type="number" placeholder="(+55)8998845-8976">
-            <hr>
-        
-            <label for="">Ocupação no Campus:</label> 
-            <input type="tex"  placeholder="Professor ou aluno">
-            <hr>
+                <div class="label-float">
+                    <input type="text" name="nome" class="nome" placeholder=" ">
+                    <label>Nome Completo:</label>
+                </div>
 
-            <label for="">E-mail:</label> 
-            <input type="email"  placeholder="Maria@gmail.com">
-            <hr>
-            <label for=""> Senha: </label>
-            <input type="password"  placeholder="************">
-            <hr>
-        
-            <label for=""> Confirmação de Senha:</label>
-            <input type="password"  placeholder="************">
-            <hr>
-        
-            <button type="submit" class="entrar"><strong> Entrar </strong>
-            </button>
-            
-            <button type="submit" class="cancelar"> <strong>Cancelar</strong>
-            </button>
-        
+                <div class="label-float">
+                    <input type="number" placeholder=" ">
+                    <label>Telefone:</label>
+                </div>
+
+                <div class="label-float">
+                    <input type="tex" placeholder=" ">
+                    <label for="">Ocupação no Campus:</label>
+                </div>
+
+                <div class="label-float">
+                    <input type="email" placeholder=" ">
+                    <label for="">E-mail:</label>
+                </div>
+
+                <div class="label-float">
+                    <input type="password" placeholder=" ">
+                    <label for=""> Senha: </label>
+                </div>
+
+                <div class="label-float">
+                    <input type="password" placeholder=" ">
+                    <label for=""> Confirmação de Senha:</label>
+                </div>
+
+            </div>
+            <div class="btn-login">
+                <button type="submit" class="button entrar">Entrar</button>
+
+                <button type="submit" class="button cancelar">Cancelar</button>
+            </div>
         </form>
     </div>
-    
+
 </body>
+
 </html>

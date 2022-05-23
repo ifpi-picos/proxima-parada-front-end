@@ -2,27 +2,14 @@
     --color-box-shadow: #afafaf;
 }
 
-*,
-*::before,
-*::after {
-    font-family: "Roboto", sans-serif;
-}
-
 .container {
+    border: 1px solid black;
     padding-top: 8vh;
     width: 100vw;
-    height: 92vh;
-}
-
-.card {
-    width: 96%;
-    max-width: 400px;
-    padding: auto;
-    background: var(--color-background);
-    border-radius: 10px;
 }
 
 .card-container {
+    border: 1px solid blue;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     width: 100%;
@@ -30,6 +17,16 @@
     align-items: flex-start;
     justify-items: center;
     color: var(--color-secondary);
+}
+
+.card {
+    border: 1px solid red;
+    width: 98%;
+    max-width: 500px;
+    padding: auto;
+    background: var(--color-background);
+    border-radius: 10px;
+    margin-top: 10px;
 }
 
 .card-content {
@@ -58,25 +55,9 @@
     font-size: 22px;
 }
 
-.card-button {
-    padding: 6px;
-    width: 98%;
-    border-radius: 50px;
-    background: var(--color-primary);
-    color: var(--color-secondary);
-    font-size: 22px;
-    cursor: pointer;
-    border: none;
-    margin: 20px auto;
-}
-
 @media (max-width: 1450px) {
     .card-container {
         grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    .card {
-        margin-top: 10px;
     }
 }
 
@@ -84,18 +65,10 @@
     .card-container {
         grid-template-columns: 1fr 1fr;
     }
-
-    .card {
-        margin-top: 10px;
-    }
 }
 
 @media (max-width: 800px) {
     .card-container {
         grid-template-columns: 1fr;
-    }
-
-    .card {
-        margin-top: 10px;
     }
 }

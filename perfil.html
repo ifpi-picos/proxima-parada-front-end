@@ -1,73 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=
     , initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="css/style-perfil.css">
-    
+
+    <link rel="stylesheet" type="text/css" href="css/form-login.css">
+
+
     <title>Tela de Perfil</title>
 </head>
+
 <body>
     <div class="div-conteiner">
         <div class="formulario">
-            <form >
-            <figure>
-                <img src="img/user-avatar.png
-                " alt="">
-                <figcaption>Edivan ssantos</figcaption>
-            </figure>
-            
-                <label>Nome Completo:</label> <br>
-                <input type="text" name="nome" class="nome" placeholder="João da silva">
-                <hr>
-            
+            <form class="form-box">
+                <figure class="logo">
+                    <img src="img/user-avatar.png" alt="">
+                </figure>
 
-                <label>Telefone:</label><br>
-                <input type="number" placeholder="(+55)8998845-8976">
-                <hr>
-            
-            
-                <label for="">Ocupação no Campus:</label> <br>
-                <input type="tex"  placeholder="Professor ou aluno">
-                <hr>
-            
 
-                <label for="">E-mail:</label> <br>
-                <input type="email"  placeholder="Maria@gmail.com">
-                <hr>
-            
+                <div class="label-float">
+                    <input type="text" name="nome" class="nome" placeholder=" ">
+                    <label>Nome Completo:</label>
+                </div>
 
-                <label for=""> Senha: </label> <br>
-                <input type="password"  placeholder="************">
-                <hr>
-            
-                <label for=""> Cidade: </label> <br>
-                <input type="tex"  placeholder="Picos">
-                <hr>
-            
+                <div class="label-float">
+                    <input type="number" placeholder=" ">
+                    <label>Telefone:</label>
+                </div>
 
-                <label for=""> Bairro: </label> <br>
-                <input type="tex"  placeholder="Junco-PI">
-                <hr>
-                
-                <label for=""> Confirmação de Senha:</label> <br>
-                <input type="password"  placeholder="************">
-                <hr>
-            
+                <div class="label-float">
+                    <input type="tex" placeholder=" ">
+                    <label for="">Ocupação no Campus:</label>
+                </div>
 
-                <button type="submit" class="Alteracao"><strong> Salvar Alteração </strong> 
-                </button>
-                <br>
-                
-                <button type="submit" class="cancelar"> <strong>Cancelar</strong>
-                </button>
-            
+                <div class="label-float">
+                    <input type="email" placeholder=" ">
+                    <label for="">E-mail:</label>
+                </div>
+
+                <div class="label-float">
+                    <input type="password" placeholder=" ">
+                    <label for=""> Senha: </label>
+                </div>
+
+                <div class="label-float">
+                    <input type="password" placeholder=" ">
+                    <label for=""> Confirmação de Senha:</label>
+                </div>
+
+
+                <div class="btn-login">
+                    <button type="submit" class="button Alteracao">Salvar Alteração
+                    </button>
+
+
+                    <button type="submit" class="button cancelar">Cancelar
+                    </button>
+                </div>
+
             </form>
         </div>
     </div>
-   
-    
+
+
 </body>
+
 </html>
