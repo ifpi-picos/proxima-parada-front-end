@@ -1,3 +1,4 @@
+
 img{
     width: 120px;
     border-radius: 50%;
@@ -11,7 +12,7 @@ figcaption{
 
 hr{
     text-align: justify;
-    width: 290px;
+    width: 350px;
     margin-top: 0px;
     opacity: 50%;
    
@@ -29,7 +30,9 @@ input{
     width: 290px;
     padding: 5px;
     font-size: 20px;
+   
 }
+
 label{
     padding: 4px;
     font-size: 18px;
@@ -39,32 +42,45 @@ figcaption{
     opacity: 50%;
 }
 
-button{
-    background-color: aqua;
-    font-size: large;
-    width: 200px;
+button {
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+    font-family: inherit;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #007bff;
+    padding: .375rem .75rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    color: #fff;
+    background-color: #007bff;
     
-}
+  }
 
 .Alteracao,.cancelar{
     margin: 12px;
     width: 280px;
-    height: 50px;
+   
     border-radius: 15px;
     font-size: 30px;
+    
+   
 }
 .Alteracao{
-    margin-top:40px;
+    margin-top:50px;
+ 
 }
 
 .div-conteiner{
     max-width: 1200;
     width: 100%;
-}
-.formulario{
-    max-width: 1200;
-    width: 100%;
-    display: flex;
+     display: flex;
     justify-content: center;
     align-items: center;
+}
+.div-formulario{
+    max-width: 1200;
+    width: 100%;
+   
 }
