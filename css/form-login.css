@@ -1,5 +1,22 @@
+html,
+body {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+:root {
+    --color-form-title: rgba(12, 34, 127, 0.4);
+    --color-form-title-8: rgba(12, 34, 127, 0.8);
+    --color-submit-button: rgba(47, 211, 218, 0.7);
+    --color-submit-button-1: rgba(47, 211, 218);
+    --color-submit-button-singup: rgb(107, 146, 164);
+}
+
 .form-structor {
-    background-color: #222;
+    background-color: var(--color-secondary);
     border-radius: 15px;
     height: 550px;
     width: 350px;
@@ -62,7 +79,7 @@
 }
 
 .form-structor .login .form-title span {
-    color: rgba(0, 0, 0, 0.4);
+    color: var(--color-form-title);
     opacity: 0;
     visibility: hidden;
     -webkit-transition: all 0.3s ease;
@@ -96,12 +113,12 @@
 }
 
 .form-structor .login .form-holder .input::-webkit-input-placeholder {
-    color: rgba(0, 0, 0, 0.4);
+    color: var(--color-form-title);
 }
 
 .form-structor .login .submit-btn {
-    background-color: rgba(0, 0, 0, 0.4);
-    color: rgba(255, 255, 255, 0.7);
+    background-color: var(--color-form-title);
+    color: var(--color-submit-button);
     border: 0;
     border-radius: 15px;
     display: block;
@@ -118,7 +135,12 @@
 
 .form-structor .login .submit-btn:hover {
     transition: all 0.3s ease;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: var(--color-form-title-8);
+    color: var(--color-primary);
+}
+
+.form-structor .login .submit-btn a {
+    color: var(--color-submit-button);
 }
 
 .form-structor .signup {
@@ -157,13 +179,13 @@
 }
 
 .form-structor .signup .center .form-title {
-    color: #000;
+    color: var(--color-secondary);
     font-size: 1.7em;
     text-align: center;
 }
 
 .form-structor .signup .center .form-title span {
-    color: rgba(0, 0, 0, 0.4);
+    color: var(--color-form-title);
     opacity: 0;
     visibility: hidden;
     -webkit-transition: all 0.3s ease;
@@ -172,7 +194,7 @@
 .form-structor .signup .center .form-holder {
     border-radius: 15px;
     background-color: #fff;
-    border: 1px solid #eee;
+    border: 1px solid var(--color-background);
     overflow: hidden;
     margin-top: 50px;
     opacity: 1;
@@ -188,7 +210,7 @@
     height: 30px;
     line-height: 30px;
     padding: 8px 15px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--color-background);
     width: 100%;
     font-size: 12px;
 }
@@ -198,12 +220,12 @@
 }
 
 .form-structor .signup .center .form-holder .input::-webkit-input-placeholder {
-    color: rgba(0, 0, 0, 0.4);
+    color: var(--color-form-title);
 }
 
 .form-structor .signup .center .submit-btn {
-    background-color: #6b92a4;
-    color: rgba(255, 255, 255, 0.7);
+    background-color: var(--color-secondary);
+    color: var(--color-submit-button);
     border: 0;
     border-radius: 15px;
     display: block;
@@ -220,7 +242,8 @@
 
 .form-structor .signup .center .submit-btn:hover {
     transition: all 0.3s ease;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: var(--color-form-title-8);
+    color: var(--color-submit-button-1);
 }
 
 .form-structor .signup.slide-up {

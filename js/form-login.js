@@ -1,28 +1,56 @@
 console.clear();
 
-const signupBtn = document.getElementById('signup');
-const loginBtn = document.getElementById('login');
+const signup = document.getElementById('signup');
+const login = document.getElementById('login');
 
-signupBtn.addEventListener('click', (e) => {
+signup.addEventListener('click', (e) => {
+	let parent = e.target.parentNode.parentNode;
+	Array.from(e.target.parentNode.parentNode.classList).find((element) => {
+		if(element === "slide-up") {
+			login.parentNode.classList.add('slide-up')
+			parent.classList.remove('slide-up')
+		}
+	});
+});
+
+login.addEventListener('click', (e) => {
+	let parent = e.target.parentNode;
+	Array.from(e.target.parentNode.classList).find((element) => {
+		if(element === "slide-up") {
+			signup.parentNode.parentNode.classList.add('slide-up')
+			parent.classList.remove('slide-up')
+		}
+	});
+});
+
+function loginBtn(){
+	location.href = "home.html";
+}
+function signupBtn(){
+	console.log('Botão signup presionado');
+}
+
+/*
+ signup.addEventListener('click', (e) => {
 	let parent = e.target.parentNode.parentNode;
 	Array.from(e.target.parentNode.parentNode.classList).find((element) => {
 		if(element !== "slide-up") {
 			parent.classList.add('slide-up')
 		}else{
-			loginBtn.parentNode.classList.add('slide-up')
+			login.parentNode.classList.add('slide-up')
 			parent.classList.remove('slide-up')
 		}
 	});
 });
 
-loginBtn.addEventListener('click', (e) => {
+login.addEventListener('click', (e) => {
 	let parent = e.target.parentNode;
 	Array.from(e.target.parentNode.classList).find((element) => {
 		if(element !== "slide-up") {
 			parent.classList.add('slide-up')
 		}else{
-			signupBtn.parentNode.parentNode.classList.add('slide-up')
+			signup.parentNode.parentNode.classList.add('slide-up')
 			parent.classList.remove('slide-up')
 		}
 	});
-});
+}); */
