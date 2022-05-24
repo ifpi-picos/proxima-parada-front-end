@@ -1,16 +1,107 @@
-.button:hover {
-    cursor: pointer;
-}
-
-
-.Alteracao {
-    margin-top: 50px;
-
-}
-
-.conteiner {
-    width: 100%;
+html,
+body {
+    position: relative;
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+}
+
+:root {
+    --color-form-title: rgba(12, 34, 127, 0.4);
+    --color-form-title-8: rgba(12, 34, 127, 0.8);
+    --color-submit-button: rgba(47, 211, 218, 0.7);
+    --color-submit-button-1: rgba(47, 211, 218);
+    --color-submit-button-singup: rgb(107, 146, 164);
+}
+
+.form-structor {
+    background-color: var(--color-background-content);
+    border-radius: 15px;
+    height: 550px;
+    width: 350px;
+    position: relative;
+    overflow: hidden;
+}
+
+.form-structor .signup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 5;
+    
+}
+
+
+.form-structor .signup .center {
+    position: absolute;
+    top: calc(50% - 10%);
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    width: 65%;
+    z-index: 5;
+
+}
+/*titulo*/
+.form-structor .signup .center .form-title {
+    color: var(--color-secondary);
+    font-size: 1.7em;
+    text-align: center;
+}
+
+.form-structor .signup .center .form-title span {
+    color: var(--color-form-title);
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.3s ease;
+}
+
+.form-structor .signup .center .form-holder {
+    border-radius: 15px;
+    background-color: #fff;
+    border: 1px solid var(--color-background);
+    overflow: hidden;
+    margin-top: 50px;
+    opacity: 1;
+    visibility: visible;
+    
+}
+
+.form-structor .signup .center .form-holder .input {
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    padding: 8px 15px;
+    border-bottom: 1px solid var(--color-background);
+    width: 100%;
+    font-size: 12px;
+}
+
+.form-structor .signup .center .submit-btn {
+    background-color: var(--color-secondary);
+    color: var(--color-submit-button);
+    border: 0;
+    border-radius: 15px;
+    display: block;
+    margin: 15px auto;
+    padding: 15px 45px;
+    width: 100%;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all 0.3s ease;
+}
+
+.form-structor .signup .center .submit-btn:hover {
+    transition: all 0.3s ease;
+    background-color: var(--color-form-title-8);
+    color: var(--color-submit-button-1);
 }
