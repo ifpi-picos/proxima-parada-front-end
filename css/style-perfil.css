@@ -15,6 +15,11 @@ body {
     --color-submit-button-singup: rgb(107, 146, 164);
 }
 
+.logo{
+    width: 120px;
+    margin-top: 140px;
+    margin-left: 40px;
+}
 .form-structor {
     background-color: var(--color-background-content);
     border-radius: 15px;
@@ -22,6 +27,8 @@ body {
     width: 350px;
     position: relative;
     overflow: hidden;
+   
+   
 }
 
 .form-structor .signup {
@@ -68,6 +75,7 @@ body {
     opacity: 1;
     visibility: visible;
     
+    
 }
 
 .form-structor .signup .center .form-holder .input {
@@ -80,7 +88,7 @@ body {
     padding: 8px 15px;
     border-bottom: 1px solid var(--color-background);
     width: 100%;
-    font-size: 12px;
+    font-size: 16px;
 }
 
 .form-structor .signup .center .submit-btn {
@@ -92,7 +100,7 @@ body {
     margin: 15px auto;
     padding: 15px 45px;
     width: 100%;
-    font-size: 13px;
+    font-size: 18px;
     font-weight: bold;
     cursor: pointer;
     opacity: 1;
