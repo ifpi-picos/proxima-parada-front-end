@@ -23,12 +23,12 @@ login.addEventListener('click', (e) => {
 	});
 });
 
-function loginBtn(){
+/* function loginBtn(){
 	location.href = "home.html";
 }
 function signupBtn(){
 	console.log('Botão signup presionado');
-}
+} */
 
 /*
  signup.addEventListener('click', (e) => {

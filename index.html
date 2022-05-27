@@ -18,10 +18,10 @@
         <div class="login">
             <h2 class="form-title" id="login"><span>ou</span>Entrar</h2>
             <div class="form-holder">
-                <input type="email" class="input" placeholder="Email" />
-                <input type="password" class="input" placeholder="Senha" />
+                <input type="email" class="input" id="email_login" placeholder="Email" value="rafhel@gmail.com">
+                <input type="password" class="input" id="senha_login" placeholder="Senha" value="123456" />
             </div>
-            <button class="submit-btn login-btn" onclick="loginBtn()">Entrar</button>
+            <button class="submit-btn login-btn" id="btnLogin">Entrar</button>
         </div>
         <div class="signup slide-up">
             <div class="center">
@@ -34,37 +34,15 @@
                     <input type="password" class="input" placeholder="Senha" />
                     <input type="password" class="input" placeholder="Comfirmar senha" />
                 </div>
-                <button class="submit-btn singup-btn" onclick="signupBtn()">Catastrar</button>
+                <button class="submit-btn singup-btn" id="btnSignup">Catastrar</button>
             </div>
         </div>
     </div>
 
-    <!-- <div class="limiter">
-        <div class="content">
-            <form action="home.html" name="formCadastro" class="form-box">
-                <div class="logo">
-                    <img src="img/img-carona.jpeg" alt="">
-                </div>
-                <div class="input">
-                    <div class="label-float">
-                        <input type="text" name="email" placeholder=" ">
-                        <label>Email</label>
-                    </div>
-                    <div class="label-float">
-                        <input type="password" name="password" placeholder=" ">
-                        <label>Senha</label>
-                    </div>
-                </div>
-                <div class="btn-login">
-                    <button type="submit" class="">Entrar</button>
-                </div>
-                <div class="text-cadastre-se">
-                    <span class="">Ainda de não tem conta? <a class="" href="cadastro.html">Cadastre-se</a></span>
-                </div>
-            </form>
-        </div>
-    </div> -->
     <script src="js/form-login.js"></script>
+    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/authentication.js"></script>
 </body>
+
 
 </html>
