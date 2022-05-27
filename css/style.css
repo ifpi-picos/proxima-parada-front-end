@@ -1,24 +1,49 @@
-/* -------------------- Configurações Globais ------------------------------ */
-* {
+/* -------------------- Inicio das configurações globais ------------------------------ */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap");
+
+:root {
+    /** primary **/
+    --color-primary: #2FD3DA;
+
+    /** secondary **/
+    --color-secondary: #0C227F;
+
+    /** background **/
+    --color-background: #EEEEEE;
+
+    /** background content **/
+    --color-background-content: #F5F5F5CC;
+}
+
+*,
+*::before,
+*::after {
+    font-family: "Roboto", sans-serif;
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
 }
 
 body {
-<<<<<<< HEAD
-    background: #ffffff;
+    background: var(--color-background);
+    background-image: url(../img/abstract-city-30.jpeg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 1370px 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
-=======
-    background: #eeeeee;
-    background-image: url(../imagens/mapa-\ abastrato-30.jpg);
-    height: 100%;
->>>>>>> 9176e1eb09d1ffc783725f048cb0cd8bbfd4b9f6
 }
 
+a {
+    text-decoration: none;
+    color: var(--color-secondary);
+}
 
-/* -------------------- Conteudo ------------------------------ */
+/* -------------------- Fim das configurações globais ------------------------------ */
+
+
+/* -------------------- Inicio das configurações de Conteudo ------------------------------ */
 .limiter {
     width: 100vw;
     height: 100vh;
@@ -29,9 +54,9 @@ body {
 }
 
 .content {
-    background: #F5F5F5CC;
+    background: var(--color-background-content);
     width: 96vw;
-    height: 60vh;
+    height: 80vh;
     max-width: 476px;
 
     display: flex;
@@ -39,16 +64,39 @@ body {
     align-items: center;
 }
 
-/* ------------------- Media Querys ----------------------- */
+.button {
+    padding: 6px;
+    width: 98%;
+    border-radius: 50px;
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    margin: 20px auto;
+}
+
+.logo img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.form-box {
+    width: 100%;
+    height: 100%;
+}
+
+/* -------------------- Fim das configurações de Conteudo ------------------------------ */
+
+
+/* -------------------- Inicio das medias Querys ------------------------------ */
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 476px) {
 
-    .content {
-        width: 96vw;
-        height: 80vh;
-        max-width: 476px;
-    }
+    /* -------------------- Inicio das configurações de Conteudo ------------------------------ */
+
+    /* -------------------- Fim das configurações de Conteudo ------------------------------ */
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -57,23 +105,10 @@ body {
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {}
 
-<<<<<<< HEAD
-    width: 100%;
-    height: 15%;
-}
-
-.text-cadastre-se {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 100%;
-    height: 10%;
-}
-
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {}
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {}
->>>>>>> 9176e1eb09d1ffc783725f048cb0cd8bbfd4b9f6
+
+/* -------------------- Fim das medias Querys ------------------------------ */

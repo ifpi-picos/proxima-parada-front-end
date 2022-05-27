@@ -13,31 +13,58 @@
 </head>
 
 <body>
-    <div class="limiter">
-        <div class="content">
-            <form action="" class="form-box">
-                <div class="logo">
-                    <img src="imagens/image-carona.jpeg" alt="">
+
+    <div class="form-structor">
+        <div class="login">
+            <h2 class="form-title" id="login"><span>ou</span>Entrar</h2>
+            <div class="form-holder">
+                <input type="email" class="input" placeholder="Email" />
+                <input type="password" class="input" placeholder="Senha" />
+            </div>
+            <button class="submit-btn login-btn" onclick="loginBtn()">Entrar</button>
+        </div>
+        <div class="signup slide-up">
+            <div class="center">
+                <h2 class="form-title" id="signup"><span>ou</span>Cadastre-se</h2>
+                <div class="form-holder">
+                    <input type="text" class="input" placeholder="Nome completo" />
+                    <input type="text" class="input" placeholder="Ocupação no IFPI" />
+                    <input type="phone" class="input" placeholder="Número de Whatsapp" />
+                    <input type="email" class="input" placeholder="Email" />
+                    <input type="password" class="input" placeholder="Senha" />
+                    <input type="password" class="input" placeholder="Comfirmar senha" />
                 </div>
-                <div class="input-login">
+                <button class="submit-btn singup-btn" onclick="signupBtn()">Catastrar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="limiter">
+        <div class="content">
+            <form action="home.html" name="formCadastro" class="form-box">
+                <div class="logo">
+                    <img src="img/img-carona.jpeg" alt="">
+                </div>
+                <div class="input">
                     <div class="label-float">
-                        <input type="text" name="email" placeholder=" " required>
+                        <input type="text" name="email" placeholder=" ">
                         <label>Email</label>
                     </div>
                     <div class="label-float">
-                        <input type="password" name="password" placeholder=" " required>
+                        <input type="password" name="password" placeholder=" ">
                         <label>Senha</label>
                     </div>
                 </div>
                 <div class="btn-login">
-                    <button class="">Entrar</button>
+                    <button type="submit" class="">Entrar</button>
                 </div>
                 <div class="text-cadastre-se">
                     <span class="">Ainda de não tem conta? <a class="" href="cadastro.html">Cadastre-se</a></span>
                 </div>
             </form>
         </div>
-    </div>
+    </div> -->
+    <script src="js/form-login.js"></script>
 </body>
 
 </html>

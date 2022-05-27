@@ -1,15 +1,297 @@
-/* -------------------- Formúlario ------------------------------ */
+html,
+body {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+:root {
+    --color-form-title: rgba(12, 34, 127, 0.4);
+    --color-form-title-8: rgba(12, 34, 127, 0.8);
+    --color-submit-button: rgba(47, 211, 218, 0.7);
+    --color-submit-button-1: rgba(47, 211, 218);
+    --color-submit-button-singup: rgb(107, 146, 164);
+}
+
+.form-structor {
+    background-color: var(--color-secondary);
+    border-radius: 15px;
+    height: 550px;
+    width: 350px;
+    position: relative;
+    overflow: hidden;
+}
+
+.form-structor::after {
+    content: "";
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 500px;
+    background-image: url("../img/car-pooling1.jpg");
+}
+
+.form-structor .login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    width: 65%;
+    z-index: 5;
+    -webkit-transition: all 0.3s ease;
+}
+
+.form-structor .login.slide-up {
+    top: 5%;
+    -webkit-transform: translate(-50%, 0%);
+    -webkit-transition: all 0.3s ease;
+}
+
+.form-structor .login.slide-up .form-holder,
+.form-structor .login.slide-up .submit-btn {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.form-structor .login.slide-up .form-title {
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.form-structor .login.slide-up .form-title span {
+    margin-right: 5px;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all 0.3s ease;
+}
+
+.form-structor .login .form-title {
+    color: #fff;
+    font-size: 1.7em;
+    text-align: center;
+}
+
+.form-structor .login .form-title span {
+    color: var(--color-form-title);
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.3s ease;
+}
+
+.form-structor .login .form-holder {
+    border-radius: 15px;
+    background-color: #fff;
+    overflow: hidden;
+    margin-top: 50px;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all 0.3s ease;
+}
+
+.form-structor .login .form-holder .input {
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    padding: 8px 15px;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    font-size: 12px;
+}
+
+.form-structor .login .form-holder .input:last-child {
+    border-bottom: 0;
+}
+
+.form-structor .login .form-holder .input::-webkit-input-placeholder {
+    color: var(--color-form-title);
+}
+
+.form-structor .login .submit-btn {
+    background-color: var(--color-form-title);
+    color: var(--color-submit-button);
+    border: 0;
+    border-radius: 15px;
+    display: block;
+    margin: 15px auto;
+    padding: 15px 45px;
+    width: 100%;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all 0.3s ease;
+}
+
+.form-structor .login .submit-btn:hover {
+    transition: all 0.3s ease;
+    background-color: var(--color-form-title-8);
+    color: var(--color-primary);
+}
+
+.form-structor .login .submit-btn a {
+    color: var(--color-submit-button);
+}
+
+.form-structor .signup {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 5;
+    -webkit-transition: all 0.3s ease;
+}
+
+.form-structor .signup::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -20px;
+    -webkit-transform: translate(-50%, 0);
+    background-color: #fff;
+    width: 200%;
+    height: 250px;
+    border-radius: 50%;
+    z-index: 4;
+    -webkit-transition: all 0.3s ease;
+}
+
+.form-structor .signup .center {
+    position: absolute;
+    top: calc(50% - 10%);
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    width: 65%;
+    z-index: 5;
+    -webkit-transition: all 0.3s ease;
+}
+
+.form-structor .signup .center .form-title {
+    color: var(--color-secondary);
+    font-size: 1.7em;
+    text-align: center;
+}
+
+.form-structor .signup .center .form-title span {
+    color: var(--color-form-title);
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.3s ease;
+}
+
+.form-structor .signup .center .form-holder {
+    border-radius: 15px;
+    background-color: #fff;
+    border: 1px solid var(--color-background);
+    overflow: hidden;
+    margin-top: 50px;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all 0.3s ease;
+}
+
+.form-structor .signup .center .form-holder .input {
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    padding: 8px 15px;
+    border-bottom: 1px solid var(--color-background);
+    width: 100%;
+    font-size: 12px;
+}
+
+.form-structor .signup .center .form-holder .input:last-child {
+    border-bottom: 0;
+}
+
+.form-structor .signup .center .form-holder .input::-webkit-input-placeholder {
+    color: var(--color-form-title);
+}
+
+.form-structor .signup .center .submit-btn {
+    background-color: var(--color-secondary);
+    color: var(--color-submit-button);
+    border: 0;
+    border-radius: 15px;
+    display: block;
+    margin: 15px auto;
+    padding: 15px 45px;
+    width: 100%;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all 0.3s ease;
+}
+
+.form-structor .signup .center .submit-btn:hover {
+    transition: all 0.3s ease;
+    background-color: var(--color-form-title-8);
+    color: var(--color-submit-button-1);
+}
+
+.form-structor .signup.slide-up {
+    top: 90%;
+    -webkit-transition: all 0.3s ease;
+}
+
+.form-structor .signup.slide-up .center {
+    top: 10%;
+    -webkit-transform: translate(-50%, 0%);
+    -webkit-transition: all 0.3s ease;
+}
+
+.form-structor .signup.slide-up .form-holder,
+.form-structor .signup.slide-up .submit-btn {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.3s ease;
+}
+
+.form-structor .signup.slide-up .form-title {
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+}
+
+.form-structor .signup.slide-up .form-title span {
+    margin-right: 5px;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all 0.3s ease;
+}
+
+
+
+
+/* -------------------- Inicio das configurações de formulário ------------------------------ 
 .form-box {
     width: 100%;
     height: 100%;
 }
 
 .logo {
-    border: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 100%;
     height: 55%;
     min-width: 100%;
@@ -19,15 +301,14 @@
 .logo img {
     max-width: 100%;
     max-height: 100%;
-}
+}*/
 
-.input-login {
-    border: 1px solid red;
+/* -------------------- Inicio input formulário ------------------------------ 
+.input {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     width: 100%;
     height: 25%;
     min-width: 100%;
@@ -40,13 +321,10 @@
 }
 
 .label-float input {
-
-    border: 1px solid red;
     width: 96%;
     height: 55px;
     background: transparent;
     padding: 0 5px;
-
     border: 0;
     border-bottom: 2px solid #a7a5a5;
     outline: none;
@@ -59,7 +337,7 @@
 }
 
 .label-float input:focus {
-    border-bottom: 2px solid #0C227F;
+    border-bottom: 2px solid var(--color-secodary);
 }
 
 .label-float input::placeholder {
@@ -92,175 +370,69 @@
     font-size: 22px;
     margin-top: 0;
     margin-left: 0;
-    color: #0C227F;
-}
+    color: var(--color-secodary);
+}*/
 
+/* -------------------- Fim input formulário ------------------------------ */
+
+
+/* -------------------- Inicio button e texto final formulário ------------------------------ 
 .btn-login {
-    border: 1px solid red;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-
     width: 100%;
-    height: 10%;
 }
 
 .btn-login button {
-    border: 1px solid red;
-    width: 96%;
-    height: 80%;
-    border-radius: 20px;
-
-    border: 1px solid #0C227F;
-    background: #2FD3DA;
+    width: 92%;
+    height: 65%;
+    border-radius: 30px;
+    border: 1px solid var(--color-secodary);
+    background: var(--color-primary);
     font-size: 20px;
-    color: #0C227F;
+    color: var(--color-secodary);
 }
 
 .text-cadastre-se {
-    border: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 10%;
 
-    font-size: 20px;
-}
-
+    font-size: 1.2em;
+}*/
+/* 
 .text-cadastre-se a {
     text-decoration: none;
     color: #0C227F;
-}
+} */
 
-/* ------------------- Media Querys ----------------------- */
+/* -------------------- Fim button e texto final formulário ------------------------------ */
+/* -------------------- Fim das configurações de formulário ------------------------------ */
+
+
+/* -------------------- Inicio das medias Querys ------------------------------ */
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 476px) {
-    .form-box {
-        border: 1px solid red;
-        width: 100%;
-        height: 100%;
-    }
 
-    .logo {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        width: 100%;
-        height: 55%;
-    }
-
-    .logo img {
-        max-width: 100%;
-        max-height: 100%;
-    }
-
-    .input-login {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        width: 100%;
-        height: 25%;
-    }
-
-    .label-float {
-        position: relative;
-        width: 96%;
-    }
-
-    .label-float input {
-
-        width: 96%;
-        height: 55px;
-        background: transparent;
-        padding: 0 5px;
-
-        border: 0;
-        border-bottom: 2px solid #a7a5a5;
-        outline: none;
-        font-size: 20px;
-        transition: all .3s ease-out;
-        -webkit-transition: all .3s ease-out;
-        -moz-transition: all .3s ease-out;
-        -webkit-appearance: none;
-        border-radius: 0;
-    }
-
-    .label-float input:focus {
-        border-bottom: 2px solid #0C227F;
-    }
-
-    .label-float input::placeholder {
-        color: transparent;
-    }
-
-    .label-float label {
-        font-size: 16px;
-        pointer-events: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        margin-top: 13px;
-        margin-left: 10px;
-        transition: all .3s ease-out;
-        -webkit-transition: all .3s ease-out;
-        -moz-transition: all .3s ease-out;
-    }
-
-    .label-float input:required:invalid+label {
-        color: #a7a5a5;
-    }
-
-    .label-float input:focus:required:invalid {
-        border-bottom: 2px solid #a7a5a5;
-    }
-
-    .label-float input:focus+label,
-    .label-float input:not(:placeholder-shown)+label {
-        font-size: 22px;
-        margin-top: 0;
-        margin-left: 0;
-        color: #0C227F;
-    }
-
-    .btn-login {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        width: 100%;
-        height: 10%;
-    }
+    /* -------------------- Inicio input formulário ------------------------------ */
+    /* -------------------- Inicio button e texto final formulário ------------------------------ 
 
     .btn-login button {
-        width: 96%;
-        height: 80%;
-        border-radius: 20px;
-
-        border: 1px solid #0C227F;
-        background: #2FD3DA;
-        font-size: 20px;
-        color: #0C227F;
+        font-size: 1.3em;
+        height: 70%;
     }
 
     .text-cadastre-se {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 10%;
-
-        font-size: 20px;
+        font-size: 1.3em;
     }
-
-    .text-cadastre-se a {
-        text-decoration: none;
-        color: #0C227F;
-    }
+*/
+    /* -------------------- Fim button e texto final formulário ------------------------------ */
+    /* -------------------- Fim das configurações de formulário ------------------------------ */
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -274,3 +446,5 @@
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {}
+
+/* -------------------- Fim das medias Querys ------------------------------ */
