@@ -75,7 +75,14 @@ a {
     border: none;
     margin: 20px auto;
 }
-
+.button-status{
+    width: 90%;
+    background-color: limegreen;
+    font-size: larger;
+    /*position: fixed;
+    margin: auto;
+    */
+}
 .logo img {
     max-width: 100%;
     max-height: 100%;

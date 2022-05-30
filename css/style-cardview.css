@@ -72,3 +72,8 @@
         grid-template-columns: 1fr;
     }
 }
+.status{
+    width: 120px;
+    background-color: red;
+    margin: 6px solid #ccc;
+}
