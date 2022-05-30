@@ -17,13 +17,29 @@ const btnSignup = document.getElementById("btnSignup");
 
 const fields = document.querySelectorAll("[required]");
 
+auth.onAuthStateChanged((user) => {
+  // Check for user status
+  //console.log(user);
+});
+
 btnLogin.addEventListener("click", () => {
-  console.log("botão login presionado");
-  const email = document.getElementById("email_login").value;
-  const senha = document.getElementById("senha_login").value;
+  const emailLogin = document.getElementById("email_login");
+  const senhaLogin = document.getElementById("senha_login");
 
   // [START auth_signin_password_modular]
+  if (emailLogin.value != "") {
+    if (senhaLogin.value != "") {
+      loginUser(email.value, senha.value);
+      //console.log("Sucesso");
+    } else {
+      alert("Preencha o campo senha.");
+    }
+  } else {
+    alert("Preencha o campo email.");
+  }
+});
 
+function loginUser(email, senha) {
   auth
     .signInWithEmailAndPassword(email, senha)
     .then((userCredential) => {
@@ -33,14 +49,14 @@ btnLogin.addEventListener("click", () => {
       location.href = "home.html";
     })
     .catch((error) => {
-      if (error.code === 'auth/invalid-email') {
-        alert('Formato de email inválido.');
-      } else if (error.code === 'auth/user-disabled') {
-        alert('Esse usuário foi desabilitado.');
-      } else if (error.code === 'auth/user-not-found') {
-        alert('Usuário não encontrado.');
-      } else if (error.code === 'auth/wrong-password') {
-        alert('Senha incorreta. digite novamente.');
+      if (error.code === "auth/invalid-email") {
+        alert("Formato de email inválido.");
+      } else if (error.code === "auth/user-disabled") {
+        alert("Esse usuário foi desabilitado.");
+      } else if (error.code === "auth/user-not-found") {
+        alert("Usuário não encontrado.");
+      } else if (error.code === "auth/wrong-password") {
+        alert("Senha incorreta. digite novamente.");
         this.loginForm.controls.password.setValue(null);
       } else {
         alert(error.message);
@@ -48,12 +64,9 @@ btnLogin.addEventListener("click", () => {
     });
 
   // [END auth_signin_password_modular]
-});
-
+}
 
 btnSignup.addEventListener("click", () => {
-  console.log("botão cadastrar presionado");
-
   const nome = document.getElementById("nome");
   const ocupacao = document.getElementById("ocupacao");
   const telefone = document.getElementById("telefone");
@@ -78,39 +91,58 @@ function createUser(nome, ocupacao, telefone, email, senha) {
     .then((userCredential) => {
       // Signed in
       var user = userCredential.user;
-
-      // Add this user to Firebase Database
       var database_ref = database.ref();
 
-      // Create User data
-      var dadosUsuario = {
-        nome: nome,
-        email: email,
-        ocupacao: ocupacao,
-        telefone: telefone,
-        endereco_imagen: "",
-      };
-
-      // Push to Firebase Database
-      database_ref.child("usuario/" + user.uid).set(dadosUsuario);
-
+      // Add this user to Firebase Database
+      writeUserData(nome, ocupacao, telefone, email, user, database_ref);
       // DOne
       location.href = "home.html";
+    
       // ...
     })
     .catch((error) => {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      console.log("Error: " + errorCode + " = " + errorMessage);
+      if (error.code === "auth/invalid-email") {
+        alert("Formato de email inválido.");
+      } else if (error.code === "auth/auth/email-already-in-use") {
+        alert("Esse email ja é utilizado por outro usuário.");
+      } else if (error.code === "auth/weak-password") {
+        alert("Senha muito fraca.");
+        email.setValue(null);
+      } else {
+        alert(error.message);
+      }
       // ..
     });
 }
 
+function writeUserData(nome, ocupacao, telefone, email, user, database_ref) {
+  // Create User data
+  var dadosUsuario = {
+    nome: nome,
+    email: email,
+    ocupacao: ocupacao,
+    telefone: telefone,
+    endereco_imagen: "",
+  };
+
+  // Push to Firebase Database
+  database_ref.child("usuario/" + user.uid).set(dadosUsuario, (error) => {
+    if (error) {
+      // The write failed...
+      alert("Erro ao salvar dados de usúario, tente fazer login.");
+    } else {
+      // Data saved successfully!
+      alert("Usuário criado com sucesso.");
+      location.href = "home.html";
+    }
+  });
+}
+
 function validandoCampos(nome, ocupacao, telefone, email, senha, confirSenha) {
-  if (senha != null && senha > 5) {
+  if (senha != "" && senha > 5) {
     if (senha == confirSenha) {
       createUser(nome, ocupacao, telefone, email, senha);
-      console.log("Sucesso");
+      //console.log("Sucesso");
     } else {
       alert("Senhas diferentes.");
     }
@@ -145,7 +177,7 @@ function ValidateField(field) {
         typeMismatch: "Por favor, preencha um número válido",
       },
       email: {
-        valueMissing: "Email é obrigatório",
+        valueMissing: "Por favor, preencha este campo",
         typeMismatch: "Por favor, preencha um email válido",
       },
       password: {

@@ -23,7 +23,7 @@
                     <li><a href="perfil.html">Perfil</a></li>
                     <li><a href="cadastrar-carona.html">Caronas</a></li>
                     <li><a href="#">Filtrar</a></li>
-                    <li><a href="index.html">Sair</a></li>
+                    <li onclick="sair()"><a href="index.html">Sair</a></li>
                 </ul>
             </div>
             <div class="item-1 mobile-menu">
@@ -257,7 +257,7 @@
             </div>
         </div>
 
-        
+
         <!--   <div class="cardview">
                 <div class="origen">
                     <p><span>José Filho</span> - <span>Professor</span></p>
@@ -284,6 +284,33 @@
 
     </main>
     <script src="js/mobile-menu.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-auth-compat.js"></script>
+    <script>
+        const firebaseApp = firebase.initializeApp({
+            apiKey: "AIzaSyBD5ZcQvTucYhZfXIF90h2IKNXTb1eF3yA",
+            authDomain: "proxima-parada-001.firebaseapp.com",
+            databaseURL: "https://proxima-parada-001-default-rtdb.firebaseio.com",
+            projectId: "proxima-parada-001",
+            storageBucket: "proxima-parada-001.appspot.com",
+            messagingSenderId: "933133262129",
+            appId: "1:933133262129:web:908e83750d11c2ccdbe410",
+        });
+
+        const auth = firebaseApp.auth();
+        auth.onAuthStateChanged(user => {
+            // Check for user status
+            console.log(user);
+        });
+
+        function sair() {
+            firebase.auth().signOut().then(() => {
+                // Sign-out successful.
+            }).catch((error) => {
+                // An error happened.
+            });
+        }
+    </script>
 </body>
 
 </html>
