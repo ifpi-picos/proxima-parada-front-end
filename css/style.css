@@ -75,14 +75,43 @@ a {
     border: none;
     margin: 20px auto;
 }
+/*minha alteraçao*/
 .button-status{
     width: 90%;
     background-color: limegreen;
     font-size: larger;
-    /*position: fixed;
-    margin: auto;
-    */
+   
 }
+.button-fixed{
+    width: 95%;
+    background-color: #0C227F;
+    text-align: center;
+    color: #EEEEEE;
+    font-size: larger;
+    position: fixed;
+    margin: auto;
+   
+}
+.cadastra-carona{
+    color: #EEEEEE;
+    width: 100%;
+    position: fixed;
+    top: 95%;
+    
+}
+.button-registrar-carona{
+    background-color: #0C227F;
+    font-size: 26px;
+    width: 93%;
+    height: 30px;
+    color: #EEEEEE;
+    border-radius: 5px;
+    margin: auto;
+
+
+}
+/*minha alteraçao*/
+
 .logo img {
     max-width: 100%;
     max-height: 100%;
