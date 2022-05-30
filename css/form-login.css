@@ -15,6 +15,16 @@ body {
     --color-submit-button-singup: rgb(107, 146, 164);
 }
 
+.input span.error {
+    display: flex;
+    padding: 0;
+}
+
+.input span.error.active {
+    border: 1px solid red;
+    padding: 0.4em;
+}
+
 .form-structor {
     background-color: var(--color-secondary);
     border-radius: 15px;
