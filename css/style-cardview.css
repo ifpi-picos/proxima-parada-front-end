@@ -20,7 +20,6 @@
 }
 
 .card {
-    border: 1px solid red;
     width: 98%;
     max-width: 500px;
     padding: auto;
@@ -36,7 +35,6 @@
     margin: 10px auto;
     border-radius: 5px;
     padding: 10px;
-    cursor: pointer;
     box-shadow: 10px 10px 20px var(--color-box-shadow);
     transition: 0.3s all ease-in-out;
 }

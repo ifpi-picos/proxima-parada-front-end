@@ -19,7 +19,7 @@ const fields = document.querySelectorAll("[required]");
 
 auth.onAuthStateChanged((user) => {
   // Check for user status
-  //console.log(user);
+  console.log(user);
 });
 
 btnLogin.addEventListener("click", () => {
