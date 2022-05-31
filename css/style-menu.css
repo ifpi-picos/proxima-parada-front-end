@@ -19,13 +19,11 @@ header {
 }
 
 .item-1 {
-    border: 1px solid red;
     text-align: center;
     width: 60%;
 }
 
 .item-2 {
-    border: 1px solid black;
     text-align: center;
     width: 5%;
     min-width: 60px;
