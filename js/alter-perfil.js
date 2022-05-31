@@ -12,84 +12,97 @@ const dbStorage = firebaseApp.firestore();
 const auth = firebaseApp.auth();
 const database = firebaseApp.firebase.database();
 
-const btnLogin = document.getElementById("btnLogin");
-const btnSignup = document.getElementById("btnSignup");
+const btnUpdate = document.getElementById("btnUpdate");
+const btnCancel = document.getElementById("btnCancel");
 
 const fields = document.querySelectorAll("[required]");
+let uid = undefined;
+
+const formUser = document.getElementById("form-user");
+const loading = document.getElementById("loading");
 
 auth.onAuthStateChanged((user) => {
   // Check for user status
-  console.log(user);
-});
-const usuarioLogado = auth.currentUser;
-console.log(usuarioLogado);
-
-btnLogin.addEventListener("click", () => {
-  const emailLogin = document.getElementById("email_login");
-  const senhaLogin = document.getElementById("senha_login");
-
-  // [START auth_signin_password_modular]
-  if (emailLogin.value != "") {
-    if (senhaLogin.value != "") {
-      loginUser(emailLogin.value, senhaLogin.value);
-      //console.log("Sucesso");
-    } else {
-      alert("Preencha o campo senha.");
-    }
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    uid = user.uid;
+    carregarDadosUsuario(user);
+    // ...
   } else {
-    alert("Preencha o campo email.");
+    // User is signed out
+    // ...
   }
 });
+console.log(uid);
 
-function loginUser(email, senha) {
-  auth
-    .signInWithEmailAndPassword(email, senha)
-    .then((userCredential) => {
-      // Signed in
-      var user = userCredential.user;
-      //console.log("sucesso");
-      location.href = "home.html";
+function carregarDadosUsuario(user) {
+  database
+    .ref()
+    .child("usuario/" + user.uid)
+    .get()
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        console.log(snapshot.val());
+        exibirDados(
+          snapshot.val().nome,
+          snapshot.val().ocupacao,
+          snapshot.val().telefone,
+          snapshot.val().email
+        );
+        loading.classList.add("off");
+        formUser.classList.remove("off");
+      } else {
+        console.log("No data available");
+      }
     })
     .catch((error) => {
-      if (error.code === "auth/invalid-email") {
-        alert("Formato de email inválido.");
-      } else if (error.code === "auth/user-disabled") {
-        alert("Esse usuário foi desabilitado.");
-      } else if (error.code === "auth/user-not-found") {
-        alert("Usuário não encontrado.");
-      } else if (error.code === "auth/wrong-password") {
-        alert("Senha incorreta. digite novamente.");
-        this.loginForm.controls.password.setValue(null);
-      } else {
-        alert(error.message);
-      }
+      console.error(error);
     });
-
-  // [END auth_signin_password_modular]
 }
 
-btnSignup.addEventListener("click", () => {
+function exibirDados(nomeUser, ocupacaoUser, telefoneUser, emailUser) {
   const nome = document.getElementById("nome");
   const ocupacao = document.getElementById("ocupacao");
   const telefone = document.getElementById("telefone");
   const email = document.getElementById("email");
-  const senha = document.getElementById("senha");
-  const confirSenha = document.getElementById("confir_senha");
 
-  validandoCampos(
+  //nome.setValue = nomeUser;
+  nome.text = nomeUser;
+  ocupacao.setValue = ocupacaoUser;
+  telefone.setValue = telefoneUser;
+  email.setValue = emailUser;
+}
+
+btnCancel.addEventListener("click", () => {
+  // [START auth_signin_password_modular]
+  location.href = "home.html";
+});
+
+btnUpdate.addEventListener("click", () => {
+  const nome = document.getElementById("nome");
+  const ocupacao = document.getElementById("ocupacao");
+  const telefone = document.getElementById("telefone");
+  const email = document.getElementById("email");
+  const senhaAtual = document.getElementById("senha_atual");
+  const senhaNova = document.getElementById("nova_senha");
+  const senhaNovaConfir = document.getElementById("confir_nova_senha");
+
+  /* validandoCampos(
     nome.value,
     ocupacao.value,
     telefone.value,
     email.value,
-    senha.value,
-    confirSenha.value
-  );
+    senhaAtual.value,
+    senhaNova.value,
+    senhaNovaConfir.value
+  ); */
 });
 
-function createUser(nome, ocupacao, telefone, email, senha) {
+function createUser(nome, ocupacao, telefone, email, senhaAtual) {
   firebase
     .auth()
-    .createUserWithEmailAndPassword(email, senha)
+    .createUserWithEmailAndPassword(email, senhaAtual)
     .then((userCredential) => {
       // Signed in
       var user = userCredential.user;
@@ -99,7 +112,7 @@ function createUser(nome, ocupacao, telefone, email, senha) {
       writeUserData(nome, ocupacao, telefone, email, user, database_ref);
       // DOne
       location.href = "home.html";
-    
+
       // ...
     })
     .catch((error) => {
@@ -140,16 +153,22 @@ function writeUserData(nome, ocupacao, telefone, email, user, database_ref) {
   });
 }
 
-function validandoCampos(nome, ocupacao, telefone, email, senha, confirSenha) {
-  if (senha != "" && senha > 5) {
-    if (senha == confirSenha) {
-      createUser(nome, ocupacao, telefone, email, senha);
-      //console.log("Sucesso");
+function validandoCampos(
+  nome,
+  ocupacao,
+  telefone,
+  email,
+  senhaAtual,
+  senhaNovaConfir
+) {
+  if (senhaAtual != "" && senhaAtual > 5) {
+    if (senhaAtual == senhaNovaConfir) {
+      //createUser(nome, ocupacao, telefone, email, senhaAtual);
+      console.log("Sucesso");
     } else {
       alert("Senhas diferentes.");
     }
   } else {
-    console.log(senha);
     alert("Senhas muito curta.");
   }
 }
@@ -242,8 +261,8 @@ function verificaSenha(senha1, senha2) {
   }
 }
 
-function validaSenha(senha) {
-  if (senha != null && senha > 5) {
+function validaSenha(senhaAtual) {
+  if (senhaAtual != null && senhaAtual > 5) {
     return false;
   } else {
     return true;

@@ -66,14 +66,14 @@
                             <p>Veículo: <span>Carro</span></p>
                             <p>Modalidade: <span>Não Colaborativa</span></p>
                         </div>
-                        <button class="button" >Conversar com o prorpietário</button>
+                        <button class="button">Conversar com o prorpietário</button>
 
                     </div>
                 </div>
 
             </div>
         </div>
-        
+
     </main>
 
 
@@ -92,10 +92,25 @@
         });
 
         const auth = firebaseApp.auth();
-        auth.onAuthStateChanged(user => {
+        let uid = undefined;
+
+        auth.onAuthStateChanged((user) => {
             // Check for user status
             console.log(user);
+            if (user) {
+                // User is signed in, see docs for a list of available properties
+                // https://firebase.google.com/docs/reference/js/firebase.User
+                uid = user.uid;
+                console.log(uid);
+                // ...
+            } else {
+                // User is signed out
+                // ...
+            }
+
+
         });
+        console.log(uid);
 
         function sair() {
             firebase.auth().signOut().then(() => {
