@@ -37,12 +37,6 @@ body {
     display: none;
 }
 
-.logo {
-    width: 120px;
-    margin-top: 140px;
-    margin-left: 40px;
-}
-
 .form-structor {
     background-color: var(--color-background-content);
     border-radius: 15px;
@@ -50,55 +44,62 @@ body {
     width: 350px;
     position: relative;
     overflow: hidden;
-    z-index: 0;
 }
 
 .form-structor .signup {
     position: absolute;
+    height: 100%;
+    width: 100%;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-color: #fff;
     z-index: 5;
-
+    
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
 }
 
 
 .form-structor .signup .center {
     position: absolute;
-    top: calc(50% - 10%);
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    width: 65%;
+    width: 80%;
     z-index: 5;
 
-}
-
-/*titulo*/
-.form-structor .signup .center .form-title {
-    color: var(--color-secondary);
-    font-size: 1.7em;
-    text-align: center;
-}
-
-.form-structor .signup .center .form-title span {
-    color: var(--color-form-title);
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
 }
 
 .form-structor .signup .center .form-holder {
+    
     border-radius: 15px;
     background-color: #fff;
     border: 1px solid var(--color-background);
+    width: 100%;
     overflow: hidden;
-    margin-top: 50px;
     opacity: 1;
+    margin-top: 10px;
     visibility: visible;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}   
 
-
+.form-structor .signup .center .form-holder .form-image {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin: 20px 0;
+}
+.form-structor .signup .center .form-holder .form-image img {
+    width: 100%;
+    height: 100%;
 }
 
 .form-structor .signup .center .form-holder .input {
@@ -120,7 +121,7 @@ body {
     border: 0;
     border-radius: 15px;
     display: block;
-    margin: 15px auto;
+    margin: 5px auto;
     padding: 15px 45px;
     width: 100%;
     font-size: 18px;
@@ -128,7 +129,6 @@ body {
     cursor: pointer;
     opacity: 1;
     visibility: visible;
-    -webkit-transition: all 0.3s ease;
 }
 
 .form-structor .signup .center .submit-btn:hover {

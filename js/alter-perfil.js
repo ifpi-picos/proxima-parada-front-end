@@ -16,7 +16,6 @@ const btnUpdate = document.getElementById("btnUpdate");
 const btnCancel = document.getElementById("btnCancel");
 
 const fields = document.querySelectorAll("[required]");
-let uid = undefined;
 
 const formUser = document.getElementById("form-user");
 const loading = document.getElementById("loading");
@@ -26,7 +25,6 @@ auth.onAuthStateChanged((user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User
-    uid = user.uid;
     carregarDadosUsuario(user);
     // ...
   } else {
@@ -34,7 +32,6 @@ auth.onAuthStateChanged((user) => {
     // ...
   }
 });
-console.log(uid);
 
 function carregarDadosUsuario(user) {
   database
@@ -44,12 +41,7 @@ function carregarDadosUsuario(user) {
     .then((snapshot) => {
       if (snapshot.exists()) {
         console.log(snapshot.val());
-        exibirDados(
-          snapshot.val().nome,
-          snapshot.val().ocupacao,
-          snapshot.val().telefone,
-          snapshot.val().email
-        );
+        exibirDados(snapshot.val());
         loading.classList.add("off");
         formUser.classList.remove("off");
       } else {
@@ -61,17 +53,18 @@ function carregarDadosUsuario(user) {
     });
 }
 
-function exibirDados(nomeUser, ocupacaoUser, telefoneUser, emailUser) {
-  const nome = document.getElementById("nome");
-  const ocupacao = document.getElementById("ocupacao");
-  const telefone = document.getElementById("telefone");
-  const email = document.getElementById("email");
+function exibirDados(snapshot) {
+  const image = document.getElementById("image_perfil");
+  const nome = document.getElementById("nome_user");
+  const ocupacao = document.getElementById("ocupacao_user");
+  const telefone = document.getElementById("telefone_user");
+  const email = document.getElementById("email_user");
 
-  //nome.setValue = nomeUser;
-  nome.text = nomeUser;
-  ocupacao.setValue = ocupacaoUser;
-  telefone.setValue = telefoneUser;
-  email.setValue = emailUser;
+ 
+  nome.value = snapshot.nome;
+  ocupacao.value = snapshot.ocupacao;
+  telefone.value = snapshot.telefone;
+  email.value = snapshot.email;
 }
 
 btnCancel.addEventListener("click", () => {
@@ -80,10 +73,10 @@ btnCancel.addEventListener("click", () => {
 });
 
 btnUpdate.addEventListener("click", () => {
-  const nome = document.getElementById("nome");
-  const ocupacao = document.getElementById("ocupacao");
-  const telefone = document.getElementById("telefone");
-  const email = document.getElementById("email");
+  const nome = document.getElementById("nome_user");
+  const ocupacao = document.getElementById("ocupacao_user");
+  const telefone = document.getElementById("telefone_user");
+  const email = document.getElementById("email_user");
   const senhaAtual = document.getElementById("senha_atual");
   const senhaNova = document.getElementById("nova_senha");
   const senhaNovaConfir = document.getElementById("confir_nova_senha");
@@ -188,50 +181,13 @@ function ValidateField(field) {
     return foundError;
   }
 
-  function customMessage(typeError) {
-    const messages = {
-      text: {
-        valueMissing: "Por favor, preencha este campo",
-      },
-      phone: {
-        valueMissing: "Por favor, preencha este campo",
-        typeMismatch: "Por favor, preencha um número válido",
-      },
-      email: {
-        valueMissing: "Por favor, preencha este campo",
-        typeMismatch: "Por favor, preencha um email válido",
-      },
-      password: {
-        valueMissing: "Por favor, preencha este campo",
-      },
-    };
-
-    return messages[field.type][typeError];
-  }
-
-  function setCustomMessage(message) {
-    const spanError = field.parentNode.querySelector("span.error");
-
-    if (message) {
-      spanError.classList.add("active");
-      spanError.innerHTML = message;
-    } else {
-      spanError.classList.remove("active");
-      spanError.innerHTML = "";
-    }
-  }
-
   return function () {
     const error = verifyErrors();
 
     if (error) {
-      const message = customMessage(error);
-
       field.style.borderColor = "red";
-      setCustomMessage(message);
     } else {
       field.style.borderColor = "green";
-      setCustomMessage();
     }
   };
 }
