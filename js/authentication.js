@@ -69,6 +69,7 @@ function loginUser(email, senha) {
 }
 
 btnSignup.addEventListener("click", () => {
+
   const nome = document.getElementById("nome");
   const ocupacao = document.getElementById("ocupacao");
   const telefone = document.getElementById("telefone");
@@ -87,6 +88,7 @@ btnSignup.addEventListener("click", () => {
 });
 
 function createUser(nome, ocupacao, telefone, email, senha) {
+
   firebase
     .auth()
     .createUserWithEmailAndPassword(email, senha)
@@ -98,7 +100,6 @@ function createUser(nome, ocupacao, telefone, email, senha) {
       // Add this user to Firebase Database
       writeUserData(nome, ocupacao, telefone, email, user, database_ref);
       // DOne
-      location.href = "home.html";
     
       // ...
     })
@@ -124,7 +125,7 @@ function writeUserData(nome, ocupacao, telefone, email, user, database_ref) {
     email: email,
     ocupacao: ocupacao,
     telefone: telefone,
-    endereco_imagen: "",
+    local_imagen: "",
   };
 
   // Push to Firebase Database
@@ -136,6 +137,7 @@ function writeUserData(nome, ocupacao, telefone, email, user, database_ref) {
       // Data saved successfully!
       alert("Usuário criado com sucesso.");
       location.href = "home.html";
+      
     }
   });
 }
@@ -149,7 +151,6 @@ function validandoCampos(nome, ocupacao, telefone, email, senha, confirSenha) {
       alert("Senhas diferentes.");
     }
   } else {
-    console.log(senha);
     alert("Senhas muito curta.");
   }
 }

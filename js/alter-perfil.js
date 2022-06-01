@@ -20,6 +20,43 @@ const fields = document.querySelectorAll("[required]");
 const formUser = document.getElementById("form-user");
 const loading = document.getElementById("loading");
 
+let imgName, imgUrl, uid;
+let files = [];
+let reader = new FileReader();
+let dadosUsuario;
+
+document.getElementById("mudar_imagem").onclick = function (e) {
+  let input = document.createElement("input");
+  input.type = "file";
+  input.onchange = (e) => {
+    files = e.target.files;
+    reader = new FileReader();
+    reader.onload = function(){
+      document.getElementById("image_perfil").src = reader.result;
+    };
+    reader.readAsDataURL(files[0]);
+  };
+  input.click();
+};
+
+function uploadImage(){
+  const timeElapsed = Date.now();
+  imgName =  new Date(timeElapsed).toISOString;
+  let uploadTask = dbStorage.ref('Imagens/'+imgName+'.png').put(files[0]);
+  uploadTask.on('state_changed', function(snapshot){
+    let progress = (snapshot.bytesTranferred / snapshot.totalBytes)*100;
+  },function(error){
+    alert('Erro ao salvar imagem.');
+  },function(){
+    uploadTask.snapshot.ref.getDonwloadURL().then(function(url){
+      imgUrl = url;
+      dadosUsuario = {
+        local_imagen: imgUrl,
+      };
+    });
+  });
+}
+
 auth.onAuthStateChanged((user) => {
   // Check for user status
   if (user) {
@@ -34,6 +71,7 @@ auth.onAuthStateChanged((user) => {
 });
 
 function carregarDadosUsuario(user) {
+  uid = user.uid
   database
     .ref()
     .child("usuario/" + user.uid)
@@ -41,6 +79,13 @@ function carregarDadosUsuario(user) {
     .then((snapshot) => {
       if (snapshot.exists()) {
         console.log(snapshot.val());
+        dadosUsuario = {
+          nome: snapshot.nome,
+          email: snapshot.email,
+          ocupacao: snapshot.ocupacao,
+          telefone: snapshot.telefone,
+          local_imagen: snapshot.localImagen,
+        };
         exibirDados(snapshot.val());
         loading.classList.add("off");
         formUser.classList.remove("off");
@@ -60,7 +105,6 @@ function exibirDados(snapshot) {
   const telefone = document.getElementById("telefone_user");
   const email = document.getElementById("email_user");
 
- 
   nome.value = snapshot.nome;
   ocupacao.value = snapshot.ocupacao;
   telefone.value = snapshot.telefone;
@@ -81,6 +125,8 @@ btnUpdate.addEventListener("click", () => {
   const senhaNova = document.getElementById("nova_senha");
   const senhaNovaConfir = document.getElementById("confir_nova_senha");
 
+  writeUserData(nome, ocupacao, telefone, email);
+
   /* validandoCampos(
     nome.value,
     ocupacao.value,
@@ -92,78 +138,31 @@ btnUpdate.addEventListener("click", () => {
   ); */
 });
 
-function createUser(nome, ocupacao, telefone, email, senhaAtual) {
-  firebase
-    .auth()
-    .createUserWithEmailAndPassword(email, senhaAtual)
-    .then((userCredential) => {
-      // Signed in
-      var user = userCredential.user;
-      var database_ref = database.ref();
-
-      // Add this user to Firebase Database
-      writeUserData(nome, ocupacao, telefone, email, user, database_ref);
-      // DOne
-      location.href = "home.html";
-
-      // ...
-    })
-    .catch((error) => {
-      if (error.code === "auth/invalid-email") {
-        alert("Formato de email inválido.");
-      } else if (error.code === "auth/auth/email-already-in-use") {
-        alert("Esse email ja é utilizado por outro usuário.");
-      } else if (error.code === "auth/weak-password") {
-        alert("Senha muito fraca.");
-        email.setValue(null);
-      } else {
-        alert(error.message);
-      }
-      // ..
-    });
-}
-
-function writeUserData(nome, ocupacao, telefone, email, user, database_ref) {
-  // Create User data
-  var dadosUsuario = {
-    nome: nome,
-    email: email,
-    ocupacao: ocupacao,
-    telefone: telefone,
-    endereco_imagen: "",
-  };
-
-  // Push to Firebase Database
-  database_ref.child("usuario/" + user.uid).set(dadosUsuario, (error) => {
-    if (error) {
-      // The write failed...
-      alert("Erro ao salvar dados de usúario, tente fazer login.");
-    } else {
-      // Data saved successfully!
-      alert("Usuário criado com sucesso.");
-      location.href = "home.html";
-    }
-  });
-}
-
-function validandoCampos(
+function writeUserData(
   nome,
   ocupacao,
   telefone,
   email,
-  senhaAtual,
-  senhaNovaConfir
 ) {
-  if (senhaAtual != "" && senhaAtual > 5) {
-    if (senhaAtual == senhaNovaConfir) {
-      //createUser(nome, ocupacao, telefone, email, senhaAtual);
-      console.log("Sucesso");
+  dadosUsuario = {
+    nome: nome,
+    email: email,
+    ocupacao: ocupacao,
+    telefone: telefone,
+  };
+
+  // Push to Firebase Database
+  database
+    .ref().child("usuario/" + uid).set(dadosUsuario, (error) => {
+    if (error) {
+      // The write failed...
+      alert("Erro ao salvar dados de usúario");
     } else {
-      alert("Senhas diferentes.");
+      // Data saved successfully!
+      alert("Dados Alterados com sucesso.");
+      location.href = "home.html";
     }
-  } else {
-    alert("Senhas muito curta.");
-  }
+  });
 }
 
 function ValidateField(field) {
@@ -231,9 +230,11 @@ function mascara(telefone, fun) {
   valueFun = fun;
   setTimeout("execmascara()", 1);
 }
+
 function execmascara() {
   numeroTelefone.value = valueFun(numeroTelefone.value);
 }
+
 function mascaraTelefone(numTel) {
   numTel = numTel.replace(/\D/g, ""); //Remove tudo telefone que não é dígito
   numTel = numTel.replace(/^(\d{2})(\d)/g, "($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
@@ -241,11 +242,13 @@ function mascaraTelefone(numTel) {
   numTel = numTel.replace(/(\d)(\d{4})$/, "$1-$2"); //Coloca hífen entre telefone quarto e telefone quinto dígitos
   return numTel;
 }
+
 function id(elemento) {
   return document.getElementById(elemento);
 }
+
 window.onload = function () {
-  id("telefone").onkeyup = function () {
+  id("telefone_user").onkeyup = function () {
     mascara(this, mascaraTelefone);
   };
 };
