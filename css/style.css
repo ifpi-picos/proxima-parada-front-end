@@ -82,7 +82,7 @@ a {
     visibility: visible;
     padding: 6px;
     margin: 20px auto;
-    
+
 }
 .button:hover {
 
@@ -93,7 +93,11 @@ a {
 
 
 /*minha alteraçao*/
-
+footer{
+    width: 95%;
+    position:fixed;
+    bottom:2px;
+}
 
 /*minha alteraçao*/
 
