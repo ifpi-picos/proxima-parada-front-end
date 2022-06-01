@@ -4,9 +4,11 @@
 :root {
     /** primary **/
     --color-primary: #2FD3DA;
+    --color-primary-60: rgb(47, 211, 218, 0.80);
 
     /** secondary **/
     --color-secondary: #0C227F;
+    --color-secondary-40: rgba(12, 33, 127, 0.40);
 
     /** background **/
     --color-background: #EEEEEE;
@@ -65,16 +67,31 @@ a {
 }
 
 .button {
-    padding: 6px;
-    width: 98%;
-    border-radius: 50px;
-    background: var(--color-primary);
+
+    background: var(--color-primary-60);
     color: var(--color-secondary);
+    border-radius: 15px;
+    display: block;
+    width: 98%;
+    
     font-size: 24px;
+    text-align: center;
     cursor: pointer;
     border: none;
+    opacity: 1;
+    visibility: visible;
+    padding: 6px;
     margin: 20px auto;
+    
 }
+.button:hover {
+
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    box-shadow: 5px 5px 10px var(--color-secondary-40);   
+}
+
+
 /*minha alteraçao*/
 .button-status{
     width: 90%;

@@ -1,8 +1,11 @@
-html,body {
+
+body {
+
     position: relative;
-    min-height: 100vh;
     display: flex;
     align-items: center;
+    height: 100vh;
+    min-height: 100vh;
     justify-content: center;
 }
 
@@ -14,11 +17,32 @@ html,body {
     --color-submit-button-singup: rgb(107, 146, 164);
 }
 
-.logo{
+.c-loader {
+    animation: is-rotating 1s infinite;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    border-top-color: var(--color-primary);
+    height: 70px;
+    width: 70px;
+}
+
+@keyframes is-rotating {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+
+.off {
+    display: none;
+}
+
+.logo {
     width: 120px;
     margin-top: 140px;
     margin-left: 40px;
 }
+
 .form-structor {
     background-color: var(--color-background-content);
     border-radius: 15px;
@@ -26,8 +50,7 @@ html,body {
     width: 350px;
     position: relative;
     overflow: hidden;
-   
-   
+    z-index: 0;
 }
 
 .form-structor .signup {
@@ -38,7 +61,7 @@ html,body {
     bottom: 0;
     background-color: #fff;
     z-index: 5;
-    
+
 }
 
 
@@ -51,6 +74,7 @@ html,body {
     z-index: 5;
 
 }
+
 /*titulo*/
 .form-structor .signup .center .form-title {
     color: var(--color-secondary);
@@ -73,8 +97,8 @@ html,body {
     margin-top: 50px;
     opacity: 1;
     visibility: visible;
-    
-    
+
+
 }
 
 .form-structor .signup .center .form-holder .input {

@@ -1,5 +1,3 @@
-console.clear();
-
 const signup = document.getElementById('signup');
 const login = document.getElementById('login');
 

@@ -18,8 +18,8 @@
         <div class="login">
             <h2 class="form-title" id="login"><span>ou</span>Entrar</h2>
             <div class="form-holder">
-                <input type="email" class="input" id="email_login" placeholder="Email" value="rafhel@gmail.com">
-                <input type="password" class="input" id="senha_login" placeholder="Senha" value="123456" />
+                <input type="email" class="input" id="email_login"  placeholder="Email">
+                <input type="password" class="input" id="senha_login"  placeholder="Senha" />
             </div>
             <button class="submit-btn login-btn" id="btnLogin">Entrar</button>
         </div>
@@ -27,21 +27,45 @@
             <div class="center">
                 <h2 class="form-title" id="signup"><span>ou</span>Cadastre-se</h2>
                 <div class="form-holder">
-                    <input type="text" class="input" placeholder="Nome completo" />
-                    <input type="text" class="input" placeholder="Ocupação no IFPI" />
-                    <input type="phone" class="input" placeholder="Número de Whatsapp" />
-                    <input type="email" class="input" placeholder="Email" />
-                    <input type="password" class="input" placeholder="Senha" />
-                    <input type="password" class="input" placeholder="Comfirmar senha" />
+                    <div>
+                        <input type="text" class="input" id="nome" placeholder="Nome completo" required />
+                        <span class="error"></span>
+                    </div>
+                    <div>
+                        <input type="text" class="input" id="ocupacao" placeholder="Ocupação no IFPI" required />
+                        <span class="error"></span>
+                    </div>
+                    <div>
+                        <input type="phone" class="input" id="telefone" placeholder="Número de Whatsapp" maxlength="16" required />
+                        <span class="error"></span>
+                    </div>
+                    <div>
+                        <input type="email" class="input" id="email" placeholder="Email" required />
+                        <span class="error"></span>
+                    </div>
+                    <div>
+                        <input type="password" class="input" id="senha" placeholder="Senha" required />
+                        <span class="error"></span>
+                    </div>
+                    <div>
+                        <input type="password" class="input" id="confir_senha" placeholder="Comfirmar senha" required />
+                        <span class="error"></span>
+                    </div>
                 </div>
                 <button class="submit-btn singup-btn" id="btnSignup">Catastrar</button>
             </div>
         </div>
     </div>
 
+    <!--------------------------- Importes Scripts --------------------------->
     <script src="js/form-login.js"></script>
-    <script type="module" src="js/app.js"></script>
-    <script type="module" src="js/authentication.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-auth-compat.js"></script>
+
+    <!-- <script type="module" src="js/app.js"></script> -->
+    <script src="js/authentication.js"></script>
 </body>
 
 
