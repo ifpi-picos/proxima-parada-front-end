@@ -8,9 +8,9 @@ const firebaseApp = firebase.initializeApp({
   appId: "1:933133262129:web:908e83750d11c2ccdbe410",
 });
 
-const dbStorage = firebaseApp.firestore();
+//const dbStorage = firebaseApp.firebase.firestore();
 const auth = firebaseApp.auth();
-const database = firebaseApp.firebase.database();
+const database = firebaseApp.database();
 
 const btnUpdate = document.getElementById("btnUpdate");
 const btnCancel = document.getElementById("btnCancel");
@@ -31,7 +31,7 @@ document.getElementById("mudar_imagem").onclick = function (e) {
   input.onchange = (e) => {
     files = e.target.files;
     reader = new FileReader();
-    reader.onload = function(){
+    reader.onload = function () {
       document.getElementById("image_perfil").src = reader.result;
     };
     reader.readAsDataURL(files[0]);
@@ -39,21 +39,19 @@ document.getElementById("mudar_imagem").onclick = function (e) {
   input.click();
 };
 
-function uploadImage(){
+function uploadImage(nome, ocupacao, telefone, email) {
   const timeElapsed = Date.now();
-  imgName =  new Date(timeElapsed).toISOString;
-  let uploadTask = dbStorage.ref('Imagens/'+imgName+'.png').put(files[0]);
-  uploadTask.on('state_changed', function(snapshot){
-    let progress = (snapshot.bytesTranferred / snapshot.totalBytes)*100;
-  },function(error){
-    alert('Erro ao salvar imagem.');
-  },function(){
-    uploadTask.snapshot.ref.getDonwloadURL().then(function(url){
+  imgName = new Date(timeElapsed).toISOString();
+
+  let storageRef = firebaseApp.storage().ref("Imagens/" + imgName + ".jpg");
+
+  let uploadTask = storageRef.put(files[0]).then((snapshot) => {
+    storageRef.getDownloadURL().then(function(url) {
       imgUrl = url;
-      dadosUsuario = {
-        local_imagen: imgUrl,
-      };
+      writeUserData(nome, ocupacao, telefone, email, imgUrl);
     });
+  }).catch((error)=>{
+    console.log(error);
   });
 }
 
@@ -71,19 +69,14 @@ auth.onAuthStateChanged((user) => {
 });
 
 function carregarDadosUsuario(user) {
-  uid = user.uid
+  uid = user.uid;
   database
     .ref()
     .child("usuario/" + user.uid)
     .get()
     .then((snapshot) => {
       if (snapshot.exists()) {
-        console.log(snapshot.val());
         dadosUsuario = {
-          nome: snapshot.nome,
-          email: snapshot.email,
-          ocupacao: snapshot.ocupacao,
-          telefone: snapshot.telefone,
           local_imagen: snapshot.localImagen,
         };
         exibirDados(snapshot.val());
@@ -109,6 +102,7 @@ function exibirDados(snapshot) {
   ocupacao.value = snapshot.ocupacao;
   telefone.value = snapshot.telefone;
   email.value = snapshot.email;
+  image.src = snapshot.local_imagen;
 }
 
 btnCancel.addEventListener("click", () => {
@@ -125,7 +119,7 @@ btnUpdate.addEventListener("click", () => {
   const senhaNova = document.getElementById("nova_senha");
   const senhaNovaConfir = document.getElementById("confir_nova_senha");
 
-  writeUserData(nome, ocupacao, telefone, email);
+  uploadImage(nome.value, ocupacao.value, telefone.value, email.value);
 
   /* validandoCampos(
     nome.value,
@@ -138,31 +132,29 @@ btnUpdate.addEventListener("click", () => {
   ); */
 });
 
-function writeUserData(
-  nome,
-  ocupacao,
-  telefone,
-  email,
-) {
+function writeUserData(nome, ocupacao, telefone, email, imageUrl) {
   dadosUsuario = {
     nome: nome,
     email: email,
     ocupacao: ocupacao,
     telefone: telefone,
+    local_imagen: imageUrl,
   };
 
   // Push to Firebase Database
   database
-    .ref().child("usuario/" + uid).set(dadosUsuario, (error) => {
-    if (error) {
-      // The write failed...
-      alert("Erro ao salvar dados de usúario");
-    } else {
-      // Data saved successfully!
-      alert("Dados Alterados com sucesso.");
-      location.href = "home.html";
-    }
-  });
+    .ref()
+    .child("usuario/" + uid)
+    .update(dadosUsuario, (error) => {
+      if (error) {
+        // The write failed...
+        alert("Erro ao salvar dados de usúario");
+      } else {
+        // Data saved successfully!
+        alert("Dados Alterados com sucesso.");
+        location.href = "home.html";
+      }
+    });
 }
 
 function ValidateField(field) {

@@ -125,7 +125,7 @@ function writeUserData(nome, ocupacao, telefone, email, user, database_ref) {
     email: email,
     ocupacao: ocupacao,
     telefone: telefone,
-    local_imagen: "",
+    local_imagen: 'https://firebasestorage.googleapis.com/v0/b/proxim…=media&token=00adc825-1d94-4453-b923-c6356bf7886c',
   };
 
   // Push to Firebase Database
