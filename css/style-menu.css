@@ -24,26 +24,18 @@ header {
 }
 
 .item-2 {
+    display: flex;
+    justify-content: center;
     text-align: center;
     width: 5%;
     min-width: 60px;
-    margin-right: 10px;
+    margin-right: 6px;
 }
 
 .itens-navbar img {
-    width: 100%;
-    height: 100%;
-    max-width: 7vh;
-}
-
-
-.logo img {
-    display: none;
-}
-
-.itens-navbar a {
-    font-size: 36px;
-    text-transform: uppercase;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
 }
 
 .menu-options {
