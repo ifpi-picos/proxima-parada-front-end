@@ -2,14 +2,34 @@
     --color-box-shadow: #afafaf;
 }
 
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .container {
+
     border: 1px solid black;
     padding-top: 4vh;
+
+    padding-top: 8vh;
+
     width: 100vw;
 }
 
+.c-loader {
+    margin-top: 40vh;
+    animation: is-rotating 1s infinite;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    border-top-color: var(--color-primary);
+    height: 70px;
+    width: 70px;
+}
+
 .card-container {
-    border: 1px solid blue;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     width: 100%;

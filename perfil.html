@@ -8,59 +8,72 @@
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="css/style-perfil.css">
-   
+
     <title>Tela de Perfil</title>
 </head>
 
 <body>
     <div id="loading" class="c-loader"></div>
-
+    <div id="loading-perfil" class="loader-p off"></div>
     <div id="form-user" class="form-structor off">
-       
-        <div class="signup">
-            <div class="center">
-                
-                <div class="form-holder">
+        <div class="center">
+            <div class="form-holder">
 
-                    <div class="form-image">
-                        <img id="image_perfil">
-                        <span id="mudar_imagem" >Mudar imagen</span>
-                    </div>
-
-                    <div>
-                        <input type="text" class="input" id="nome_user" placeholder="Nome completo" value="" required />
-                        <span class="error"></span>
-                    </div>
-                    <div>
-                        <input type="text" class="input" id="ocupacao_user" placeholder="Ocupação no IFPI" value="" required />
-                        <span class="error"></span>
-                    </div>
-                    <div>
-                        <input type="phone" class="input" id="telefone_user" placeholder="Número de Whatsapp" value="" maxlength="16" required />
-                        <span class="error"></span>
-                    </div>
-                    <div>
-                        <input type="email" class="input" id="email_user" placeholder="Email" value="" required />
-                        <span class="error"></span>
-                    </div>
-                    <div>
-                        <input type="password" class="input" id="senha_atual" placeholder="Senha atual" required />
-                        <span class="error"></span>
-                    </div>
-                    <div>
-                        <input type="password" class="input" id="nova_senha" placeholder="Nova senha" required />
-                        <span class="error"></span>
-                    </div>
-                    <div>
-                        <input type="password" class="input" id="confir_nova_senha" placeholder="Confirmar nova senha" required />
-                        <span class="error"></span>
-                    </div>
-
+                <div class="form-image">
+                    <img id="image_perfil" src="img/user-avatar.png">
+                    <span id="mudar_imagem">Mudar imagen</span>
                 </div>
-                <button class="submit-btn singup-btn" id="btnUpdate">Salvar Alteracao</button>
-                <button class="submit-btn singup-btn" id="btnCancel">Cancelar</button>
+
+                <div>
+                    <input type="text" class="input" id="nome_user" placeholder="Nome completo" value="" required />
+                    <span class="error"></span>
+                </div>
+                <div>
+                    <input type="text" class="input" id="ocupacao_user" placeholder="Ocupação no IFPI" value=""
+                        required />
+                    <span class="error"></span>
+                </div>
+                <div>
+                    <input type="phone" class="input" id="telefone_user" placeholder="Número de Whatsapp" value=""
+                        maxlength="16" required />
+                    <span class="error"></span>
+                </div>
+                <div>
+                    <button class="submit-btn singup-btn" id="btnUpdateUser">Salvar Alterações</button>
+                </div>
+
             </div>
+
+            <!-- <div class="form-holder">
+                <div>
+                    <input type="email" class="input" id="email_user" placeholder="Email" value="" required />
+                    <span class="error"></span>
+                </div>
+                <div>
+                    <input type="password" class="input" id="senha_atual" placeholder="Senha atual" required />
+                    <span class="error"></span>
+                </div>
+                <div>
+                    <input type="password" class="input" id="nova_senha" placeholder="Nova senha" required />
+                    <span class="error"></span>
+                </div>
+                <div>
+                    <input type="password" class="input" id="confir_nova_senha" placeholder="Confirmar nova senha"
+                        required />
+                    <span class="error"></span>
+                </div>
+                <div>
+                    <button class="submit-btn singup-btn" id="btnUpdateEmPass">Salvar Alterações</button>
+                </div>
+            </div> -->
+            <div class="form-holder">
+                <div>
+                    <button class="submit-btn singup-btn" id="btnCancel">Cancelar</button>
+                </div>
+            </div>
+            
         </div>
+
     </div>
 
     <!--------------------------- Importes Scripts --------------------------->
@@ -70,8 +83,13 @@
     <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-database-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-auth-compat.js"></script>
 
+<<<<<<< HEAD
     
    <script src="js/alter-perfil.js"></script>
+=======
+    <script src="js/validado-campos.js"></script>
+    <script src="js/alter-perfil.js"></script>
+>>>>>>> c6283bfc2b8a07c3d6195f50b98135d713bd697e
 </body>
 
 </html>
