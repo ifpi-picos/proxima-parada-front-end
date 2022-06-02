@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sistema de compartlhamento de caronas">
-    <script src="js/mobile-menu.js"></script>
+   
     <title>Próxima Parada</title>
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -20,11 +20,11 @@
         <nav class="navbar">
             <div class="item-1 menu-options">
                 <ul class="nav-list">
-                    <li><a href="#">Início</a></li>
+                    <li><a href="index.html">Início</a></li>
                     <li><a href="perfil.html">Perfil</a></li>
                     <li><a href="cadastrar-carona.html">Caronas</a></li>
                     <li><a href="#">Filtrar</a></li>
-                    <li><a href="#">Sair</a></li>
+                    <li onclick="sair()"><a href="index.html">Sair</a></li>
                 </ul>
             </div>
             <div class="item-1 mobile-menu">
@@ -33,25 +33,18 @@
                 <div class="line3"></div>
             </div>
            
-            <div class="item-2 logo itens-navbar">
-                <a href="/">Próxima Parada</a>
-                <img src="img/carro.png" alt="">
-            </div>
-            <div class="item-3 avatar itens-navbar">
-                <img src="img/user-avatar.png" alt="">
+            
+            <div class="item-2 avatar itens-navbar">
+               <a href="perfil.html"><img src="img/user-avatar.png" alt=""></a> 
             </div>
         </nav>
        
     </header>
 
     <main>
-       
-
         <div class="container">
             <div class="card-container">
-
                 <div class="card">
-                    
                     <div class="card-content">
                         <div class="card-header">
                             <p><span>José Filho</span> - <span>Professor</span></p>
@@ -70,79 +63,17 @@
                     </div>
                         <div class="card-info">
                             <p>Veículo: <span>Carro</span></p>
-                            <p>Modalidade: <span>Não Colaborativa</span></p>
-                            
+                            <p>Modalidade: <span>Não Colaborativa</span></p>  
                         </div>
-                            <button class="button-status">Vaga-Disponivel</button>
-                            <!--
-                            <div class="button-fixed">
-                                Cadastrar Nova Carona
-                            </div>
-                            -->
                     </div>
-                </div>
-
-
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-header">
-                            <p><span>José Filho</span> - <span>Professor</span></p>
-                        </div>
-                        <div class="card-info">
-                            <p>Origen:</p>
-                            <p>Bairro<span> Morrinhos</span></p>
-                            <p>Rua: <span>Projetada 10</span> n°: <span>23</span></p>
-                            <p><span>05/05</span> - <span>07:00 AM</span></p>
-                        </div>
-                        <div class="card-info">
-                            <p>Destino:</p>
-                            <p>Bairro<span> Pantanal</span></p>
-                            <p>Rua: <span>Alvaro Batista</span> n°: <span>45</span></p>
-                        </div>
-                        <div class="card-info">
-                            <p>Veículo: <span>Carro</span></p>
-                            <p>Modalidade: <span>Não Colaborativa</span></p>
-                        </div>
-                        <button class="button-status">Vaga-Disponivel</button>
-                    </div>
-                </div>
-                
-
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-header">
-                            <p><span>José Filho</span> - <span>Professor</span></p>
-                        </div>
-                        <div class="card-info">
-                            <p>Origen:</p>
-                            <p>Bairro<span> Morrinhos</span></p>
-                            <p>Rua: <span>Projetada 10</span> n°: <span>23</span></p>
-                            <p><span>05/05</span> - <span>07:00 AM</span></p>
-                        </div>
-                        <div class="card-info">
-                            <p>Destino:</p>
-                            <p>Bairro<span> Pantanal</span></p>
-                            <p>Rua: <span>Alvaro Batista</span> n°: <span>45</span></p>
-                        </div>
-                        <div class="card-info">
-                            <p>Veículo: <span>Carro</span></p>
-                            <p>Modalidade: <span>Não Colaborativa</span></p>
-                        </div>
-                      <button class="button-status">Vaga-Disponivel</button>
-                      <br><br>
+                    <div class="button2">
+                        <button class="button">cadastrar Nova Carona</button>
                     </div>
                    
-                </div>
-                <div class="cadastra-carona">
-                   <a href="cadastrar-carona02.html"><button class="button-registrar-carona">Cadastrar Nova Carona</button></a> 
-                    
-                </div> 
-                
-            </div>             
+                </div>                  
     </main>
-    
-    
-      
+   
+    <script src="js/mobile-menu.js"></script>
 </body>
 
 </html>

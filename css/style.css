@@ -66,6 +66,25 @@ a {
     align-items: center;
 }
 
+.c-loader {
+    animation: is-rotating 1s infinite;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    border-top-color: var(--color-primary);
+    height: 70px;
+    width: 70px;
+}
+
+@keyframes is-rotating {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+.off {
+    display: none;
+}
+
 .button {
 
     background: var(--color-primary-60);
@@ -82,7 +101,7 @@ a {
     visibility: visible;
     padding: 6px;
     margin: 20px auto;
-    
+
 }
 .button:hover {
 
@@ -93,40 +112,15 @@ a {
 
 
 /*minha alteraçao*/
-.button-status{
-    width: 90%;
-    background-color: limegreen;
-    font-size: larger;
-   
-}
-.button-fixed{
+footer{
     width: 95%;
-    background-color: #0C227F;
-    text-align: center;
-    color: #EEEEEE;
-    font-size: larger;
-    position: fixed;
-    margin: auto;
-   
+    position:fixed;
+  
 }
-.cadastra-carona{
-    color: #EEEEEE;
-    width: 100%;
-    position: fixed;
-    top: 95%;
-    
+.button2{
+    padding-top: 70px;
 }
-.button-registrar-carona{
-    background-color: #0C227F;
-    font-size: 26px;
-    width: 93%;
-    height: 30px;
-    color: #EEEEEE;
-    border-radius: 5px;
-    margin: auto;
 
-
-}
 /*minha alteraçao*/
 
 .logo img {

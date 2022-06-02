@@ -23,7 +23,7 @@
                     <li><a href="perfil.html">Perfil</a></li>
                     <li><a href="cadastrar-carona.html">Caronas</a></li>
                     <li><a href="#">Filtrar</a></li>
-                    <li onclick="sair()"><a href="index.html">Sair</a></li>
+                    <li id="btnSair"><a>Sair</a></li>
                 </ul>
             </div>
             <div class="item-1 mobile-menu">
@@ -35,15 +35,18 @@
                 <a href="/">Próxima Parada</a>
                 <img src="img/carro.png" alt="">
             </div> -->
-            <div class="item-2 avatar itens-navbar">
-                <img src="img/user-avatar.png" alt="">
+
+             <div class="item-2 itens-navbar">
+                <img id="img-home" src="img/user-avatar.png" alt="">
+
             </div>
         </nav>
     </header>
 
     <main>
-
-        <div class="container">
+        <div id="loading" class="c-loader"></div>
+        <div id="conteudo" class="container off">
+            
             <div class="card-container">
 
                 <div class="card">
@@ -66,7 +69,7 @@
                             <p>Veículo: <span>Carro</span></p>
                             <p>Modalidade: <span>Não Colaborativa</span></p>
                         </div>
-                        <button class="button">Conversar com o prorpietário</button>
+                        <button class="button">Conversar com o proprietário</button>
 
                     </div>
                 </div>
@@ -78,48 +81,14 @@
 
 
     <script src="js/mobile-menu.js"></script>
+
     <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-database-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-auth-compat.js"></script>
-    <script>
-        const firebaseApp = firebase.initializeApp({
-            apiKey: "AIzaSyBD5ZcQvTucYhZfXIF90h2IKNXTb1eF3yA",
-            authDomain: "proxima-parada-001.firebaseapp.com",
-            databaseURL: "https://proxima-parada-001-default-rtdb.firebaseio.com",
-            projectId: "proxima-parada-001",
-            storageBucket: "proxima-parada-001.appspot.com",
-            messagingSenderId: "933133262129",
-            appId: "1:933133262129:web:908e83750d11c2ccdbe410",
-        });
 
-        const auth = firebaseApp.auth();
-        let uid = undefined;
-
-        auth.onAuthStateChanged((user) => {
-            // Check for user status
-            console.log(user);
-            if (user) {
-                // User is signed in, see docs for a list of available properties
-                // https://firebase.google.com/docs/reference/js/firebase.User
-                uid = user.uid;
-                console.log(uid);
-                // ...
-            } else {
-                // User is signed out
-                // ...
-            }
+    <script src="js/home.js"></script>
 
 
-        });
-        console.log(uid);
-
-        function sair() {
-            firebase.auth().signOut().then(() => {
-                // Sign-out successful.
-            }).catch((error) => {
-                // An error happened.
-            });
-        }
-    </script>
 </body>
 
 </html>
