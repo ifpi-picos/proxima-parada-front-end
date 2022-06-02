@@ -66,6 +66,25 @@ a {
     align-items: center;
 }
 
+.c-loader {
+    animation: is-rotating 1s infinite;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    border-top-color: var(--color-primary);
+    height: 70px;
+    width: 70px;
+}
+
+@keyframes is-rotating {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+.off {
+    display: none;
+}
+
 .button {
 
     background: var(--color-primary-60);

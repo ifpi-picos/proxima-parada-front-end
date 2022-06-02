@@ -106,8 +106,6 @@ function carregarDadosUsuario(user) {
         };
         imgUrl = snapshot.val().local_imagen;
         exibirDados(snapshot.val());
-        loading.classList.add("off");
-        formUser.classList.remove("off");
       } else {
         console.log("No data available");
       }
@@ -118,13 +116,14 @@ function carregarDadosUsuario(user) {
 }
 
 function exibirDados(snapshot) {
-
   nome.value = snapshot.nome;
   ocupacao.value = snapshot.ocupacao;
   telefone.value = snapshot.telefone;
   email.value = snapshot.email;
   image.src = snapshot.local_imagen;
-
+  
+  loading.classList.add("off");
+  formUser.classList.remove("off");
 }
 
 function uploadImage(nome, ocupacao, telefone, email) {

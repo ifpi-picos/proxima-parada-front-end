@@ -14,6 +14,7 @@ const database = firebaseApp.firebase.database();
 
 const btnLogin = document.getElementById("btnLogin");
 const btnSignup = document.getElementById("btnSignup");
+const progressBar = document.getElementById("loading-login");
 
 const fields = document.querySelectorAll("[required]");
 
@@ -33,6 +34,7 @@ btnLogin.addEventListener("click", () => {
     if (senhaLogin.value != "") {
       loginUser(emailLogin.value, senhaLogin.value);
       //console.log("Sucesso");
+      progressBar.classList.remove("off");
     } else {
       alert("Preencha o campo senha.");
     }
@@ -41,35 +43,7 @@ btnLogin.addEventListener("click", () => {
   }
 });
 
-function loginUser(email, senha) {
-  auth
-    .signInWithEmailAndPassword(email, senha)
-    .then((userCredential) => {
-      // Signed in
-      var user = userCredential.user;
-      //console.log("sucesso");
-      location.href = "home.html";
-    })
-    .catch((error) => {
-      if (error.code === "auth/invalid-email") {
-        alert("Formato de email inválido.");
-      } else if (error.code === "auth/user-disabled") {
-        alert("Esse usuário foi desabilitado.");
-      } else if (error.code === "auth/user-not-found") {
-        alert("Usuário não encontrado.");
-      } else if (error.code === "auth/wrong-password") {
-        alert("Senha incorreta. digite novamente.");
-        this.loginForm.controls.password.setValue(null);
-      } else {
-        alert(error.message);
-      }
-    });
-
-  // [END auth_signin_password_modular]
-}
-
 btnSignup.addEventListener("click", () => {
-
   const nome = document.getElementById("nome");
   const ocupacao = document.getElementById("ocupacao");
   const telefone = document.getElementById("telefone");
@@ -87,8 +61,66 @@ btnSignup.addEventListener("click", () => {
   );
 });
 
-function createUser(nome, ocupacao, telefone, email, senha) {
+function loginUser(email, senha) {
+  auth
+    .signInWithEmailAndPassword(email, senha)
+    .then((userCredential) => {
+      // Signed in
+      var user = userCredential.user;
+      //console.log("sucesso");
+      location.href = "home.html";
+      progressBar.classList.add("off");
+    })
+    .catch((error) => {
+      progressBar.classList.add("off");
+      if (error.code === "auth/invalid-email") {
+        alert("Formato de email inválido.");
+      } else if (error.code === "auth/user-disabled") {
+        alert("Esse usuário foi desabilitado.");
+      } else if (error.code === "auth/user-not-found") {
+        alert("Usuário não encontrado.");
+      } else if (error.code === "auth/wrong-password") {
+        alert("Senha incorreta. digite novamente.");
+        this.loginForm.controls.password.setValue(null);
+      } else {
+        alert(error.message);
+      }
+    });
 
+  /*const task = auth.signInWithEmailAndPassword(email, senha);
+  task.on(
+    "states changed",
+    function (snapshot) {
+      let progress = (snapshot.bytesTranferred / snapshot.totalBytes) * 100;
+      progressBar.style.width = progress + "%";
+    },
+    function (userCredential) {
+      // Signed in
+      var user = userCredential.user;
+      //console.log("sucesso");
+      location.href = "home.html";
+      progressBar.classList.add("off");
+    },
+    function (error) {
+      progressBar.classList.add("off");
+      if (error.code === "auth/invalid-email") {
+        alert("Formato de email inválido.");
+      } else if (error.code === "auth/user-disabled") {
+        alert("Esse usuário foi desabilitado.");
+      } else if (error.code === "auth/user-not-found") {
+        alert("Usuário não encontrado.");
+      } else if (error.code === "auth/wrong-password") {
+        alert("Senha incorreta. digite novamente.");
+        this.loginForm.controls.password.setValue(null);
+      } else {
+        alert(error.message);
+      }
+    }
+  ); */
+  // [END auth_signin_password_modular]
+}
+
+function createUser(nome, ocupacao, telefone, email, senha) {
   firebase
     .auth()
     .createUserWithEmailAndPassword(email, senha)
@@ -100,7 +132,7 @@ function createUser(nome, ocupacao, telefone, email, senha) {
       // Add this user to Firebase Database
       writeUserData(nome, ocupacao, telefone, email, user, database_ref);
       // DOne
-    
+
       // ...
     })
     .catch((error) => {
@@ -125,7 +157,8 @@ function writeUserData(nome, ocupacao, telefone, email, user, database_ref) {
     email: email,
     ocupacao: ocupacao,
     telefone: telefone,
-    local_imagen: 'https://firebasestorage.googleapis.com/v0/b/proxim…=media&token=00adc825-1d94-4453-b923-c6356bf7886c',
+    local_imagen:
+      "https://firebasestorage.googleapis.com/v0/b/proxim…=media&token=00adc825-1d94-4453-b923-c6356bf7886c",
   };
 
   // Push to Firebase Database
@@ -133,11 +166,11 @@ function writeUserData(nome, ocupacao, telefone, email, user, database_ref) {
     if (error) {
       // The write failed...
       alert("Erro ao salvar dados de usúario, tente fazer login.");
+      progressBar.classList.add("off");
     } else {
       // Data saved successfully!
-      alert("Usuário criado com sucesso.");
+      progressBar.classList.add("off");
       location.href = "home.html";
-      
     }
   });
 }
@@ -145,6 +178,7 @@ function writeUserData(nome, ocupacao, telefone, email, user, database_ref) {
 function validandoCampos(nome, ocupacao, telefone, email, senha, confirSenha) {
   if (senha != "" && senha > 5) {
     if (senha == confirSenha) {
+      progressBar.classList.remove("off");
       createUser(nome, ocupacao, telefone, email, senha);
       //console.log("Sucesso");
     } else {

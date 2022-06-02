@@ -16,22 +16,6 @@ body {
     --color-submit-button-singup: rgb(107, 146, 164);
 }
 
-.c-loader {
-    animation: is-rotating 1s infinite;
-    border: 8px solid #fff;
-    border-radius: 50%;
-    border-top-color: var(--color-primary);
-    height: 70px;
-    width: 70px;
-}
-
-@keyframes is-rotating {
-    to {
-        transform: rotate(1turn);
-    }
-}
-
-
 .form-structor {
     background-color: var(--color-background-content);
     width: 350px;
@@ -47,7 +31,6 @@ body {
 .off {
     display: none;
 }
-
 
 .form-structor .center {
     border-radius: 15px;
@@ -146,7 +129,6 @@ body {
 
 #btnCancel{
     background: transparent;
-    
     border: 1px solid var(--color-secondary);
     color: var(--color-primary);
 }
