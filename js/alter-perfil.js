@@ -11,7 +11,8 @@ const firebaseApp = firebase.initializeApp({
 const auth = firebaseApp.auth();
 const database = firebaseApp.database();
 
-const btnUpdate = document.getElementById("btnUpdate");
+const btnUpdateUser = document.getElementById("btnUpdateUser");
+const btnUpdateEmPass = document.getElementById("btnUpdateEmPass");
 const btnCancel = document.getElementById("btnCancel");
 
 const fields = document.querySelectorAll("[required]");
@@ -23,7 +24,16 @@ let imgName, imgUrl, uid;
 let files = [];
 let reader = new FileReader();
 let dadosUsuario;
-let change_image = false; 
+let change_image = false;
+
+const image = document.getElementById("image_perfil");
+const nome = document.getElementById("nome_user");
+const ocupacao = document.getElementById("ocupacao_user");
+const telefone = document.getElementById("telefone_user");
+const email = document.getElementById("email_user");
+const senhaAtual = document.getElementById("senha_atual");
+const senhaNova = document.getElementById("nova_senha");
+const senhaNovaConfir = document.getElementById("confir_nova_senha");
 
 document.getElementById("mudar_imagem").onclick = function (e) {
   let input = document.createElement("input");
@@ -40,23 +50,6 @@ document.getElementById("mudar_imagem").onclick = function (e) {
   input.click();
 };
 
-function uploadImage(nome, ocupacao, telefone, email) {
-  const timeElapsed = Date.now();
-  imgName = new Date(timeElapsed).toISOString();
-
-  let storageRef = firebaseApp.storage().ref("Imagens/" + imgName + ".jpg");
-
-  let uploadTask = storageRef.put(files[0]).then((snapshot) => {
-    storageRef.getDownloadURL().then(function(url) {
-      imgUrl = url;
-      console.log(url);
-      writeUserData(nome, ocupacao, telefone, email, imgUrl);
-    });
-  }).catch((error)=>{
-    console.log(error);
-  });
-}
-
 auth.onAuthStateChanged((user) => {
   // Check for user status
   if (user) {
@@ -68,6 +61,36 @@ auth.onAuthStateChanged((user) => {
     // User is signed out
     // ...
   }
+});
+
+btnCancel.addEventListener("click", () => {
+  // [START auth_signin_password_modular]
+  location.href = "home.html";
+});
+
+btnUpdateUser.addEventListener("click", () => {
+  if (change_image) {
+    uploadImage(nome.value, ocupacao.value, telefone.value, email.value);
+  } else {
+    console.log(imgUrl);
+    writeUserData(
+      nome.value,
+      ocupacao.value,
+      telefone.value,
+      email.value,
+      imgUrl
+    );
+  }
+
+  /* validandoCampos(
+    nome.value,
+    ocupacao.value,
+    telefone.value,
+    email.value,
+    senhaAtual.value,
+    senhaNova.value,
+    senhaNovaConfir.value
+  ); */
 });
 
 function carregarDadosUsuario(user) {
@@ -95,51 +118,36 @@ function carregarDadosUsuario(user) {
 }
 
 function exibirDados(snapshot) {
-  const image = document.getElementById("image_perfil");
-  const nome = document.getElementById("nome_user");
-  const ocupacao = document.getElementById("ocupacao_user");
-  const telefone = document.getElementById("telefone_user");
-  const email = document.getElementById("email_user");
 
   nome.value = snapshot.nome;
   ocupacao.value = snapshot.ocupacao;
   telefone.value = snapshot.telefone;
   email.value = snapshot.email;
   image.src = snapshot.local_imagen;
+
 }
 
-btnCancel.addEventListener("click", () => {
-  // [START auth_signin_password_modular]
-  location.href = "home.html";
-});
+function uploadImage(nome, ocupacao, telefone, email) {
+  /* const timeElapsed = Date.now();
+  imgName = new Date(timeElapsed).toISOString(); */
 
-btnUpdate.addEventListener("click", () => {
-  const nome = document.getElementById("nome_user");
-  const ocupacao = document.getElementById("ocupacao_user");
-  const telefone = document.getElementById("telefone_user");
-  const email = document.getElementById("email_user");
-  const senhaAtual = document.getElementById("senha_atual");
-  const senhaNova = document.getElementById("nova_senha");
-  const senhaNovaConfir = document.getElementById("confir_nova_senha");
+  imgName = uid;
 
-  if(change_image){
-    uploadImage(nome.value, ocupacao.value, telefone.value, email.value);
-  }else{
-    console.log(imgUrl)
-    writeUserData(nome.value, ocupacao.value, telefone.value, email.value, imgUrl);
-  }
-  
+  let storageRef = firebaseApp.storage().ref("Imagens/" + imgName + ".jpg");
 
-  /* validandoCampos(
-    nome.value,
-    ocupacao.value,
-    telefone.value,
-    email.value,
-    senhaAtual.value,
-    senhaNova.value,
-    senhaNovaConfir.value
-  ); */
-});
+  let uploadTask = storageRef
+    .put(files[0])
+    .then((snapshot) => {
+      storageRef.getDownloadURL().then(function (url) {
+        imgUrl = url;
+        console.log(url);
+        writeUserData(nome, ocupacao, telefone, email, imgUrl);
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
 
 function writeUserData(nome, ocupacao, telefone, email, imageUrl) {
   dadosUsuario = {

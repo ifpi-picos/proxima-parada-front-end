@@ -1,11 +1,10 @@
 
 body {
-
     position: relative;
+    height: 100vh;
+
     display: flex;
     align-items: center;
-    height: 100vh;
-    min-height: 100vh;
     justify-content: center;
 }
 
@@ -33,29 +32,28 @@ body {
 }
 
 
+.form-structor {
+    background-color: var(--color-background-content);
+    width: 350px;
+    height: 100%;
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
 .off {
     display: none;
 }
 
-.form-structor {
-    background-color: var(--color-background-content);
+
+.form-structor .center {
     border-radius: 15px;
-    height: 550px;
-    width: 350px;
-    position: relative;
-    overflow: hidden;
-}
-
-.form-structor .signup {
     position: absolute;
-    height: 100%;
     width: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     background-color: #fff;
-    z-index: 5;
 
     display: flex;
     flex-direction: column;
@@ -63,37 +61,27 @@ body {
     align-items: center;
 }
 
-
-.form-structor .signup .center {
-    position: absolute;
-    width: 80%;
-    z-index: 5;
-
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
-}
-
-.form-structor .signup .center .form-holder {
-
+.form-structor .center .form-holder {
     border-radius: 15px;
     background-color: #fff;
     border: 1px solid var(--color-background);
-    width: 100%;
-    overflow: hidden;
-    opacity: 1;
+    width: 90%;
     margin-top: 10px;
-    visibility: visible;
+
+    padding: 0;
     display: flex;
     flex-direction: column;
     justify-items: center;
     align-items: center;
 }
 
-.form-structor .signup .center .form-holder .form-image {
+.form-structor .center .form-holder div{
+    width: 90%;
+}
+
+.form-structor .center .form-holder .form-image {
     margin: 20px 0;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 
     display: flex;
     flex-direction: column;
@@ -101,44 +89,47 @@ body {
     align-items: center;
 }
 
-.form-structor .signup .center .form-holder .form-image img {
+.form-structor .center .form-holder .form-image img {
     border-radius: 50%;
     width: 120px;
     height: 120px;
 }
 
-.form-structor .signup .center .form-holder .form-image span {
+.form-structor .center .form-holder .form-image span {
     font-style: italic;
     font-size: 14px;
-    margin-top: 5px;
+    margin-top: 10px;
+    padding: 2px 35px;
     cursor: pointer;
+    border: 1px solid var(--color-background);
+    border-radius: 10px;
 }
 
-.form-structor .signup .center .form-holder .form-image span:hover {
+.form-structor .center .form-holder .form-image span:hover {
     font-weight: bold;
 }
 
-.form-structor .signup .center .form-holder .input {
+.form-structor .center .form-holder .input {
     border: 0;
     outline: none;
     box-shadow: none;
     display: block;
-    height: 30px;
-    line-height: 30px;
+    height: 35px;
+    line-height: 35px;
     padding: 8px 15px;
     border-bottom: 1px solid var(--color-background);
     width: 100%;
-    font-size: 16px;
+    font-size: 18px;
 }
 
-.form-structor .signup .center .submit-btn {
+.form-structor .center .submit-btn {
     background-color: var(--color-secondary);
     color: var(--color-submit-button);
     border: 0;
     border-radius: 15px;
     display: block;
     margin: 5px auto;
-    padding: 15px 45px;
+    padding: 10px 45px;
     width: 100%;
     font-size: 18px;
     font-weight: bold;
@@ -147,8 +138,15 @@ body {
     visibility: visible;
 }
 
-.form-structor .signup .center .submit-btn:hover {
+.form-structor .center .submit-btn:hover {
     transition: all 0.3s ease;
     background-color: var(--color-form-title-8);
     color: var(--color-submit-button-1);
+}
+
+#btnCancel{
+    background: transparent;
+    
+    border: 1px solid var(--color-secondary);
+    color: var(--color-primary);
 }
