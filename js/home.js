@@ -12,13 +12,14 @@ const auth = firebaseApp.auth();
 const user = firebaseApp.auth().currentUser;
 const database = firebaseApp.database();
 
-const btnSair = document.getElementById("btnCancel");
+const btnSair = document.getElementById("btnSair");
+
 const image = document.getElementById("img-home");
 
 const conteudo = document.getElementById("conteudo");
 const loading = document.getElementById("loading");
 
-let imgName, imgUrl, uid;
+let imgUrl, uid;
 
 auth.onAuthStateChanged((user) => {
   if (user) {
@@ -58,19 +59,13 @@ function exibirDados(imgUrl) {
   conteudo.classList.remove("off");
 }
 
-btnCancel.addEventListener("click", () => {
-  // [START auth_signin_password_modular]
-  sair();
-});
-
-function sair() {
-  firebase
-    .auth()
+btnSair.addEventListener("click", () => {
+  auth
     .signOut()
     .then(() => {
-        location.href = "index.html";
+      location.href = "index.html";
     })
     .catch((error) => {
       // An error happened.
     });
-}
+});
