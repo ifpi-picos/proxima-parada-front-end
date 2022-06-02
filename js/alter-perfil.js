@@ -8,7 +8,6 @@ const firebaseApp = firebase.initializeApp({
   appId: "1:933133262129:web:908e83750d11c2ccdbe410",
 });
 
-//const dbStorage = firebaseApp.firebase.firestore();
 const auth = firebaseApp.auth();
 const database = firebaseApp.database();
 
@@ -24,6 +23,7 @@ let imgName, imgUrl, uid;
 let files = [];
 let reader = new FileReader();
 let dadosUsuario;
+let change_image = false; 
 
 document.getElementById("mudar_imagem").onclick = function (e) {
   let input = document.createElement("input");
@@ -33,6 +33,7 @@ document.getElementById("mudar_imagem").onclick = function (e) {
     reader = new FileReader();
     reader.onload = function () {
       document.getElementById("image_perfil").src = reader.result;
+      change_image = true;
     };
     reader.readAsDataURL(files[0]);
   };
@@ -48,6 +49,7 @@ function uploadImage(nome, ocupacao, telefone, email) {
   let uploadTask = storageRef.put(files[0]).then((snapshot) => {
     storageRef.getDownloadURL().then(function(url) {
       imgUrl = url;
+      console.log(url);
       writeUserData(nome, ocupacao, telefone, email, imgUrl);
     });
   }).catch((error)=>{
@@ -77,8 +79,9 @@ function carregarDadosUsuario(user) {
     .then((snapshot) => {
       if (snapshot.exists()) {
         dadosUsuario = {
-          local_imagen: snapshot.localImagen,
+          local_imagen: snapshot.val().local_imagen,
         };
+        imgUrl = snapshot.val().local_imagen;
         exibirDados(snapshot.val());
         loading.classList.add("off");
         formUser.classList.remove("off");
@@ -119,7 +122,13 @@ btnUpdate.addEventListener("click", () => {
   const senhaNova = document.getElementById("nova_senha");
   const senhaNovaConfir = document.getElementById("confir_nova_senha");
 
-  uploadImage(nome.value, ocupacao.value, telefone.value, email.value);
+  if(change_image){
+    uploadImage(nome.value, ocupacao.value, telefone.value, email.value);
+  }else{
+    console.log(imgUrl)
+    writeUserData(nome.value, ocupacao.value, telefone.value, email.value, imgUrl);
+  }
+  
 
   /* validandoCampos(
     nome.value,
