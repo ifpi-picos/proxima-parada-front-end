@@ -10,7 +10,6 @@ header {
 }
 
 main {
-    border: 1px solid black;
     margin-top: 8vh;
     height: 92%;
     width: 100vw;
@@ -22,7 +21,6 @@ main {
 }
 
 .content{
-    border: 1px solid blue;
     height: 94%;
     width: 80%;
     min-width: 350px;
@@ -35,7 +33,6 @@ main {
 }
 
 .form-structor {
-    border: 1px solid blue;
     border-radius: 15px;
     height: 550px;
     width: 350px;
@@ -49,7 +46,6 @@ main {
 }
 
 .campos{
-    border: 1px solid red;
     width: 100%;
     display: flex;
     justify-content:space-between;
