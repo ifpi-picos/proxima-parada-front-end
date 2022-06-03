@@ -1,50 +1,82 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema de compartlhamento de caronas">
+    <title>Próxima Parada</title>
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" href="css/style-perfil.css">
+    <link rel="stylesheet" type="text/css" href="css/style-menu.css">
 
-    <title>Tela de Perfil</title>
+    <link rel="stylesheet" type="text/css" href="css/style-perfil.css">
+
 </head>
 
 <body>
-    <div id="loading" class="c-loader"></div>
-    <div id="loading-perfil" class="loader-p off"></div>
-    <div id="form-user" class="form-structor off">
-        <div class="center">
-            <div class="form-holder">
-
-                <div class="form-image">
-                    <img id="image_perfil" src="img/user-avatar.png">
-                    <span id="mudar_imagem">Mudar imagen</span>
-                </div>
-
-                <div>
-                    <input type="text" class="input" id="nome_user" placeholder="Nome completo" value="" required />
-                    <span class="error"></span>
-                </div>
-                <div>
-                    <input type="text" class="input" id="ocupacao_user" placeholder="Ocupação no IFPI" value=""
-                        required />
-                    <span class="error"></span>
-                </div>
-                <div>
-                    <input type="phone" class="input" id="telefone_user" placeholder="Número de Whatsapp" value=""
-                        maxlength="16" required />
-                    <span class="error"></span>
-                </div>
-                <div>
-                    <button class="submit-btn singup-btn" id="btnUpdateUser">Salvar Alterações</button>
-                </div>
-
+   <!--  <header>
+        <nav class="navbar">
+            <div class="item-1 menu-options">
+                <ul class="nav-list">
+                    <li><a class="ativa">Início</a></li>
+                    <li><a href="perfil.html">Perfil</a></li>
+                    <li><a href="cadastrar-carona.html">Caronas</a></li>
+                    <li><a href="#">Filtrar</a></li>
+                    <li id="btnSair"><a>Sair</a></li>
+                </ul>
             </div>
+            <div class="item-1 mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <div class="item-2 itens-navbar">
+                <img id="img-home" src="img/user-avatar.png" alt="">
+            </div>
+        </nav>
+    </header> -->
+    <main>
+        <div id="loading" class="c-loader"></div>
+        <div id="loading-perfil" class="loader-p off"></div>
+        <div id="form-user" class="form-structor off">
+            <div class="center">
+                <div class="form-holder">
 
-            <!-- <div class="form-holder">
+                    <div class="form-image">
+                        <img id="image_perfil" src="img/user-avatar.png">
+                        <span id="mudar_imagem">Mudar imagen</span>
+                    </div>
+
+                    <div>
+                        <input type="text" class="input" id="nome_user" placeholder="Nome completo" value="" required />
+                        <span class="error"></span>
+                    </div>
+                    <div>
+                        <input type="text" class="input" id="ocupacao_user" placeholder="Ocupação no IFPI" value=""
+                            required />
+                        <span class="error"></span>
+                    </div>
+                    <div>
+                        <input type="phone" class="input" id="telefone_user" placeholder="Número de Whatsapp" value=""
+                            maxlength="16" required />
+                        <span class="error"></span>
+                    </div>
+                    <div>
+                        <button class="submit-btn singup-btn" id="btnUpdateUser">Salvar Alterações</button>
+                    </div>
+
+                </div>
+
+               
+                <div class="form-holder">
+                    <div>
+                        <button class="submit-btn singup-btn" id="btnCancel">Cancelar</button>
+                    </div>
+                </div>
+
+                 <!-- <div class="form-holder">
                 <div>
                     <input type="email" class="input" id="email_user" placeholder="Email" value="" required />
                     <span class="error"></span>
@@ -66,15 +98,11 @@
                     <button class="submit-btn singup-btn" id="btnUpdateEmPass">Salvar Alterações</button>
                 </div>
             </div> -->
-            <div class="form-holder">
-                <div>
-                    <button class="submit-btn singup-btn" id="btnCancel">Cancelar</button>
-                </div>
-            </div>
-            
-        </div>
 
-    </div>
+            </div>
+
+        </div>
+    </main>
 
     <!--------------------------- Importes Scripts --------------------------->
     <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-app-compat.js"></script>
@@ -83,11 +111,19 @@
     <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-database-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-auth-compat.js"></script>
 
+<<<<<<< HEAD
 
     
    <script src="js/alter-perfil.js"></script>
+=======
+    <script src="js/config-firebase.js"></script>
+
+
+<!--     <script src="js/mobile-menu.js"></script> -->
+>>>>>>> a023a446aaa908aefd77da3d1cc396c65a60eab3
 
     <script src="js/validado-campos.js"></script>
+
     <script src="js/alter-perfil.js"></script>
 
 </body>
