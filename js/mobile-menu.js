@@ -1,3 +1,42 @@
+const image = document.querySelector("#img-home");
+
+const conteudo = document.getElementById("conteudo");
+const loading = document.getElementById("loading");
+
+let imgUrl, uid;
+
+auth.onAuthStateChanged((user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    console.log(uid);
+    carregarDadosUsuario(user.uid);
+    // ...
+  } else {
+    // User is signed out
+    // ...
+  }
+});
+
+function carregarDadosUsuario(uid) {
+  database
+    .ref()
+    .child("usuario/" + uid)
+    .get()
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        image.src = snapshot.val().local_imagen;
+        loading.classList.add("off");
+        conteudo.classList.remove("off");
+      } else {
+        console.log("No data available");
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
+
 class MobileNavbar {
   constructor(mobileMenu, menuOptions, navLinks) {
     this.mobileMenu = document.querySelector(mobileMenu);
