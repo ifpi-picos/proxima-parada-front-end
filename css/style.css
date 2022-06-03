@@ -111,17 +111,9 @@ a {
 }
 
 
-/*minha alteraçao*/
-footer{
-    width: 95%;
-    position:fixed;
-  
+.nova-carona {
+    width: 80%;
 }
-.button2{
-    padding-top: 70px;
-}
-
-/*minha alteraçao*/
 
 .logo img {
     max-width: 100%;
@@ -131,6 +123,21 @@ footer{
 .form-box {
     width: 100%;
     height: 100%;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 8vh;
+}
+
+.rodape {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* -------------------- Fim das configurações de Conteudo ------------------------------ */
