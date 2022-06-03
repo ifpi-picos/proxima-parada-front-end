@@ -1,17 +1,3 @@
-const firebaseApp = firebase.initializeApp({
-  apiKey: "AIzaSyBD5ZcQvTucYhZfXIF90h2IKNXTb1eF3yA",
-  authDomain: "proxima-parada-001.firebaseapp.com",
-  databaseURL: "https://proxima-parada-001-default-rtdb.firebaseio.com",
-  projectId: "proxima-parada-001",
-  storageBucket: "proxima-parada-001.appspot.com",
-  messagingSenderId: "933133262129",
-  appId: "1:933133262129:web:908e83750d11c2ccdbe410",
-});
-
-const dbStorage = firebaseApp.firestore();
-const auth = firebaseApp.auth();
-const database = firebaseApp.firebase.database();
-
 const btnLogin = document.getElementById("btnLogin");
 const btnSignup = document.getElementById("btnSignup");
 const progressBar = document.getElementById("loading-login");

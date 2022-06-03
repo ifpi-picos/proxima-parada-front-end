@@ -81,6 +81,11 @@ header {
     transition: background 0.5s, color 0.5s;
 }
 
+.ativa{
+    background: var(--color-secondary);
+    color: var(--color-primary); 
+}
+
 .mobile-menu {
     display: none;
     cursor: pointer;
