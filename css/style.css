@@ -115,7 +115,10 @@ a {
 footer{
     width: 95%;
     position:fixed;
-    bottom:2px;
+  
+}
+.button2{
+    padding-top: 70px;
 }
 
 /*minha alteraçao*/
