@@ -8,8 +8,9 @@
     , initial-scale=1.0">
 
 
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <<link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/style-menu.css">
+   
     
     <link rel="stylesheet" type="text/css" href="css/cadastrar-carona.css">
 
@@ -22,11 +23,11 @@
         <nav class="navbar">
             <div class="item-1 menu-options">
                 <ul class="nav-list">
-                    <li><a href="#">Início</a></li>
+                    <li><a class="ativa">Início</a></li>
                     <li><a href="perfil.html">Perfil</a></li>
-                    <li><a href="cadastrar-carona.html">Caronas</a></li>
+                    <li><a href="caronas.html">Caronas</a></li>
                     <li><a href="#">Filtrar</a></li>
-                    <li><a href="#">Sair</a></li>
+                    <li id="btnSair"><a>Sair</a></li>
                 </ul>
             </div>
             <div class="item-1 mobile-menu">
@@ -34,13 +35,8 @@
                 <div class="line2"></div>
                 <div class="line3"></div>
             </div>
-           
-            <div class="item-2 logo itens-navbar">
-                <a href="/">Próxima Parada</a>
-                <img src="img/carro.png" alt="">
-            </div>
-            <div class="item-3 avatar itens-navbar">
-                <img src="img/user-avatar.png" alt="">
+            <div class="item-2 itens-navbar">
+                <img id="img-home" src="img/user-avatar.png" alt="">
             </div>
         </nav>
        
@@ -85,10 +81,10 @@
             <div class="campo">
                 <div class="bolas">
                 <label>
-                    <input type="radio" name="carro" value="carro"> Carro
+                    <input type="checkbox" name="carro" value="carro" checked> Carro
                 </label>
                 <label>
-                    <input type="radio" name="moto" value="moto"> Moto
+                    <input type="checkbox" name="moto" value="moto" checked> Moto
                 </label>
             </div>
             </div>
@@ -96,10 +92,10 @@
             <div class="campo">
                 <div class="bolas">
                 <label>
-                    <input type="radio" name="não-colaborativo" value="não-colaborativo"> Não-Colaborativo
+                    <input type="checkbox" name="não-colaborativo" value="não-colaborativo" checked> Não-Colaborativo
                 </label>
                 <label>
-                    <input type="radio" name="colaborativo" value="colaborativo"> Colaborativo
+                    <input type="checkbox" name="colaborativo" value="colaborativo" checked> Colaborativo
                 </label>
             </div>
             </div>
@@ -107,10 +103,10 @@
             <div class="campo">
                 <div class="bolas">
                 <label>
-                    <input type="radio" name="regular" value="regular"> Regular
+                    <input type="checkbox" name="regular" value="regular"> Regular
                 </label>
                 <label>
-                    <input type="radio" name="não-regular" value="não-regular"> Não-Regular
+                    <input type="checkbox" name="não-regular" value="não-regular" checked> Não-Regular
                 </label>
                 </div>
             </div>
@@ -180,5 +176,5 @@
         </fieldset>
     </form>
 </body>
+    
 </html>
-

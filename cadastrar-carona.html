@@ -9,20 +9,20 @@
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/style-menu.css">
-
     <link rel="stylesheet" type="text/css" href="css/cadastrar-carona.css">
 
 
 </head>
 
 <body>
-    <header class="cabecalho">
+
+    <header>
         <nav class="navbar">
             <div class="item-1 menu-options">
                 <ul class="nav-list">
-                    <li><a href="home.html">Início</a></li>
+                    <li><a class="ativa">Início</a></li>
                     <li><a href="perfil.html">Perfil</a></li>
-                    <li><a class="ativa">Caronas</a></li>
+                    <li><a href="caronas.html">Caronas</a></li>
                     <li><a href="#">Filtrar</a></li>
                     <li id="btnSair"><a>Sair</a></li>
                 </ul>
@@ -38,172 +38,92 @@
         </nav>
     </header>
 
-    <main class="conteudo">
-        <div class="content">
-            <form class="form-structor" method="POST">
-                <div class="input-group">
-                    <h3>Origen</h3>
-                    <div class="campos">
-                        <label for="">Bairro:</label>
-                        <input class="" type="text" placeholder="bairro">
-                    </div>
-                    <div class="campos">
-                        <label for="">Rua:</label>
-                        <input class="" type="text" placeholder="bairro">
-                    </div>
-                    <div class="campos">
-                        <label for="">Cidade:</label>
-                        <input class="" type="text" placeholder="bairro">
-                    </div>
-                    <div class="campos">
-                        <div class="dt">
-                            <label for="">Data:</label>
-                            <input class="" type="text" placeholder="bairro">
-                        </div>
-                        <div class="dt">
-                            <label for="">Hora:</label>
-                            <input class="" type="text" placeholder="bairro">
-                        </div>
-                    </div>
-                </div>
-                <div class="input-group">
-                    <h3>Destino</h3>
-                    <div class="campos">
-                        <label for="">Bairro:</label>
-                        <input class="" type="text" placeholder="bairro">
-                    </div>
-                    <div class="campos">
-                        <label for="">Rua:</label>
-                        <input class="" type="text" placeholder="bairro">
-                    </div>
-                    <div class="campos">
-                        <label for="">Cidade:</label>
-                        <input class="" type="text" placeholder="bairro">
-                    </div>
-                </div>
-
-
-                <div class="input-group">
-                    <h3>Veiculo</h3>
-                    <div>
-                        <label>Moto
-                            <input type="radio" name="radio">
-                            <span></span>
-                        </label>
-                        <label>Carro
-                            <input type="radio" name="radio">
-                            <span></span>
-                        </label>
-                    </div>
-
-                </div>
-                <div class="input-group">
-                    <h3>regularidade</h3>
-                    <div>
-                        <label class="">Regular
-                            <input type="radio" name="radio">
-                            <span></span>
-                        </label>
-                        <label class="container">Não regular
-                            <input type="radio" name="radio">
-                            <span></span>
-                        </label>
-                    </div>
-                </div>
-                <div class="input-group">
-                    <h3>Dias da semana</h3>
-                    <div>
-                        <label>One
-                            <input type="checkbox">
-                            <span></span>
-                        </label>
-                        <label>Two
-                            <input type="checkbox">
-                            <span></span>
-                        </label>
-                        <label>Three
-                            <input type="checkbox">
-                            <span></span>
-                        </label>
-                        <label>Four
-                            <input type="checkbox">
-                            <span></span>
-                        </label>
-                    </div>
-                </div>
-            </form>
-        </div>
-
-        <!-- 
-        <form action="#" method="post">
-            <fieldset>
-                <div class="caixa">
+    <form action="#" method="post">
+        <fieldset>
+            <div class="caixa">
                     <h1 class="titulo1">Origem</h1>
-                    <fieldset class="grupo">
-                        <div class="campo">
-                            <label for="nome">Bairro</label>
-                            <input type="text" id="nome" name="nome" style="width: 10em" value="">
-                        </div>
-                        <div class="campo">
-                            <label for="snome">Rua</label>
-                            <input type="text" id="snome" name="snome" style="width: 10em" value="">
-                        </div>
-                        <div class="campo">
-                            <label for="snome">N°</label>
-                            <input type="text" id="snome" name="snome" style="width: 10em" value="">
-                        </div>
-                    </fieldset>
-                    <h1 class="titulo1">Destino</h1>
-                    <fieldset class="grupo">
-                        <div class="campo">
-                            <label for="nome">Bairro</label>
-                            <input type="text" id="nome" name="nome" style="width: 10em" value="">
-                        </div>
-                        <div class="campo">
-                            <label for="snome">Rua</label>
-                            <input type="text" id="snome" name="snome" style="width: 10em" value="">
-                        </div>
-                        <div class="campo">
-                            <label for="snome">N°</label>
-                            <input type="text" id="snome" name="snome" style="width: 10em" value="">
-                        </div>
-                    </fieldset>
-
-                    <h1 class="titulo1">Veículo</h1>
+                <fieldset class="grupo">
                     <div class="campo">
-                        <div class="bolas">
-                            <label>
-                                <input type="radio" name="carro" value="carro"> Carro
-                            </label>
-                            <label>
-                                <input type="radio" name="moto" value="moto"> Moto
-                            </label>
-                        </div>
+                        <label for="nome">Bairro</label>
+                        <input type="text" id="nome" name="nome" value="" style="width: 10em" >
                     </div>
-                    <h1 class="titulo1">Modalidade</h1>
                     <div class="campo">
-                        <div class="bolas">
-                            <label>
-                                <input type="radio" name="não-colaborativo" value="não-colaborativo"> Não-Colaborativo
-                            </label>
-                            <label>
-                                <input type="radio" name="colaborativo" value="colaborativo"> Colaborativo
-                            </label>
-                        </div>
+                        <label for="snome">Rua</label>
+                        <input type="text" id="snome" name="snome"value=""style="width: 10em" >
                     </div>
-                    <h1 class="titulo1">Frequência de Rota</h1>
                     <div class="campo">
-                        <div class="bolas">
-                            <label>
-                                <input type="radio" name="regular" value="regular"> Regular
-                            </label>
-                            <label>
-                                <input type="radio" name="não-regular" value="não-regular"> Não-Regular
-                            </label>
-                        </div>
+                        <label for="snome">N°</label>
+                        <input type="text" id="snome" name="snome"value=""style="width: 10em" >
                     </div>
-                    <h1 class="titulo1">Dias da Semana</h1>
                     <div class="campo">
+                        <label for="snome">Data da Partida</label>
+                        <input type="date" id="snome" name="snome"value=""style="width: 10em" >
+                    </div>
+                    <div class="campo">
+                        <label for="snome">Hora da Partida</label>
+                        <input type="time" id="snome" name="snome"value=""style="width: 10em" >
+                    </div>
+                </div> 
+            <div class="caixa" 
+                </fieldset>
+                <h1 class="titulo1">Destino</h1>
+                <fieldset class="grupo">
+                    <div class="campo">
+                        <label for="nome">Bairro</label>
+                        <input type="text" id="nome" name="nome"value=""style="width: 10em" >
+                    </div>
+                    <div class="campo">
+                        <label for="snome">Rua</label>
+                        <input type="text" id="snome" name="snome" value=""style="width: 10em" >
+                    </div>
+                    <div class="campo">
+                        <label for="snome">N°</label>
+                        <input type="text" id="snome" name="snome" value=""style="width: 10em" >
+                    </div>
+                </fieldset>
+            </div>
+            <div class="caixa">
+                <h1 class="titulo1">Veículo</h1>
+                <div class="campo">
+                    <div class="bolas">
+                    <label>
+                        <input type="radio" name="carro" value="carro"> Carro
+                    </label>
+                    <label>
+                        <input type="radio" name="moto" value="moto"> Moto
+                    </label>
+                </div>
+            </div>
+            </div>
+            <div class="caixa">
+                <h1 class="titulo1">Modalidade</h1>
+                <div class="campo">
+                    <div class="bolas">
+                        <label>
+                            <input type="radio" name="não-colaborativo" value="não-colaborativo"> Não-Colaborativo
+                        </label>
+                        <label>
+                            <input type="radio" name="colaborativo" value="colaborativo"> Colaborativo
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="caixa">
+                <h1 class="titulo1">Frequência de Rota</h1>
+                <div class="campo">
+                    <div class="bolas">
+                        <label>
+                            <input type="radio" name="regular" value="regular"> Regular
+                        </label>
+                        <label>
+                            <input type="radio" name="não-regular" value="não-regular"> Não-Regular
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="caixa">
+                <h1 class="titulo1">Dias da Semana</h1>
+                <div class="campo">
                         <div class="bolas">
                             <label>
                                 <input type="radio" name="domingo" value="domingo"> Dom
@@ -226,52 +146,12 @@
                             <label>
                                 <input type="radio" name="sabado" value="sabado"> Sab
                             </label>
-                        </div>
                     </div>
-                </div> -->
-        <!-- <div class="campo">
-                <label for="email">E-mail</label>
-                <input type="text" id="email" name="email" style="width: 20em" value="">
-            </div>
-            <div class="campo">
-                <label for="telefone">Telefone</label>
-                <input type="text" id="telefone" name="telefone" style="width: 10em" value="">
-            </div>
-    
-            <fieldset class="grupo">
-                <div class="campo">
-                    <label for="cidade">Cidade</label>
-                    <input type="text" id="cidade" name="cidade" style="width: 10em" value="">
                 </div>
-                <div class="campo">
-                    <label for="estado">Estado</label>
-                    <select name="estado" id="estado">
-                        <option value="">--</option>
-                        <option value="PR">PR</option>
-                    </select>
-                </div> -->
-
-
-        <!-- <div class="campo">
-                <label for="mensagem">Mensagem</label>
-                <textarea rows="6" style="width: 20em" id="mensagem" name="mensagem"></textarea>
             </div>
-    
-            <div class="campo">
-                <label>Newsletter</label>
-                <label>
-                    <input type="checkbox" name="newsletter" value="1"> Gostaria de receber a Newsletter da empresa
-                </label>
-            </div> -->
-    </main>
-
-    <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-database-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-auth-compat.js"></script>
-
-    <script src="js/config-firebase.js"></script>
-    <script src="js/mobile-menu.js"></script>
-
+            <button class="botao" type="submit" name="submit">Salvar nova Carona</button>
+        </fieldset>
+    </form
+  <h1>teste</h1>
 </body>
-
 </html>
