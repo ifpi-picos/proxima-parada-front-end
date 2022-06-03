@@ -7,7 +7,7 @@
 
 fieldset {
     border: 0;
-    margin-left: 30%;
+    margin-left: auto;
 }
 
 body, input, select, textarea, button {
@@ -55,7 +55,7 @@ fieldset.grupo .campo {
 .caixa{
     background-color: #2FD3DA;
     border-radius: 10px;
-    width: 55%;
+    width: auto;
 }
 .campo input[type="text"],
 .campo input[type="email"],
