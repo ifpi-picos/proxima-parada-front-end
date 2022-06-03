@@ -9,7 +9,6 @@
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/style-menu.css">
-    
     <link rel="stylesheet" type="text/css" href="css/cadastrar-carona.css">
 
 
@@ -21,11 +20,11 @@
         <nav class="navbar">
             <div class="item-1 menu-options">
                 <ul class="nav-list">
-                    <li><a href="#">Início</a></li>
+                    <li><a class="ativa">Início</a></li>
                     <li><a href="perfil.html">Perfil</a></li>
-                    <li><a href="cadastrar-carona.html">Caronas</a></li>
+                    <li><a href="caronas.html">Caronas</a></li>
                     <li><a href="#">Filtrar</a></li>
-                    <li><a href="#">Sair</a></li>
+                    <li id="btnSair"><a>Sair</a></li>
                 </ul>
             </div>
             <div class="item-1 mobile-menu">
@@ -33,172 +32,127 @@
                 <div class="line2"></div>
                 <div class="line3"></div>
             </div>
-           
-            <div class="item-2 logo itens-navbar">
-                <a href="/">Próxima Parada</a>
-                <img src="img/carro.png" alt="">
-            </div>
-            <div class="item-3 avatar itens-navbar">
-                <img src="img/user-avatar.png" alt="">
+            <div class="item-2 itens-navbar">
+                <img id="img-home" src="img/user-avatar.png" alt="">
             </div>
         </nav>
-       
     </header>
-
 
     <form action="#" method="post">
         <fieldset>
             <div class="caixa">
-                <h1 class="titulo1">Origem</h1>
-            <fieldset class="grupo">
+                    <h1 class="titulo1">Origem</h1>
+                <fieldset class="grupo">
+                    <div class="campo">
+                        <label for="nome">Bairro</label>
+                        <input type="text" id="nome" name="nome" value="" style="width: 10em" >
+                    </div>
+                    <div class="campo">
+                        <label for="snome">Rua</label>
+                        <input type="text" id="snome" name="snome"value=""style="width: 10em" >
+                    </div>
+                    <div class="campo">
+                        <label for="snome">N°</label>
+                        <input type="text" id="snome" name="snome"value=""style="width: 10em" >
+                    </div>
+                    <div class="campo">
+                        <label for="snome">Data da Partida</label>
+                        <input type="date" id="snome" name="snome"value=""style="width: 10em" >
+                    </div>
+                    <div class="campo">
+                        <label for="snome">Hora da Partida</label>
+                        <input type="time" id="snome" name="snome"value=""style="width: 10em" >
+                    </div>
+                </div> 
+            <div class="caixa" 
+                </fieldset>
+                <h1 class="titulo1">Destino</h1>
+                <fieldset class="grupo">
+                    <div class="campo">
+                        <label for="nome">Bairro</label>
+                        <input type="text" id="nome" name="nome"value=""style="width: 10em" >
+                    </div>
+                    <div class="campo">
+                        <label for="snome">Rua</label>
+                        <input type="text" id="snome" name="snome" value=""style="width: 10em" >
+                    </div>
+                    <div class="campo">
+                        <label for="snome">N°</label>
+                        <input type="text" id="snome" name="snome" value=""style="width: 10em" >
+                    </div>
+                </fieldset>
+            </div>
+            <div class="caixa">
+                <h1 class="titulo1">Veículo</h1>
                 <div class="campo">
-                    <label for="nome">Bairro</label>
-                    <input type="text" id="nome" name="nome" style="width: 10em" value="">
+                    <div class="bolas">
+                    <label>
+                        <input type="radio" name="carro" value="carro"> Carro
+                    </label>
+                    <label>
+                        <input type="radio" name="moto" value="moto"> Moto
+                    </label>
                 </div>
+            </div>
+            </div>
+            <div class="caixa">
+                <h1 class="titulo1">Modalidade</h1>
                 <div class="campo">
-                    <label for="snome">Rua</label>
-                    <input type="text" id="snome" name="snome" style="width: 10em" value="">
+                    <div class="bolas">
+                        <label>
+                            <input type="radio" name="não-colaborativo" value="não-colaborativo"> Não-Colaborativo
+                        </label>
+                        <label>
+                            <input type="radio" name="colaborativo" value="colaborativo"> Colaborativo
+                        </label>
+                    </div>
                 </div>
+            </div>
+            <div class="caixa">
+                <h1 class="titulo1">Frequência de Rota</h1>
                 <div class="campo">
-                    <label for="snome">N°</label>
-                    <input type="text" id="snome" name="snome" style="width: 10em" value="">
+                    <div class="bolas">
+                        <label>
+                            <input type="radio" name="regular" value="regular"> Regular
+                        </label>
+                        <label>
+                            <input type="radio" name="não-regular" value="não-regular"> Não-Regular
+                        </label>
+                    </div>
                 </div>
-            </fieldset>
-            <h1 class="titulo1">Destino</h1>
-            <fieldset class="grupo">
+            </div>
+            <div class="caixa">
+                <h1 class="titulo1">Dias da Semana</h1>
                 <div class="campo">
-                    <label for="nome">Bairro</label>
-                    <input type="text" id="nome" name="nome" style="width: 10em" value="">
-                </div>
-                <div class="campo">
-                    <label for="snome">Rua</label>
-                    <input type="text" id="snome" name="snome" style="width: 10em" value="">
-                </div>
-                <div class="campo">
-                    <label for="snome">N°</label>
-                    <input type="text" id="snome" name="snome" style="width: 10em" value="">
-                </div>
-            </fieldset>
-            
-            <h1 class="titulo1">Veículo</h1>
-            <div class="campo">
-                <div class="bolas">
-                <label>
-                    <input type="radio" name="carro" value="carro"> Carro
-                </label>
-                <label>
-                    <input type="radio" name="moto" value="moto"> Moto
-                </label>
-            </div>
-            </div>
-            <h1 class="titulo1">Modalidade</h1>
-            <div class="campo">
-                <div class="bolas">
-                <label>
-                    <input type="radio" name="não-colaborativo" value="não-colaborativo"> Não-Colaborativo
-                </label>
-                <label>
-                    <input type="radio" name="colaborativo" value="colaborativo"> Colaborativo
-                </label>
-            </div>
-            </div>
-            <h1 class="titulo1">Frequência de Rota</h1>
-            <div class="campo">
-                <div class="bolas">
-                <label>
-                    <input type="radio" name="regular" value="regular"> Regular
-                </label>
-                <label>
-                    <input type="radio" name="não-regular" value="não-regular"> Não-Regular
-                </label>
+                        <div class="bolas">
+                            <label>
+                                <input type="radio" name="domingo" value="domingo"> Dom
+                            </label>
+                            <label>
+                                <input type="radio" name="segunda" value="segunda"> Seg
+                            </label>
+                            <label>
+                                <input type="radio" name="terca" value="terca"> Ter
+                            </label>
+                            <label>
+                                <input type="radio" name="quarta" value="quarta"> Qua
+                            </label>
+                            <label>
+                                <input type="radio" name="quinta" value="quinta"> Qui
+                            </label>
+                            <label>
+                                <input type="radio" name="sexta" value="sexta"> Sex
+                            </label>
+                            <label>
+                                <input type="radio" name="sabado" value="sabado"> Sab
+                            </label>
+                    </div>
                 </div>
             </div>
-            <h1 class="titulo1">Dias da Semana</h1>
-            <div class="campo">
-                <div class="bolas">
-                <label>
-                    <input type="radio" name="domingo" value="domingo"> Dom
-                </label>
-                <label>
-                    <input type="radio" name="segunda" value="segunda"> Seg
-                </label>
-                <label>
-                    <input type="radio" name="terca" value="terca"> Ter
-                </label>
-                <label>
-                    <input type="radio" name="quarta" value="quarta"> Qua
-                </label>
-                <label>
-                    <input type="radio" name="quinta" value="quinta"> Qui
-                </label>
-                <label>
-                    <input type="radio" name="sexta" value="sexta"> Sex
-                </label>
-                <label>
-                    <input type="radio" name="sabado" value="sabado"> Sab
-                </label>
-                </div>
-            </div>
-        </div>
-            <!-- <div class="campo">
-                <label for="email">E-mail</label>
-                <input type="text" id="email" name="email" style="width: 20em" value="">
-            </div>
-            <div class="campo">
-                <label for="telefone">Telefone</label>
-                <input type="text" id="telefone" name="telefone" style="width: 10em" value="">
-            </div>
-    
-            <fieldset class="grupo">
-                <div class="campo">
-                    <label for="cidade">Cidade</label>
-                    <input type="text" id="cidade" name="cidade" style="width: 10em" value="">
-                </div>
-                <div class="campo">
-                    <label for="estado">Estado</label>
-                    <select name="estado" id="estado">
-                        <option value="">--</option>
-                        <option value="PR">PR</option>
-                    </select>
-                </div> -->
-          
-    
-            <!-- <div class="campo">
-                <label for="mensagem">Mensagem</label>
-                <textarea rows="6" style="width: 20em" id="mensagem" name="mensagem"></textarea>
-            </div>
-    
-            <div class="campo">
-                <label>Newsletter</label>
-                <label>
-                    <input type="checkbox" name="newsletter" value="1"> Gostaria de receber a Newsletter da empresa
-                </label>
-            </div> -->
-    
             <button class="botao" type="submit" name="submit">Salvar nova Carona</button>
         </fieldset>
-    </form>
-</body>
-
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" href="css/style-perfil.css">
-   
-    <title>Tela de Perfil</title>
-</head>
-
-<body>
-    
-    <div class="form-structor">
-       
-        <div class="signup">
-            <div class="center">
-            
-            
-                    <h1>Cadastrar Caronas</h1>
-                
-            </div>
-        </div>
-    </div>
+    </form
+  
 </body>
 </html>
 
