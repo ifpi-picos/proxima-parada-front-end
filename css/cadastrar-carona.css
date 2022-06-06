@@ -47,6 +47,20 @@ main {
 
 .dias{
     display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.radio-buttons{
+    border: 1px solid red;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.dia{
+    display: flex;
+    flex-direction: column;
     justify-content:center;
     align-items: center;
 }

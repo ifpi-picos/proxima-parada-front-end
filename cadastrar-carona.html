@@ -39,29 +39,29 @@
     <main>
 
         <div class="content">
-            <form name="form-carona" class="form-structor" method="POST">
+            <div class="form-structor">
                 <div class="input-group">
-                    <h3>Origen</h3>
+                    <h3>Origem</h3>
                     <div class="campos">
                         <label for="">Bairro:</label>
-                        <input id="bairro-origen" class="" name="bairro-origen" type="text" placeholder="bairro">
+                        <input id="bairro-origem" class="" type="text" placeholder="Bairro" value="Pantanal">
                     </div>
                     <div class="campos">
                         <label for="">Rua:</label>
-                        <input id="rua-origen" class="" name="rua-origen"  type="text" placeholder="bairro">
+                        <input id="rua-origem" class="" ype="text" placeholder="Rua" value="Projetada">
                     </div>
                     <div class="campos">
                         <label for="">Número:</label>
-                        <input id="num-origen" class="" name="num-origen"  type="text" placeholder="bairro">
+                        <input id="num-origem" class="" type="text" placeholder="Número" value="02">
                     </div>
                     <div class="campos">
                         <div class="dt">
                             <label for="">Data:</label>
-                            <input id="data-origen" class="" name="data-origen"  type="text" placeholder="bairro">
+                            <input id="data-origem" class="" type="text" placeholder="Data" value="05/05/2022">
                         </div>
                         <div class="dt">
                             <label for="">Hora:</label>
-                            <input id="hora-origen" class="" name="hora-origen"  type="text" placeholder="bairro">
+                            <input id="hora-origem" class="" type="text" placeholder="Hora" value="09:00">
                         </div>
                     </div>
                 </div>
@@ -69,97 +69,93 @@
                     <h3>Destino</h3>
                     <div class="campos">
                         <label for="">Bairro:</label>
-                        <input id="bairro-destino" class="" name="bairro-destino"  type="text" placeholder="bairro">
+                        <input id="bairro-destino" class="" name="bairro-destino" type="text" placeholder="Bairro"
+                            value="Centro">
                     </div>
                     <div class="campos">
                         <label for="">Rua:</label>
-                        <input id="rua-destino" class="" name="rua-destino" type="text" placeholder="bairro">
+                        <input id="rua-destino" class="" name="rua-destino" type="text" placeholder="Rua"
+                            value="Alvaro Batista">
                     </div>
                     <div class="campos">
                         <label for="">Número:</label>
-                        <input id="num-destino" class="" name="num-destino" type="text" placeholder="bairro">
+                        <input id="num-destino" class="" name="num-destino" type="text" placeholder="Número" value="15">
                     </div>
                 </div>
 
-                <div class="input-group">
+                <fieldset id="veiculo" class="input-group">
                     <h3>Veiculo</h3>
                     <div>
-                        <label>Moto
-                            <input type="radio" name="radio">
-                            <span></span>
-                        </label>
-                        <label>Carro
-                            <input type="radio" name="radio">
-                            <span></span>
-                        </label>
+                        <div class="radio-buttons">
+                            <input type="radio" name="veiculo" checked>
+                            <p>Carro</p>
+                        </div>
+                        <div>
+                            <input type="radio" name="veiculo">
+                            <p>Moto</p>
+                        </div>
                     </div>
-
-                </div>
-                <div class="input-group">
+                </fieldset>
+                <fieldset id="regularidade" class="input-group">
                     <h3>regularidade</h3>
-                    <div>
-                        <label class="">Regular
-                            <input type="radio" name="radio">
-                            <span></span>
-                        </label>
-                        <label class="container">Não regular
-                            <input type="radio" name="radio">
-                            <span></span>
-                        </label>
+                    <div class="campo">
+                        <div>
+                            <input type="radio" name="regularida" checked>
+                            <p>Não regular</p>
+                        </div>
+                        <div>
+                            <input type="radio" name="regularida">
+                            <p>Regular</p>
+                        </div>
                     </div>
-                </div>
-                <div class="input-group">
+                </fieldset>
+                <fieldset class="input-group">
                     <h3>Dias da semana</h3>
                     <div class="dias">
                         <div class="dia">
-                            <label>
-                                <input type="checkbox">
-                                <p>Dom</p>
-                            </label>
+                            <input type="checkbox" name="dia">
+                            <p>Dom</p>
                         </div>
                         <div class="dia">
-                            <label>
-                                <input type="checkbox">
-                                <p>Seg</p>
-                            </label>
+                            <input type="checkbox" name="dia">
+                            <p>Seg</p>
                         </div>
                         <div class="dia">
-                            <label>
-                                <input type="checkbox">
-                                <p>Ter</p>
-                            </label>
+                            <input type="checkbox" name="dia">
+                            <p>Ter</p>
                         </div>
                         <div class="dia">
-                            <label>
-                                <input type="checkbox">
-                                <p>Qua</p>
-                            </label>
+                            <input type="checkbox" name="dia">
+                            <p>Qua</p>
                         </div>
                         <div class="dia">
-                            <label>
-                                <input type="checkbox">
-                                <p>Qui</p>
-                            </label>
+                            <input type="checkbox" name="dia">
+                            <p>Qui</p>
                         </div>
                         <div class="dia">
-                            <label>
-                                <input type="checkbox">
-                                <p>Sex</p>
-                            </label>
+                            <input type="checkbox" name="dia">
+                            <p>Sex</p>
+
                         </div>
                         <div class="dia">
-                            <label>
-                                <input type="checkbox">
-                                <p>Sab</p>
-                            </label>
+                            <input type="checkbox" name="dia">
+                            <p>Sab</p>
                         </div>
                     </div>
-                </div>
-                <button class="button" type="submit">Cadastrar carona</button>
-            </form>
-            
+                </fieldset>
+                <button id="btnCadastrarCarona" class="button">Cadastrar carona</button>
+            </div>
+
 
     </main>
+
+    <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-auth-compat.js"></script>
+
+    <script src="js/config-firebase.js"></script>
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/cadastro-carona.js"></script>
 
 </body>
 
