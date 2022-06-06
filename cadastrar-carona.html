@@ -15,7 +15,6 @@
 </head>
 
 <body>
-
     <header>
         <nav class="navbar">
             <div class="item-1 menu-options">
@@ -37,122 +36,133 @@
             </div>
         </nav>
     </header>
+    <main>
 
-    <form action="#" method="post">
-        <fieldset>
-            <div class="caixa">
-                    <h1 class="titulo1">Origem</h1>
-                <fieldset class="grupo">
-                    <div class="campo">
-                        <label for="nome">Bairro</label>
-                        <input type="text" id="nome" name="nome" value="" style="width: 10em" >
+        <div class="content">
+            <form name="form-carona" class="form-structor" method="POST">
+                <div class="input-group">
+                    <h3>Origen</h3>
+                    <div class="campos">
+                        <label for="">Bairro:</label>
+                        <input id="bairro-origen" class="" name="bairro-origen" type="text" placeholder="bairro">
                     </div>
-                    <div class="campo">
-                        <label for="snome">Rua</label>
-                        <input type="text" id="snome" name="snome"value=""style="width: 10em" >
+                    <div class="campos">
+                        <label for="">Rua:</label>
+                        <input id="rua-origen" class="" name="rua-origen"  type="text" placeholder="bairro">
                     </div>
-                    <div class="campo">
-                        <label for="snome">N°</label>
-                        <input type="text" id="snome" name="snome"value=""style="width: 10em" >
+                    <div class="campos">
+                        <label for="">Número:</label>
+                        <input id="num-origen" class="" name="num-origen"  type="text" placeholder="bairro">
                     </div>
-                    <div class="campo">
-                        <label for="snome">Data da Partida</label>
-                        <input type="date" id="snome" name="snome"value=""style="width: 10em" >
-                    </div>
-                    <div class="campo">
-                        <label for="snome">Hora da Partida</label>
-                        <input type="time" id="snome" name="snome"value=""style="width: 10em" >
-                    </div>
-                </div> 
-            <div class="caixa" 
-                </fieldset>
-                <h1 class="titulo1">Destino</h1>
-                <fieldset class="grupo">
-                    <div class="campo">
-                        <label for="nome">Bairro</label>
-                        <input type="text" id="nome" name="nome"value=""style="width: 10em" >
-                    </div>
-                    <div class="campo">
-                        <label for="snome">Rua</label>
-                        <input type="text" id="snome" name="snome" value=""style="width: 10em" >
-                    </div>
-                    <div class="campo">
-                        <label for="snome">N°</label>
-                        <input type="text" id="snome" name="snome" value=""style="width: 10em" >
-                    </div>
-                </fieldset>
-            </div>
-            <div class="caixa">
-                <h1 class="titulo1">Veículo</h1>
-                <div class="campo">
-                    <div class="bolas">
-                    <label>
-                        <input type="radio" name="carro" value="carro"> Carro
-                    </label>
-                    <label>
-                        <input type="radio" name="moto" value="moto"> Moto
-                    </label>
-                </div>
-            </div>
-            </div>
-            <div class="caixa">
-                <h1 class="titulo1">Modalidade</h1>
-                <div class="campo">
-                    <div class="bolas">
-                        <label>
-                            <input type="radio" name="não-colaborativo" value="não-colaborativo"> Não-Colaborativo
-                        </label>
-                        <label>
-                            <input type="radio" name="colaborativo" value="colaborativo"> Colaborativo
-                        </label>
+                    <div class="campos">
+                        <div class="dt">
+                            <label for="">Data:</label>
+                            <input id="data-origen" class="" name="data-origen"  type="text" placeholder="bairro">
+                        </div>
+                        <div class="dt">
+                            <label for="">Hora:</label>
+                            <input id="hora-origen" class="" name="hora-origen"  type="text" placeholder="bairro">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="caixa">
-                <h1 class="titulo1">Frequência de Rota</h1>
-                <div class="campo">
-                    <div class="bolas">
-                        <label>
-                            <input type="radio" name="regular" value="regular"> Regular
+                <div class="input-group">
+                    <h3>Destino</h3>
+                    <div class="campos">
+                        <label for="">Bairro:</label>
+                        <input id="bairro-destino" class="" name="bairro-destino"  type="text" placeholder="bairro">
+                    </div>
+                    <div class="campos">
+                        <label for="">Rua:</label>
+                        <input id="rua-destino" class="" name="rua-destino" type="text" placeholder="bairro">
+                    </div>
+                    <div class="campos">
+                        <label for="">Número:</label>
+                        <input id="num-destino" class="" name="num-destino" type="text" placeholder="bairro">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <h3>Veiculo</h3>
+                    <div>
+                        <label>Moto
+                            <input type="radio" name="radio">
+                            <span></span>
                         </label>
-                        <label>
-                            <input type="radio" name="não-regular" value="não-regular"> Não-Regular
+                        <label>Carro
+                            <input type="radio" name="radio">
+                            <span></span>
+                        </label>
+                    </div>
+
+                </div>
+                <div class="input-group">
+                    <h3>regularidade</h3>
+                    <div>
+                        <label class="">Regular
+                            <input type="radio" name="radio">
+                            <span></span>
+                        </label>
+                        <label class="container">Não regular
+                            <input type="radio" name="radio">
+                            <span></span>
                         </label>
                     </div>
                 </div>
-            </div>
-            <div class="caixa">
-                <h1 class="titulo1">Dias da Semana</h1>
-                <div class="campo">
-                        <div class="bolas">
+                <div class="input-group">
+                    <h3>Dias da semana</h3>
+                    <div class="dias">
+                        <div class="dia">
                             <label>
-                                <input type="radio" name="domingo" value="domingo"> Dom
+                                <input type="checkbox">
+                                <p>Dom</p>
                             </label>
+                        </div>
+                        <div class="dia">
                             <label>
-                                <input type="radio" name="segunda" value="segunda"> Seg
+                                <input type="checkbox">
+                                <p>Seg</p>
                             </label>
+                        </div>
+                        <div class="dia">
                             <label>
-                                <input type="radio" name="terca" value="terca"> Ter
+                                <input type="checkbox">
+                                <p>Ter</p>
                             </label>
+                        </div>
+                        <div class="dia">
                             <label>
-                                <input type="radio" name="quarta" value="quarta"> Qua
+                                <input type="checkbox">
+                                <p>Qua</p>
                             </label>
+                        </div>
+                        <div class="dia">
                             <label>
-                                <input type="radio" name="quinta" value="quinta"> Qui
+                                <input type="checkbox">
+                                <p>Qui</p>
                             </label>
+                        </div>
+                        <div class="dia">
                             <label>
-                                <input type="radio" name="sexta" value="sexta"> Sex
+                                <input type="checkbox">
+                                <p>Sex</p>
                             </label>
+                        </div>
+                        <div class="dia">
                             <label>
-                                <input type="radio" name="sabado" value="sabado"> Sab
+                                <input type="checkbox">
+                                <p>Sab</p>
                             </label>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <button class="botao" type="submit" name="submit">Salvar nova Carona</button>
-        </fieldset>
-    </form>
-  <h1>teste</h1>
+
+                <button class="button" type="submit">Cadastrar carona</button>
+            </form>
+            
+
+    </main>
+
+
 </body>
-</html>
 
+</html>

@@ -1,8 +1,7 @@
 
 main {
     position: relative;
-    height: 92vh;
-  /*   top: 8vh; */
+    top: 8vh;
 
     display: flex;
     flex-direction: column;
@@ -86,6 +85,7 @@ main {
 
 .form-structor .center .form-holder .form-image img {
     border-radius: 50%;
+    object-fit: cover;
     width: 120px;
     height: 120px;
 }

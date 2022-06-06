@@ -1,8 +1,3 @@
-header {
-    position: fixed;
-    width: 100vw;
-    height: 8vh;
-}
 
 .navbar {
     width: 100%;
@@ -21,6 +16,7 @@ header {
 .item-1 {
     text-align: center;
     width: 60%;
+    padding-left: 3px;
 }
 
 .item-2 {
@@ -34,6 +30,7 @@ header {
 
 .itens-navbar img {
     border-radius: 50%;
+    object-fit: cover;
     width: 45px;
     height: 45px;
 }
