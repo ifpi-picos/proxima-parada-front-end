@@ -42,6 +42,17 @@ a {
     color: var(--color-secondary);
 }
 
+header {
+    position: fixed;
+    width: 100vw;
+    height: 8vh;
+}
+
+main {
+    height: 92vh;
+    top: 8vh;
+}
+
 /* -------------------- Fim das configurações globais ------------------------------ */
 
 

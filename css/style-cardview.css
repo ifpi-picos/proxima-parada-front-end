@@ -2,7 +2,7 @@
     --color-box-shadow: #afafaf;
 }
 
-main{
+main {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,9 +10,7 @@ main{
 }
 
 .container {
-
     padding-top: 8vh;
-
     width: 100vw;
 }
 
