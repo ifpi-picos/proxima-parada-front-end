@@ -19,7 +19,6 @@ let i_regularidade, i_veiculo;
 let i_dias = [];
 auth.onAuthStateChanged((user) => {
   uid = user.uid;
-  console.log(user);
 });
 
 btnCadastrarCarona.addEventListener("click", () => {
@@ -29,19 +28,19 @@ btnCadastrarCarona.addEventListener("click", () => {
       break;
     }
   }
+
   for (const r of regularidades) {
     if (r.checked) {
       i_regularidade = r.value;
       break;
     }
   }
-  if (i_regularidade == true) {
-    console.log("entrou no regularidade");
-    for (const d of checkDias) {
-      if (d.checked) {
-        i_dias.push(r.value);
+  if (i_regularidade == "true") {
+    checkDias.forEach((dia) => {
+      if (dia.checked) {
+        i_dias.push(dia.value);
       }
-    }
+    });
   }
 
   dados = {
@@ -49,7 +48,7 @@ btnCadastrarCarona.addEventListener("click", () => {
     bairro_origem: bairroOrigem.value,
     rua_origem: ruaOrigem.value,
     numero_origem: numeroOrigem.value,
-    data_origem: dataOrigem.value,
+    data_origem: dataAtualFormatada(dataOrigem.value),
     hora_origem: horaOrigem.value,
     bairro_destino: bairroDestino.value,
     rua_destino: ruaDestino.value,
@@ -60,18 +59,27 @@ btnCadastrarCarona.addEventListener("click", () => {
   };
 
   salvarDados(dados);
+
 });
 
-function salvarDados(dados) {
-  console.log(dados);
+function dataAtualFormatada(dataO) {
+  let data = new Date(dataO);
+  dataFormatada = data.toLocaleDateString("pt-BR", { timeZone: "UTC" });
+  return dataFormatada;
+}
 
-  database_ref.child("Caronas/" + uid).set(dados, (error) => {
+function salvarDados(dados) {
+  
+  const timeElapsed = Date.now();
+  const dataCompleta = new Date(timeElapsed);
+  let data = Date.parse(dataCompleta);
+
+  database_ref.child("Caronas/" + uid+"/" + data).set(dados, (error) => {
     if (error) {
-      // The write failed...
       alert("Erro ao salvar dados de usúario");
     } else {
       alert("Sucesso ao salvar dados de usúario");
-      // Data saved successfully!
+      location.href = "caronas.html";
     }
   });
 }
