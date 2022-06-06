@@ -73,6 +73,7 @@ main {
 
 .campos{
     width: 100%;
+    margin: 3px;
     display: flex;
     justify-content:space-between;
     align-items: center;
@@ -94,7 +95,7 @@ main {
 }
 
 .dt label{
-    width: 40%;
+    width: 60%;
 }
 
 .dt input{
