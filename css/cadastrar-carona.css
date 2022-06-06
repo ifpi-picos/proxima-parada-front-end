@@ -40,8 +40,8 @@ main {
 
 .input-group{
     border: 1px solid rgb(148, 148, 148);
-    border-radius: 15px;
-    padding: 5px;
+    border-radius: 10px;
+    padding: 15px;
     margin: 5px 0;
 }
 
@@ -57,11 +57,13 @@ main {
      /* border: 1px solid red;*/
     /*justify-content:space-between;*/
 }
+
 /* vou mexer aqui */
 .veiculo{
     margin-left: 20px;
 }
 /* vou mexer aqui */
+
 .dia{
     display: flex;
     flex-direction: column;
