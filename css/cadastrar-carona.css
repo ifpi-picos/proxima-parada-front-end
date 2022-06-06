@@ -52,12 +52,16 @@ main {
 }
 
 .radio-buttons{
-    border: 1px solid red;
     display: flex;
-    justify-content:space-between;
     align-items: center;
+     /* border: 1px solid red;*/
+    /*justify-content:space-between;*/
 }
-
+/* vou mexer aqui */
+.carro{
+    margin-left: 20px;
+}
+/* vou mexer aqui */
 .dia{
     display: flex;
     flex-direction: column;
