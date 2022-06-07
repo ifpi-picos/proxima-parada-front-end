@@ -19,6 +19,8 @@ let i_regularidade, i_veiculo;
 let i_dias = [];
 auth.onAuthStateChanged((user) => {
   uid = user.uid;
+  console.log(uid);
+  recuperarCaronas("Caronas/" + uid);
 });
 
 btnCadastrarCarona.addEventListener("click", () => {
@@ -59,7 +61,6 @@ btnCadastrarCarona.addEventListener("click", () => {
   };
 
   salvarDados(dados);
-
 });
 
 function dataAtualFormatada(dataO) {
@@ -69,12 +70,11 @@ function dataAtualFormatada(dataO) {
 }
 
 function salvarDados(dados) {
-  
   const timeElapsed = Date.now();
   const dataCompleta = new Date(timeElapsed);
   let data = Date.parse(dataCompleta);
 
-  database_ref.child("Caronas/" + uid+"/" + data).set(dados, (error) => {
+  database_ref.child("Caronas/" + uid + "/" + data).set(dados, (error) => {
     if (error) {
       alert("Erro ao salvar dados de usúario");
     } else {
@@ -82,4 +82,43 @@ function salvarDados(dados) {
       location.href = "caronas.html";
     }
   });
+}
+
+function recuperarCaronas(endereco) {
+  let caronas = database_ref.child(endereco);
+  caronas.on("value", (snapshot) => {
+    const data = snapshot.val();
+    for (carona in data) {
+      console.log(carona);
+      //recuperarCaronas("Caronas/" + uid+"/"+carona);
+    }
+    console.log(data);
+  });
+
+  /* 
+  database_ref
+    .child(endereco)
+    .get()
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        //console.log(snapshot.val());
+        for (carona in snapshot.val()) {
+          console.log(carona.veiculo);
+          //recuperarCaronas("Caronas/" + uid+"/"+carona);
+        }
+        //exibirDados(snapshot.val());
+      } else {
+        console.log("No data available");
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+    }); */
+}
+
+function exibirDados(dados) {
+  for (let carona in dados) {
+    console.log(carona);
+    recuperarCaronas("Caronas/" + uid + "/" + carona);
+  }
 }
