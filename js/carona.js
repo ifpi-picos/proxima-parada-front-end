@@ -88,37 +88,16 @@ function recuperarCaronas(endereco) {
   let caronas = database_ref.child(endereco);
   caronas.on("value", (snapshot) => {
     const data = snapshot.val();
-    for (carona in data) {
-      console.log(carona);
-      //recuperarCaronas("Caronas/" + uid+"/"+carona);
+    for (key in data) {
+      console.log(data[key]);
+      exibirDados(data[key]);
     }
-    console.log(data);
+    
   });
 
-  /* 
-  database_ref
-    .child(endereco)
-    .get()
-    .then((snapshot) => {
-      if (snapshot.exists()) {
-        //console.log(snapshot.val());
-        for (carona in snapshot.val()) {
-          console.log(carona.veiculo);
-          //recuperarCaronas("Caronas/" + uid+"/"+carona);
-        }
-        //exibirDados(snapshot.val());
-      } else {
-        console.log("No data available");
-      }
-    })
-    .catch((error) => {
-      console.error(error);
-    }); */
 }
 
 function exibirDados(dados) {
-  for (let carona in dados) {
-    console.log(carona);
-    recuperarCaronas("Caronas/" + uid + "/" + carona);
-  }
+  const caronasView = document.getElementById("card-container");
+  caronasView = document.createElement('');
 }
