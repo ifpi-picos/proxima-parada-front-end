@@ -101,3 +101,9 @@ function exibirDados(dados) {
   const caronasView = document.getElementById("card-container");
   caronasView = document.createElement('');
 }
+const btnCancel = document.getElementById("btnCancel");
+
+btnCancel.addEventListener("click", () => {
+  // [START auth_signin_password_modular]
+  location.href = "caronas.html";
+});
