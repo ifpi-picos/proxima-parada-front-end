@@ -43,6 +43,7 @@ main {
     border-radius: 10px;
     padding: 15px;
     margin: 5px 0;
+    background: #1F9BCF;
    
 }
 
@@ -81,6 +82,7 @@ main {
     justify-content:space-between;
     align-items: center;
     
+    
 }
 
 .campos label{
@@ -92,6 +94,7 @@ main {
 .campos input{
     width: 80%;
    
+   
 }
 
 .campos .dt{
@@ -99,14 +102,16 @@ main {
     display: flex;
     justify-content:space-between;
     align-items: center;
+    margin-right: 10px;
 }
 
 .dt label{
     width: 40%;
+    
 }
 
 .dt input{
-    width: 60%;
+    width: 100%;
 }
 h3{
     font-size: 25px;
