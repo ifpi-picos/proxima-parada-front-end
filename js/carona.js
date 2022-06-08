@@ -100,7 +100,6 @@ function recuperarUsuario(endereco) {
     .get()
     .then((snapshot) => {
       if (snapshot.exists()) {
-        console.log(snapshot.val());
         currentUser = {
           nome: snapshot.val().nome,
           ocupacao: snapshot.val().ocupacao
