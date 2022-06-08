@@ -8,6 +8,7 @@ const checkDias = document.querySelectorAll('input[name="dia"]');
 
 let dados;
 let uid;
+let currentUser;
 let bairroOrigem = document.getElementById("bairro-origem");
 let ruaOrigem = document.getElementById("rua-origem");
 let numeroOrigem = document.getElementById("num-origem");
@@ -22,8 +23,9 @@ let i_dias = [];
 
 auth.onAuthStateChanged((user) => {
   uid = user.uid;
-  console.log(uid);
   recuperarCaronas("Caronas/" + uid);
+  recuperarUsuario("usuario/" + uid);
+  
 });
 
 btnCancel.addEventListener("click", () => {
@@ -55,6 +57,8 @@ btnCadastrarCarona.addEventListener("click", () => {
 
   dados = {
     uid_usuario: uid,
+    nome_usuario: currentUser.nome,
+    ocupacao_usuario: currentUser.ocupacao,
     bairro_origem: bairroOrigem.value,
     rua_origem: ruaOrigem.value,
     numero_origem: numeroOrigem.value,
@@ -91,13 +95,29 @@ function salvarDados(dados) {
     }
   });
 }
-
+function recuperarUsuario(endereco) {
+  database_ref.child(endereco)
+    .get()
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        console.log(snapshot.val());
+        currentUser = {
+          nome: snapshot.val().nome,
+          ocupacao: snapshot.val().ocupacao
+        };
+      } else {
+        console.log("No data available");
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
 function recuperarCaronas(endereco) {
   let caronas = database_ref.child(endereco);
   caronas.on("value", (snapshot) => {
     const dataC = snapshot.val();
     for (key in dataC) {
-      console.log(dataC[key]);
       exibirDados(dataC[key]);
     }
     
@@ -110,7 +130,7 @@ function exibirDados(dadosCarona) {
   caronasView = caronasView + '<div class="card">'+
   '<div class="card-content">'+
   '<div class="card-header">'+
-  '<p><span>José Filho</span> - <span>Professor</span></p>'+
+  '<p><span>'+dadosCarona.nome_usuario+'</span> - <span>'+dadosCarona.ocupacao_usuario+'</span></p>'+
   '</div>'+
   '<div class="card-info">'+
   '<p>Origen:</p>'+
