@@ -125,7 +125,7 @@ function recuperarCaronas(endereco) {
 
 }
 
-function exibirDados(dadosCarona) {
+function exibirDados(dadosCarona ) {
   let caronasView = document.getElementById("card-container").innerHTML;
   caronasView = caronasView + '<div class="card">'+
   '<div class="card-content">'+
@@ -136,7 +136,7 @@ function exibirDados(dadosCarona) {
   '<p>Origen:</p>'+
   '<p>Bairro: <span>'+dadosCarona.bairro_origem+'</span></p>'+
   '<p>Rua: <span>'+dadosCarona.rua_origem+'</span> n°: <span>'+dadosCarona.numero_origem+'</span></p>'+
-  '<p><span>'+dadosCarona.data_origem+'</span> - <span>07:00 AM</span></p>'+
+  '<p><span>'+dadosCarona.data_origem+'</span> - <span>'+dadosCarona.hora_origem+'</span></p>'+
   '</div>'+
   '<div class="card-info">'+
   '<p>Destino:</p>'+
