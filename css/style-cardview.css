@@ -12,6 +12,7 @@ main {
 .container {
     padding-top: 8vh;
     width: 100vw;
+    height: 92vh;
 }
 
 .c-loader {
@@ -35,12 +36,11 @@ main {
 }
 
 .card {
-    width: 98%;
-    max-width: 500px;
+    width: 96%;
+    max-width: 400px;
     padding: auto;
     background: var(--color-background);
     border-radius: 10px;
-    margin-top: 10px;
 }
 
 .card-content {
@@ -50,6 +50,7 @@ main {
     margin: 10px auto;
     border-radius: 5px;
     padding: 10px;
+    cursor: pointer;
     box-shadow: 10px 10px 20px var(--color-box-shadow);
     transition: 0.3s all ease-in-out;
 }
@@ -68,9 +69,25 @@ main {
     font-size: 22px;
 }
 
+.card-button {
+    padding: 6px;
+    width: 98%;
+    border-radius: 50px;
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    font-size: 22px;
+    cursor: pointer;
+    border: none;
+    margin: 20px auto;
+}
+
 @media (max-width: 1450px) {
     .card-container {
         grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .card {
+        margin-top: 10px;
     }
 }
 
@@ -78,15 +95,18 @@ main {
     .card-container {
         grid-template-columns: 1fr 1fr;
     }
+
+    .card {
+        margin-top: 10px;
+    }
 }
 
 @media (max-width: 800px) {
     .card-container {
         grid-template-columns: 1fr;
     }
-}
-.status{
-    width: 120px;
-    background-color: red;
-    margin: 6px solid #ccc;
+
+    .card {
+        margin-top: 10px;
+    }
 }
