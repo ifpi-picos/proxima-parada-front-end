@@ -34,7 +34,7 @@ main {
     color: var(--color-secondary);
 }
 
-.card {
+z.card {
     width: 98%;
     max-width: 500px;
     padding: auto;
