@@ -1,8 +1,10 @@
 const btnCadastrarCarona = document.getElementById("btnCadastrarCarona");
+const btnCancel = document.getElementById("btnCancelCarona");
 
 const veiculos = document.querySelectorAll('input[name="veiculo"]');
 const regularidades = document.querySelectorAll('input[name="regularidade"]');
 const checkDias = document.querySelectorAll('input[name="dia"]');
+
 
 let dados;
 let uid;
@@ -17,8 +19,16 @@ let numeroDestino = document.getElementById("num-destino");
 
 let i_regularidade, i_veiculo;
 let i_dias = [];
+
 auth.onAuthStateChanged((user) => {
   uid = user.uid;
+  console.log(uid);
+  recuperarCaronas("Caronas/" + uid);
+});
+
+btnCancel.addEventListener("click", () => {
+  // [START auth_signin_password_modular]
+  location.href = "caronas.html";
 });
 
 btnCadastrarCarona.addEventListener("click", () => {
@@ -59,7 +69,6 @@ btnCadastrarCarona.addEventListener("click", () => {
   };
 
   salvarDados(dados);
-
 });
 
 function dataAtualFormatada(dataO) {
@@ -69,12 +78,11 @@ function dataAtualFormatada(dataO) {
 }
 
 function salvarDados(dados) {
-  
   const timeElapsed = Date.now();
   const dataCompleta = new Date(timeElapsed);
   let data = Date.parse(dataCompleta);
 
-  database_ref.child("Caronas/" + uid+"/" + data).set(dados, (error) => {
+  database_ref.child("Caronas/" + uid + "/" + data).set(dados, (error) => {
     if (error) {
       alert("Erro ao salvar dados de usúario");
     } else {
@@ -82,4 +90,44 @@ function salvarDados(dados) {
       location.href = "caronas.html";
     }
   });
+}
+
+function recuperarCaronas(endereco) {
+  let caronas = database_ref.child(endereco);
+  caronas.on("value", (snapshot) => {
+    const dataC = snapshot.val();
+    for (key in dataC) {
+      console.log(dataC[key]);
+      exibirDados(dataC[key]);
+    }
+    
+  });
+
+}
+
+function exibirDados(dadosCarona) {
+  let caronasView = document.getElementById("card-container").innerHTML;
+  caronasView = caronasView + '<div class="card">'+
+  '<div class="card-content">'+
+  '<div class="card-header">'+
+  '<p><span>José Filho</span> - <span>Professor</span></p>'+
+  '</div>'+
+  '<div class="card-info">'+
+  '<p>Origen:</p>'+
+  '<p>Bairro: <span>'+dadosCarona.bairro_origem+'</span></p>'+
+  '<p>Rua: <span>'+dadosCarona.rua_origem+'</span> n°: <span>'+dadosCarona.numero_origem+'</span></p>'+
+  '<p><span>'+dadosCarona.data_origem+'</span> - <span>07:00 AM</span></p>'+
+  '</div>'+
+  '<div class="card-info">'+
+  '<p>Destino:</p>'+
+  '<p>Bairro: <span>'+dadosCarona.bairro_destino+'</span></p>'+
+  '<p>Rua: <span>'+dadosCarona.rua_destino+'</span> n°: <span>'+dadosCarona.numero_destino+'</span></p>'+
+  '</div>'+
+  '<div class="card-info">'+
+  '<p>Veículo: <span>'+dadosCarona.veiculo+'</span></p>'+
+  '</div>'+
+  '</div>'+
+  '</div>';
+
+  document.getElementById("card-container").innerHTML = caronasView;
 }
