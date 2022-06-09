@@ -15,16 +15,6 @@ main {
     height: 92vh;
 }
 
-.c-loader {
-    margin-top: 40vh;
-    animation: is-rotating 1s infinite;
-    border: 8px solid #fff;
-    border-radius: 50%;
-    border-top-color: var(--color-primary);
-    height: 70px;
-    width: 70px;
-}
-
 .card-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;

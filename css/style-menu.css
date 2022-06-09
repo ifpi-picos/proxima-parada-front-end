@@ -8,9 +8,6 @@
     background: var(--color-primary);
 }
 
-.itens-navbar {
-    width: 7vh;
-}
 
 .item-1 {
     text-align: center;
@@ -19,15 +16,18 @@
 }
 
 .item-2 {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    width: 5%;
-    min-width: 60px;
-    margin-right: 6px;
+    width: 40%;
 }
 
-.itens-navbar img {
+.itens-navbar {
+    display: flex;
+    justify-content: right;
+    text-align: center;
+    min-width: 60px;
+    margin-right: 10px;
+}
+
+.itens-navbar .img-home {
     border-radius: 50%;
     object-fit: cover;
     width: 45px;
