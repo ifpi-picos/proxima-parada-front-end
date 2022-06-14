@@ -165,8 +165,11 @@
         box-shadow: none;
     }
 
-    .itens-navbar img {
-        display: block;
+    .itens-navbar .img-home {
+        border-radius: 50%;
+        object-fit: cover;
+        width: 45px;
+        height: 45px;
     }
 
     .item-2 {

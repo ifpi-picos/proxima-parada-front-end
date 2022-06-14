@@ -1,10 +1,11 @@
 const btnCadastrarCarona = document.getElementById("btnCadastrarCarona");
-const btnCancel = document.getElementById("btnCancelCarona");
+
+const conteudoCaronas = document.querySelector('.conteudo-caronas')
+const loadingCaronas = document.querySelector('.loading-caronas')
 
 const veiculos = document.querySelectorAll('input[name="veiculo"]');
 const regularidades = document.querySelectorAll('input[name="regularidade"]');
 const checkDias = document.querySelectorAll('input[name="dia"]');
-
 
 let dados;
 let uid;
@@ -25,12 +26,6 @@ auth.onAuthStateChanged((user) => {
   uid = user.uid;
   recuperarCaronas("Caronas/" + uid);
   recuperarUsuario("usuario/" + uid);
-  
-});
-
-btnCancel.addEventListener("click", () => {
-  // [START auth_signin_password_modular]
-  location.href = "caronas.html";
 });
 
 btnCadastrarCarona.addEventListener("click", () => {
@@ -96,13 +91,14 @@ function salvarDados(dados) {
   });
 }
 function recuperarUsuario(endereco) {
-  database_ref.child(endereco)
+  database_ref
+    .child(endereco)
     .get()
     .then((snapshot) => {
       if (snapshot.exists()) {
         currentUser = {
           nome: snapshot.val().nome,
-          ocupacao: snapshot.val().ocupacao
+          ocupacao: snapshot.val().ocupacao,
         };
       } else {
         console.log("No data available");
@@ -116,37 +112,40 @@ function recuperarCaronas(endereco) {
   let caronas = database_ref.child(endereco);
   caronas.on("value", (snapshot) => {
     const dataC = snapshot.val();
+    console.log(snapshot.val());
     for (key in dataC) {
       exibirDados(dataC[key]);
     }
-    
+    loadingUser.classList.add("off");
+    conteudoCaronas.classList.remove("off");
   });
-
 }
 
-function exibirDados(dadosCarona ) {
+function exibirDados(dadosCarona) {
   let caronasView = document.getElementById("card-container").innerHTML;
-  caronasView = caronasView + '<div class="card">'+
-  '<div class="card-content">'+
-  '<div class="card-header">'+
-  '<p><span>'+dadosCarona.nome_usuario+'</span> - <span>'+dadosCarona.ocupacao_usuario+'</span></p>'+
-  '</div>'+
-  '<div class="card-info">'+
-  '<p>Origen:</p>'+
-  '<p>Bairro: <span>'+dadosCarona.bairro_origem+'</span></p>'+
-  '<p>Rua: <span>'+dadosCarona.rua_origem+'</span> n°: <span>'+dadosCarona.numero_origem+'</span></p>'+
-  '<p><span>'+dadosCarona.data_origem+'</span> - <span>'+dadosCarona.hora_origem+'</span></p>'+
-  '</div>'+
-  '<div class="card-info">'+
-  '<p>Destino:</p>'+
-  '<p>Bairro: <span>'+dadosCarona.bairro_destino+'</span></p>'+
-  '<p>Rua: <span>'+dadosCarona.rua_destino+'</span> n°: <span>'+dadosCarona.numero_destino+'</span></p>'+
-  '</div>'+
-  '<div class="card-info">'+
-  '<p>Veículo: <span>'+dadosCarona.veiculo+'</span></p>'+
-  '</div>'+
-  '</div>'+
-  '</div>';
+  caronasView =
+    caronasView +
+    `<div class="card">
+      <div class="card-content">
+          <div class="card-header">
+              <p><span>${dadosCarona.nome_usuario}</span> - <span>${dadosCarona.ocupacao_usuario}</span></p>
+          </div>
+          <div class="card-info">
+              <p>Origen</p>
+              <p>Bairro: <span>${dadosCarona.bairro_origem}</span></p>
+              <p>Rua: <span>${dadosCarona.rua_origem}</span> n°: <span>${dadosCarona.numero_origem}</span></p>
+              <p><span>${dadosCarona.data_origem}</span> - <span>${dadosCarona.numero_origem}</span></p>
+          </div>
+          <div class="card-info">
+              <p>Destino</p>
+              <p>Bairro: <span>${dadosCarona.bairro_destino}</span></p>
+              <p>Rua: <span>${dadosCarona.rua_destino}</span> n°: <span>${dadosCarona.numero_destino}</span></p>
+          </div>
+          <div class="card-info">
+              <p>Veículo: <span>${dadosCarona.veiculo}</span></p>
+          </div>
+      </div>
+    </div>`;
 
   document.getElementById("card-container").innerHTML = caronasView;
 }

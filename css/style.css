@@ -47,6 +47,7 @@ header {
     position: fixed;
     width: 100vw;
     height: 8vh;
+    z-index: 1;
 }
 
 main {

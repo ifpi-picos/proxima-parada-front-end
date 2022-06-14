@@ -91,7 +91,7 @@
                             <input type="radio" name="veiculo" value="moto">
                             <p class="veiculo">Moto</p>
                         </div>
-                    
+
                     </div>
                 </fieldset>
                 <fieldset id="regularidade" class="input-group">
@@ -143,12 +143,18 @@
 
                 <button id="btnCadastrarCarona" class="button">Cadastrar Carona</button>
                 <button id="btnCancelCarona" class="button">Cancelar</button>
-            
+
             </div>
 
 
     </main>
 
+    <script>
+        document.getElementById("btnCancelCarona").addEventListener("click", () => {
+            // [START auth_signin_password_modular]
+            location.href = "caronas.html";
+        });
+    </script>
     <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-database-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-auth-compat.js"></script>
