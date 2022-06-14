@@ -16,6 +16,9 @@ function recuperarCaronas(endereco) {
     const dataC = snapshot.val();
     for (key1 in dataC) {
       for (key2 in dataC[key1]) {
+       /*  if(dataC[key1][key2].disponivel =='true'){
+          exibirDados(dataC[key1][key2]);
+        } */
         exibirDados(dataC[key1][key2]);
       }
     }

@@ -33,7 +33,7 @@ body {
 
 .form-structor {
     border-radius: 15px;
-    height: 550px;
+    height: 95%;
     width: 350px;
     position: relative;
     overflow: hidden;
@@ -65,12 +65,6 @@ body {
     -webkit-transition: all 0.3s ease;
 }
 
-.form-structor .login #progress-bar {
-    border-radius: 5px;
-    width: 1%;
-    height: 8px;
-    background: var(--color-primary);
-}
 
 .form-structor .login.slide-up {
     top: 5%;
@@ -124,21 +118,64 @@ body {
     outline: none;
     box-shadow: none;
     display: block;
-    height: 40px;
-    line-height: 45px;
     padding: 8px 15px;
     border-bottom: 1px solid #eee;
     width: 100%;
-    font-size: 16px;
+    font-size: 20px;
+    z-index: 1;
+    margin-top: 0.7em;
 }
 
-.form-structor .login .form-holder .input:last-child {
-    border-bottom: 0;
+
+
+
+
+input {
+    appearance: none;
+    border-radius: 0;
 }
 
-.form-structor .login .form-holder .input::-webkit-input-placeholder {
-    color: var(--color-form-title);
+
+.input {
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+    padding-top: 1.5rem;
 }
+
+.input-label {
+    color: #8597a3;
+    position: absolute;
+    top: 0.8rem;
+    left: 1.2rem;
+    z-index: -1;
+    transition: 0.25s ease;
+}
+
+.input-field {
+    border: 0;
+    z-index: 1;
+    background-color: transparent;
+    border-bottom: 2px solid #eee;
+    font: inherit;
+    font-size: 1.125rem;
+    padding: 0.25rem 0;
+}
+
+.input-field:focus,
+.input-field:valid {
+    outline: 0;
+    border-bottom-color: #6658d3;
+}
+
+.input-field:focus+.input-label,
+.input-field:valid+.input-label {
+    color: #6658d3;
+    transform: translateY(-1.5rem);
+}
+
+
+
 
 .form-structor .login .submit-btn {
     background-color: var(--color-form-title);
@@ -169,7 +206,7 @@ body {
 
 .form-structor .signup {
     position: absolute;
-    top: 20%;
+    top: 15%;
     left: 0;
     right: 0;
     bottom: 0;
@@ -233,12 +270,12 @@ body {
     outline: none;
     box-shadow: none;
     display: block;
-    height: 30px;
     line-height: 30px;
     padding: 8px 15px;
     border-bottom: 1px solid var(--color-background);
     width: 100%;
-    font-size: 14px;
+    font-size: 20px;
+    z-index: 1;
 }
 
 .form-structor .signup .center .form-holder .input:last-child {
@@ -256,9 +293,10 @@ body {
     border-radius: 15px;
     display: block;
     margin: 15px auto;
+    margin-bottom: -80px;
     padding: 15px 45px;
     width: 100%;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     cursor: pointer;
     opacity: 1;

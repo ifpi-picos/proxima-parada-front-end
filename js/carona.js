@@ -52,6 +52,7 @@ btnCadastrarCarona.addEventListener("click", () => {
 
   dados = {
     uid_usuario: uid,
+    /* disponivel:'true', */
     nome_usuario: currentUser.nome,
     ocupacao_usuario: currentUser.ocupacao,
     bairro_origem: bairroOrigem.value,

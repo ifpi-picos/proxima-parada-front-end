@@ -19,8 +19,16 @@
         <div class="login">
             <h2 class="form-title" id="login"><span>ou</span>Entrar</h2>
             <div class="form-holder">
-                <input type="email" class="input" id="email_login"  placeholder="Email">
-                <input type="password" class="input" id="senha_login"  placeholder="Senha" />
+                <div class="input">
+                    <input type="text" id="email_login" class="input-field" required />
+                    <label class="input-label">E-mail</label>
+                </div>
+                <div class="input">
+                    <input type="password" id="senha_login" class="input-field" required />
+                    <label class="input-label">senha</label>
+                </div>
+             <!--    <input type="email" class="input" id="email_login" placeholder="Email">
+                <input type="password" class="input" id="senha_login" placeholder="Senha" /> -->
             </div>
             <button class="submit-btn login-btn" id="btnLogin">Entrar</button>
         </div>
@@ -28,28 +36,34 @@
             <div class="center">
                 <h2 class="form-title" id="signup"><span>ou</span>Cadastre-se</h2>
                 <div class="form-holder">
-                    <div>
-                        <input type="text" class="input" id="nome" placeholder="Nome completo" required />
+                    <div class="input">
+                        <input type="text" class="input-field" id="nome" required />
+                        <label class="input-label">Nome completo</label>
                         <span class="error"></span>
                     </div>
-                    <div>
-                        <input type="text" class="input" id="ocupacao" placeholder="Ocupação no IFPI" required />
+                    <div class="input">
+                        <input type="text" class="input-field" id="ocupacao" required />
+                        <label class="input-label">Ocupação no IFPI</label>
                         <span class="error"></span>
                     </div>
-                    <div>
-                        <input type="phone" class="input" id="telefone" placeholder="Número de Whatsapp" maxlength="16" required />
+                    <div class="input">
+                        <input type="phone" class="input-field" id="telefone" maxlength="16" required />
+                        <label class="input-label">Número de Whatsapp</label>
                         <span class="error"></span>
                     </div>
-                    <div>
-                        <input type="email" class="input" id="email" placeholder="Email" required />
+                    <div class="input">
+                        <input type="email" class="input-field" id="email" required />
+                        <label class="input-label">Email</label>
                         <span class="error"></span>
                     </div>
-                    <div>
-                        <input type="password" class="input" id="senha" placeholder="Senha" required />
+                    <div class="input">
+                        <input type="password"class="input-field" id="senha" required />
+                        <label class="input-label">senha</label>
                         <span class="error"></span>
                     </div>
-                    <div>
-                        <input type="password" class="input" id="confir_senha" placeholder="Comfirmar senha" required />
+                    <div class="input">
+                        <input type="password" class="input-field" id="confir_senha" required />
+                        <label class="input-label">Comfirmar senha</label>
                         <span class="error"></span>
                     </div>
                 </div>
