@@ -62,6 +62,11 @@ main {
     font-size: 22px;
 }
 
+.card-info h3{
+    margin: 0;
+}
+
+
 .card-button {
     padding: 6px;
     width: 98%;

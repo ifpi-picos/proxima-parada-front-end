@@ -132,13 +132,13 @@ function exibirDados(dadosCarona) {
               <p><span>${dadosCarona.nome_usuario}</span> - <span>${dadosCarona.ocupacao_usuario}</span></p>
           </div>
           <div class="card-info">
-              <p>Origen</p>
+              <h3>Origen</h3>
               <p>Bairro: <span>${dadosCarona.bairro_origem}</span></p>
               <p>Rua: <span>${dadosCarona.rua_origem}</span> n°: <span>${dadosCarona.numero_origem}</span></p>
-              <p><span>${dadosCarona.data_origem}</span> - <span>${dadosCarona.numero_origem}</span></p>
+              <p><span>${dadosCarona.data_origem}</span> - <span>${dadosCarona.hora_origem}</span></p>
           </div>
           <div class="card-info">
-              <p>Destino</p>
+              <h3>Destino</h3>
               <p>Bairro: <span>${dadosCarona.bairro_destino}</span></p>
               <p>Rua: <span>${dadosCarona.rua_destino}</span> n°: <span>${dadosCarona.numero_destino}</span></p>
           </div>
