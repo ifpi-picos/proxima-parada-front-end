@@ -37,115 +37,114 @@
         </nav>
     </header>
     <main>
-
-        <div class="content">
-            <div class="form-structor">
-                <div class="input-group">
-                    <h3>Origem</h3>
-                    <div class="campos">
-                        <label for="">Bairro:</label>
-                        <input id="bairro-origem" class="" type="text" placeholder="Pantanal">
+        <div class="form-structor">
+            <div class="input-group">
+                <h3>Origem</h3>
+                <div class="campos">
+                    <label for="">Bairro:</label><br>
+                    <input id="bairro-origem" class="" type="text">
+                </div>
+                <div class="campos">
+                    <label for="">Rua:</label><br>
+                    <input id="rua-origem" class="" ype="text">
+                </div>
+                <div class="campos">
+                    <label for="">Número:</label><br>
+                    <input id="num-origem" class="" type="text">
+                </div>
+                <div class="campos">
+                    <div class="date-time">
+                        <label for="">Data:</label>
+                        <input id="data-origem" class="" type="date" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
                     </div>
-                    <div class="campos">
-                        <label for="">Rua:</label>
-                        <input id="rua-origem" class="" ype="text" placeholder="Projetada 02">
-                    </div>
-                    <div class="campos">
-                        <label for="">Número:</label>
-                        <input id="num-origem" class="" type="text" placeholder="02">
-                    </div>
-                    <div class="campos">
-                        <div class="dt">
-                            <label for="">Data:</label>
-                            <input id="data-origem" class="" type="date" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
-                                placeholder="05/05/2022">
-                        </div>
-                        <div class="dt">
-                            <label for="">Hora:</label>
-                            <input id="hora-origem" class="" type="time" placeholder="09:00">
-                        </div>
+                    <div class="date-time">
+                        <label for="">Hora:</label>
+                        <input id="hora-origem" class="" type="time">
                     </div>
                 </div>
-                <div class="input-group">
-                    <h3>Destino</h3>
-                    <div class="campos">
-                        <label for="">Bairro:</label>
-                        <input id="bairro-destino" class="" name="bairro-destino" type="text" placeholder="Centro">
-                    </div>
-                    <div class="campos">
-                        <label for="">Rua:</label>
-                        <input id="rua-destino" class="" name="rua-destino" type="text" placeholder="Alvaro Batista">
-                    </div>
-                    <div class="campos">
-                        <label for="">Número:</label>
-                        <input id="num-destino" class="" name="num-destino" type="text" placeholder="15">
-                    </div>
+            </div>
+            <div class="input-group">
+                <h3>Destino</h3>
+                <div class="campos">
+                    <label for="">Bairro:</label><br>
+                    <input id="bairro-destino" class="" name="bairro-destino" type="text">
                 </div>
-
-                <fieldset id="veiculo" class="input-group">
-                    <h3>Veículo</h3>
-                    <div>
-                        <div class="radio-buttons">
-                            <input type="radio" name="veiculo" value="carro" checked>
-                            <p class="veiculo">Carro</p>
-                            <input type="radio" name="veiculo" value="moto">
-                            <p class="veiculo">Moto</p>
-                        </div>
-
-                    </div>
-                </fieldset>
-                <fieldset id="regularidade" class="input-group">
-                    <h3>Regularidade</h3>
-                    <div class="campo">
-                        <div class="radio-buttons">
-                            <input type="radio" name="regularidade" value="false" checked>
-                            <p class="veiculo">Não regular</p>
-                            <input type="radio" name="regularidade" value="true">
-                            <p class="veiculo">Regular</p>
-                        </div>
-                    </div>
-                </fieldset>
-                <fieldset class="input-group">
-                    <h3>Dias da Semana</h3>
-                    <div class="dias">
-                        <div class="dia">
-                            <input type="checkbox" name="dia" value="dom">
-                            <p>Dom</p>
-                        </div>
-                        <div class="dia">
-                            <input type="checkbox" name="dia" value="seg">
-                            <p>Seg</p>
-                        </div>
-                        <div class="dia">
-                            <input type="checkbox" name="dia" value="ter">
-                            <p>Ter</p>
-                        </div>
-                        <div class="dia">
-                            <input type="checkbox" name="dia" value="qua">
-                            <p>Qua</p>
-                        </div>
-                        <div class="dia">
-                            <input type="checkbox" name="dia" value="qui">
-                            <p>Qui</p>
-                        </div>
-                        <div class="dia">
-                            <input type="checkbox" name="dia" value="sex">
-                            <p>Sex</p>
-
-                        </div>
-                        <div class="dia">
-                            <input type="checkbox" name="dia" value="sab">
-                            <p>Sáb</p>
-                        </div>
-                    </div>
-
-                </fieldset>
-
-                <button id="btnCadastrarCarona" class="button">Cadastrar Carona</button>
-                <button id="btnCancelCarona" class="button">Cancelar</button>
-
+                <div class="campos">
+                    <label for="">Rua:</label><br>
+                    <input id="rua-destino" class="" name="rua-destino" type="text">
+                </div>
+                <div class="campos">
+                    <label for="">Número:</label><br>
+                    <input id="num-destino" class="" name="num-destino" type="text">
+                </div>
             </div>
 
+            <fieldset id="veiculo" class="input-group">
+                <h3>Veículo</h3>
+                <div class="radio-buttons">
+                    <div class="option">
+                        <input type="radio" name="veiculo" value="carro" checked>
+                        <label class="veiculo">Carro</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="veiculo" value="moto">
+                        <label class="veiculo">Moto</label>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset id="regularidade" class="input-group">
+                <h3>Regularidade</h3>
+                <div class="campo">
+                    <div class="radio-buttons">
+                        <div class="option">
+                            <input type="radio" name="regularidade" value="false" checked>
+                            <label class="veiculo">Não regular</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="regularidade" value="true">
+                            <label class="veiculo">Regular</label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="input-group">
+                <h3>Dias da Semana</h3>
+                <div class="dias">
+                    <div class="dia">
+                        <input type="checkbox" name="dia" value="dom">
+                        <label>Dom</label>
+                    </div>
+                    <div class="dia">
+                        <input type="checkbox" name="dia" value="seg">
+                        <label>Seg</label>
+                    </div>
+                    <div class="dia">
+                        <input type="checkbox" name="dia" value="ter">
+                        <label>Ter</label>
+                    </div>
+                    <div class="dia">
+                        <input type="checkbox" name="dia" value="qua">
+                        <label>Qua</label>
+                    </div>
+                    <div class="dia">
+                        <input type="checkbox" name="dia" value="qui">
+                        <label>Qui</label>
+                    </div>
+                    <div class="dia">
+                        <input type="checkbox" name="dia" value="sex">
+                        <label>Sex</label>
+                    </div>
+                    <div class="dia">
+                        <input type="checkbox" name="dia" value="sab">
+                        <label>Sáb</label>
+                    </div>
+                </div>
+
+            </fieldset>
+
+            <button id="btnCadastrarCarona" class="button">Cadastrar Carona</button>
+            <button id="btnCancelCarona" class="button">Cancelar</button>
+        </div>
 
     </main>
 

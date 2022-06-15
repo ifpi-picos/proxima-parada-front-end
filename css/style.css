@@ -68,17 +68,6 @@ main {
     text-align: center;
 }
 
-.content {
-    background: var(--color-background-content);
-    width: 96vw;
-    height: 80vh;
-    max-width: 476px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .c-loader {
     animation: is-rotating 1s infinite;
     border: 8px solid #fff;
@@ -116,12 +105,12 @@ main {
     margin: 20px auto;
 
 }
+
 .button:hover {
     background: var(--color-primary);
     color: var(--color-secondary);
     box-shadow: 5px 5px 10px var(--color-secondary-40);   
 }
-
 
 .nova-carona {
     width: 80%;
@@ -151,30 +140,3 @@ footer {
     justify-content: space-between;
     align-items: center;
 }
-
-/* -------------------- Fim das configurações de Conteudo ------------------------------ */
-
-
-/* -------------------- Inicio das medias Querys ------------------------------ */
-
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 476px) {
-
-    /* -------------------- Inicio das configurações de Conteudo ------------------------------ */
-
-    /* -------------------- Fim das configurações de Conteudo ------------------------------ */
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {}
-
-/* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {}
-
-/* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {}
-
-/* -------------------- Fim das medias Querys ------------------------------ */
