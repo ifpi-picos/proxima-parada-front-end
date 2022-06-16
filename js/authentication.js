@@ -2,13 +2,13 @@ const btnLogin = document.getElementById("btnLogin");
 const btnSignup = document.getElementById("btnSignup");
 const progressBar = document.getElementById("loading-login");
 
-auth.onAuthStateChanged((user) => {
+/* auth.onAuthStateChanged((user) => {
   // Check for user status
   console.log(user);
-});
+}); */
 const usuarioLogado = auth.currentUser;
-
-console.log(usuarioLogado);
+/* 
+console.log(usuarioLogado); */
 
 btnLogin.addEventListener("click", () => {
   const emailLogin = document.getElementById("email_login");

@@ -113,7 +113,7 @@ function recuperarCaronas(endereco) {
   let caronas = database_ref.child(endereco);
   caronas.on("value", (snapshot) => {
     const dataC = snapshot.val();
-    console.log(snapshot.val());
+   /*  console.log(snapshot.val()); */
     for (key in dataC) {
       exibirDados(dataC[key]);
     }
