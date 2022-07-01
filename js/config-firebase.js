@@ -9,5 +9,6 @@ const firebaseApp = firebase.initializeApp({
 });
 
 const auth = firebaseApp.auth();
-const database = firebaseApp.database(); 
+const database = firebaseApp.database();
+const database_ref = database.ref();
 const user = firebaseApp.auth().currentUser;

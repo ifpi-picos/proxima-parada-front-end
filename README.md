@@ -5,5 +5,9 @@ Próxia Parada
 Sistema de compartilhamento de caronas voltado para os alunos e professores do IFPI Picos
 
 Rafhael Gaspar - lider da equipe
-Edivan Santos de Oliveira 
+Edivan dos Santos Oliveira 
 Kemily de Jesus de Sousa Santos.
+
+Site online
+
+proxima-parada-001.web.app

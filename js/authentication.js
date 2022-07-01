@@ -2,13 +2,13 @@ const btnLogin = document.getElementById("btnLogin");
 const btnSignup = document.getElementById("btnSignup");
 const progressBar = document.getElementById("loading-login");
 
-auth.onAuthStateChanged((user) => {
+/* auth.onAuthStateChanged((user) => {
   // Check for user status
   console.log(user);
-});
+}); */
 const usuarioLogado = auth.currentUser;
-
-console.log(usuarioLogado);
+/* 
+console.log(usuarioLogado); */
 
 btnLogin.addEventListener("click", () => {
   const emailLogin = document.getElementById("email_login");
@@ -143,7 +143,7 @@ function writeUserData(nome, ocupacao, telefone, email, user, database_ref) {
     ocupacao: ocupacao,
     telefone: telefone,
     local_imagen:
-      "https://firebasestorage.googleapis.com/v0/b/proxim…=media&token=00adc825-1d94-4453-b923-c6356bf7886c",
+      "https://firebasestorage.googleapis.com/v0/b/proxima-parada-001.appspot.com/o/avatar.jpg?alt=media&token=951ecb7f-e586-477e-97e3-4b90667cf394",
   };
 
   // Push to Firebase Database
@@ -174,32 +174,31 @@ function validandoCampos(nome, ocupacao, telefone, email, senha, confirSenha) {
   }
 }
 
-  /* Máscaras ER */
-  function mascara(telefone, fun) {
-    numeroTelefone = telefone;
-    valueFun = fun;
-    setTimeout("execmascara()", 1);
-  }
-  
-  function execmascara() {
-    numeroTelefone.value = valueFun(numeroTelefone.value);
-  }
-  
-  function mascaraTelefone(numTel) {
-    numTel = numTel.replace(/\D/g, ""); //Remove tudo telefone que não é dígito
-    numTel = numTel.replace(/^(\d{2})(\d)/g, "($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
-    numTel = numTel.replace(/(\d)(\d{8})/g, "$1 $2"); //Coloca espaço entre 9 e os outros numeros
-    numTel = numTel.replace(/(\d)(\d{4})$/, "$1-$2"); //Coloca hífen entre telefone quarto e telefone quinto dígitos
-    return numTel;
-  }
-  
-  function id(elemento) {
-    return document.getElementById(elemento);
-  }
-  
-  window.onload = function () {
-    id("telefone").onkeyup = function () {
-      mascara(this, mascaraTelefone);
-    };
+/* Máscaras ER */
+function mascara(telefone, fun) {
+  numeroTelefone = telefone;
+  valueFun = fun;
+  setTimeout("execmascara()", 1);
+}
+
+function execmascara() {
+  numeroTelefone.value = valueFun(numeroTelefone.value);
+}
+
+function mascaraTelefone(numTel) {
+  numTel = numTel.replace(/\D/g, ""); //Remove tudo telefone que não é dígito
+  numTel = numTel.replace(/^(\d{2})(\d)/g, "($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
+  numTel = numTel.replace(/(\d)(\d{8})/g, "$1 $2"); //Coloca espaço entre 9 e os outros numeros
+  numTel = numTel.replace(/(\d)(\d{4})$/, "$1-$2"); //Coloca hífen entre telefone quarto e telefone quinto dígitos
+  return numTel;
+}
+
+function id(elemento) {
+  return document.getElementById(elemento);
+}
+
+window.onload = function () {
+  id("telefone").onkeyup = function () {
+    mascara(this, mascaraTelefone);
   };
-  
+};

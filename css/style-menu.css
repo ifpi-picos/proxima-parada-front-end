@@ -1,9 +1,3 @@
-header {
-    position: fixed;
-    width: 100vw;
-    height: 8vh;
-}
-
 .navbar {
     width: 100%;
     height: 100%;
@@ -14,26 +8,28 @@ header {
     background: var(--color-primary);
 }
 
-.itens-navbar {
-    width: 7vh;
-}
 
 .item-1 {
     text-align: center;
     width: 60%;
+    padding-left: 3px;
 }
 
 .item-2 {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    width: 5%;
-    min-width: 60px;
-    margin-right: 6px;
+    width: 40%;
 }
 
-.itens-navbar img {
+.itens-navbar {
+    display: flex;
+    justify-content: right;
+    text-align: center;
+    min-width: 60px;
+    margin-right: 10px;
+}
+
+.itens-navbar .img-home {
     border-radius: 50%;
+    object-fit: cover;
     width: 45px;
     height: 45px;
 }
@@ -41,6 +37,7 @@ header {
 .menu-options {
     list-style: none;
     display: flex;
+    height: 7vh;
 }
 
 .nav-list {
@@ -81,9 +78,9 @@ header {
     transition: background 0.5s, color 0.5s;
 }
 
-.ativa{
+.ativa {
     background: var(--color-secondary);
-    color: var(--color-primary); 
+    color: var(--color-primary);
 }
 
 .mobile-menu {
@@ -138,10 +135,11 @@ header {
         transform: translateX(-100%);
         transition: transform 0.3s ease-in;
     }
-/*minha modificação*/
+
+    /*minha modificação*/
 
 
-/*minha modificação*/
+    /*minha modificação*/
 
     .nav-list {
         width: 100%;
@@ -167,8 +165,11 @@ header {
         box-shadow: none;
     }
 
-    .itens-navbar img {
-        display: block;
+    .itens-navbar .img-home {
+        border-radius: 50%;
+        object-fit: cover;
+        width: 45px;
+        height: 45px;
     }
 
     .item-2 {

@@ -1,9 +1,9 @@
-const imageNav = document.querySelector("#img-home");
+const imageUser = document.querySelector(".img-user");
+const loadingUser = document.querySelector(".loading-img");
 
 const btnSair = document.getElementById("btnSair");
 
-const conteudo = document.querySelector(".container");
-const loadingShort = document.getElementById("loading");
+const imagePerfil = document.querySelector(".container");
 
 auth.onAuthStateChanged((user) => {
   if (user) {
@@ -25,9 +25,9 @@ function carregarDadosUsuario(uid) {
     .get()
     .then((snapshot) => {
       if (snapshot.exists()) {
-        imageNav.src = snapshot.val().local_imagen;
-        loadingShort.classList.add("off");
-        conteudo.classList.remove("off");
+        imageUser.src = snapshot.val().local_imagen;
+        loadingUser.classList.add("off");
+        imageUser.classList.remove("off");
       } else {
         console.log("No data available");
       }

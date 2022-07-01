@@ -59,7 +59,7 @@ btnUpdateUser.addEventListener("click", () => {
   if (change_image) {
     uploadImage(nome.value, ocupacao.value, telefone.value);
   } else {
-    console.log(imgUrl);
+    /* console.log(imgUrl); */
     writeUserData(
       nome.value,
       ocupacao.value,
@@ -178,7 +178,7 @@ function uploadImage(nome, ocupacao, telefone) {
     .then((snapshot) => {
       storageRef.getDownloadURL().then(function (url) {
         imgUrl = url;
-        console.log(url);
+        /* console.log(url); */
         writeUserData(nome, ocupacao, telefone, imgUrl);
       });
     })
