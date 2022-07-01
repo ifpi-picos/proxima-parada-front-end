@@ -3,41 +3,23 @@
 
 <head>
 
-    <link rel="manifest" href="manifest.json" />
-    <link rel="canonical" href="proxima-parada-001.web.app">
+<!--     <link rel="manifest" href="manifest.json" />
+    <link rel="canonical" href="proxima-parada-001.web.app"> -->
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sistema de compartlhamento de caronas">
+
     <title>Próxima Parada</title>
 
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/form-login.css">
 </head>
 
 <body>
-
-    <script>
-        // This is the service worker with the Cache-first network
-        // Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
-        // Check compatibility for the browser we're running this in
-        if ("serviceWorker" in navigator) {
-            if (navigator.serviceWorker.controller) {
-                console.log("[PWA Builder] active service worker found, no need to register");
-            } else {
-                // Register the service worker
-                navigator.serviceWorker
-                    .register("pwabuilder-sw.js", {
-                        scope: "./"
-                    })
-                    .then(function (reg) {
-                        console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
-                    });
-            }
-        }
-    </script>
-
+<div class="container"></div>
     <div id="loading-login" class="c-loader off"></div>
     <div class="form-structor">
         <div class="login">
@@ -97,16 +79,17 @@
     </div>
 
     <!--------------------------- Importes Scripts --------------------------->
-    <script src="js/form-login.js"></script>
+    <!-- <script src="js/form-login.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-database-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-auth-compat.js"></script>
 
     <script src="js/config-firebase.js"></script>
+    
+    <script src="js/authentication.js"></script> -->
     <script src="js/validado-campos.js"></script>
-    <script src="js/authentication.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+
 </body>
-
-
 </html>
